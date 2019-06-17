@@ -1,0 +1,35 @@
+{
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    "no-debugger": "off",
+    "vue/script-indent": [
+      "off", 4,
+      {
+        "baseIndent": 0,
+        "switchCase": 0,
+        "ignores": []
+      }
+    ],
+    "key-spacing": "off",
+    "no-multi-spaces": "off",
+    "no-unused-vars": "warn",
+    "brace-style": "off",
+    "no-extra-semi": "warn",
+    "semi": "off",
+    "comma-dangle": "off",
+    "quotes": "off",
+    "one-var": "off",
+    "wrap-iife": "off",
+    "no-console": "off"
+  },
+  "overrides": [
+    {
+      "files": ["*.vue"],
+      "rules": {
+        "indent": "off"
+      }
+    }
+  ]
+}
