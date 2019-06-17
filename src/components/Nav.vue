@@ -1,20 +1,6 @@
 <template>
   <nav class="navbar navbar-expand-lg bg-inverse fixed-top scrolling-navbar" :class="{ 'top-nav-collapse' : topNavCollapse}">
     <div class="container">
-      <!-- <a href="/" class="navbar-brand">
-         <div :style="`background-image: url(/img/logos/${ !topNavCollapse ?  logos.whiteBased : logos.accentBased})`"></div>
-       </a>-->
-      <!-- Brand and toggle get grouped for better mobile display -->
-
-      <!--<div class="navbar-toggler"
-            type="button"
-           data-toggle="collapse" data-target="#navbarCollapse"
-           aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        &lt;!&ndash;        <i class="lni-menu"></i>&ndash;&gt;
-        <div class="layer"></div>
-        <div class="layer"></div>
-        <div class="layer"></div>
-      </div>-->
       <div id="hamburger" class="hamburglar navbar-toggler is-open" :class="{'is-closed' : !mobNavShow, 'is-open' : mobNavShow}"
            @click="handleMobNav" data-toggle="collapse" data-target="#navbarCollapse"
            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,13 +15,15 @@
         <!-- svg ring containter -->
         <div class="burger-ring">
           <svg class="svg-ring">
-            <path class="path" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="2" d="M 34 2 C 16.3 2 2 16.3 2 34 s 14.3 32 32 32 s 32 -14.3 32 -32 S 51.7 2 34 2" />
+            <path class="path" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="2"
+                  d="M 34 2 C 16.3 2 2 16.3 2 34 s 14.3 32 32 32 s 32 -14.3 32 -32 S 51.7 2 34 2"/>
           </svg>
         </div>
         <!-- the masked path that animates the fill to the ring -->
         <svg width="0" height="0">
           <mask id="mask">
-            <path xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#ff0000" stroke-miterlimit="10" stroke-width="2" d="M 34 2 c 11.6 0 21.8 6.2 27.4 15.5 c 2.9 4.8 5 16.5 -9.4 16.5 h -4" />
+            <path xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#ff0000" stroke-miterlimit="10" stroke-width="2"
+                  d="M 34 2 c 11.6 0 21.8 6.2 27.4 15.5 c 2.9 4.8 5 16.5 -9.4 16.5 h -4"/>
           </mask>
         </svg>
         <div class="path-burger">
@@ -45,7 +33,7 @@
         </div>
       </div>
       <transition name="collapsing">
-        <div class="collapse navbar-collapse"  id="navbarCollapse">
+        <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto w-100 justify-content-end">
             <!--List Items-->
             <li v-for="listItem in homeNavList "
@@ -208,9 +196,10 @@ export default {
   }
 
   .navbar-expand-lg {
-    .container{
+    .container {
       max-width: 95%;
     }
+
     .navbar-toggler {
       //background: $accent-gradient;-->
       //border: 1px solid $accent-color;-->
@@ -239,6 +228,7 @@ export default {
         transition: all 0.3s ease-in-out;
         position: relative;
       }
+
       li > a:before {
         content: '';
         position: absolute;
@@ -256,19 +246,20 @@ export default {
         transition: transform 0.1s;
       }
 
-      .active a{
+      .active a {
 
         &:before {
-        -webkit-transform: scale3d(1, 1, 1);
-        -moz-transform: scale3d(1, 1, 1);
-        transform: scale3d(1, 1, 1);
-        -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-        -moz-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-        -webkit-transition-duration: 0.3s;
-        -moz-transition-duration: 0.3s;
-        transition-duration: 0.3s;
-      }}
+          -webkit-transform: scale3d(1, 1, 1);
+          -moz-transform: scale3d(1, 1, 1);
+          transform: scale3d(1, 1, 1);
+          -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          -moz-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          -webkit-transition-duration: 0.3s;
+          -moz-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+        }
+      }
     }
   }
 
@@ -489,7 +480,7 @@ export default {
     -moz-border-radius: 50%;
     border-radius: 25px;
 
-    &+label {
+    & + label {
       &::before {
         top: 20%;
         left: 0;
@@ -509,7 +500,7 @@ export default {
       /*-moz-border-radius: 0;*/
       /*border-radius: 0;*/
 
-      &+label::before, &+label::after {
+      & + label::before, & + label::after {
         top: 20%;
         left: 10%;
         display: none !important;
@@ -517,10 +508,10 @@ export default {
     }
   }
 
-  $color: #fff;// icon color
-  $blue: #158fef;// background color-->
-  $animation: 0.6s;// animation speed
-  $scale: 1;// icon scale 68/68 default
+  $color: #fff; // icon color
+  $blue: #158fef; // background color-->
+  $animation: 0.6s; // animation speed
+  $scale: 1; // icon scale 68/68 default
 
   .hamburglar {
     transform: scale($scale);
@@ -560,6 +551,7 @@ export default {
     margin: 34px 34px 0 0;
     transform: rotate(0deg);
     transform-origin: 100% 0;
+
     &:before {
       content: '';
       display: block;
@@ -602,22 +594,24 @@ export default {
   .hamburglar.is-open {
     .path {
       animation: dash-in $animation linear normal;
-      animation-fill-mode:forwards;
+      animation-fill-mode: forwards;
     }
+
     .animate-path {
       animation: rotate-in $animation linear normal;
-      animation-fill-mode:forwards;
+      animation-fill-mode: forwards;
     }
   }
 
   .hamburglar.is-closed {
     .path {
       animation: dash-out $animation linear normal;
-      animation-fill-mode:forwards;
+      animation-fill-mode: forwards;
     }
+
     .animate-path {
       animation: rotate-out $animation linear normal;
-      animation-fill-mode:forwards;
+      animation-fill-mode: forwards;
     }
   }
 
@@ -638,6 +632,7 @@ export default {
       stroke-dashoffset: 0;
     }
   }
+
   @keyframes dash-out {
     0% {
       stroke-dashoffset: 0;
@@ -685,6 +680,7 @@ export default {
     bottom: 0;
     transform-origin: 34px 2px;
   }
+
   //.burger-filling {
   //  @include transition(all,($animation/2.5),ease-in-//out);
   //}
@@ -707,26 +703,28 @@ export default {
     height: 68px;
   }
 
-
   // bun animations
   .hamburglar.is-open {
     .burger-bun-top {
       animation: bun-top-out $animation linear normal;
-      animation-fill-mode:forwards;
+      animation-fill-mode: forwards;
     }
+
     .burger-bun-bot {
       animation: bun-bot-out $animation linear normal;
-      animation-fill-mode:forwards;
+      animation-fill-mode: forwards;
     }
   }
+
   .hamburglar.is-closed {
     .burger-bun-top {
       animation: bun-top-in $animation linear normal;
-      animation-fill-mode:forwards;
+      animation-fill-mode: forwards;
     }
+
     .burger-bun-bot {
       animation: bun-bot-in $animation linear normal;
-      animation-fill-mode:forwards;
+      animation-fill-mode: forwards;
     }
   }
 
@@ -772,7 +770,6 @@ export default {
     }
   }
 
-
   @keyframes bun-top-in {
     0% {
       left: -5px;
@@ -817,20 +814,18 @@ export default {
     }
   }
 
-
-
   // burger filling
   .hamburglar.is-open {
     .burger-filling {
       animation: burger-fill-out $animation linear normal;
-      animation-fill-mode:forwards;
+      animation-fill-mode: forwards;
     }
   }
 
   .hamburglar.is-closed {
     .burger-filling {
       animation: burger-fill-in $animation linear normal;
-      animation-fill-mode:forwards;
+      animation-fill-mode: forwards;
     }
   }
 

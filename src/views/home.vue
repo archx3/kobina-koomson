@@ -173,10 +173,9 @@ import PortfolioGallery from './PortfolioGallery'
 import ContactMe        from './ContactMe'
 import MyClients        from './MyClients'
 import AboutMe          from './AboutMe'
-import { Slide, Carousel } from 'vue-carousel'
 export default {
   name      : 'home',
-  components: { AboutMe, MyClients, ContactMe, PortfolioGallery, HeaderWrap, Slide, Carousel },
+  components: { AboutMe, MyClients, ContactMe, PortfolioGallery, HeaderWrap,},
   props     : [],
   data () {
     return {
