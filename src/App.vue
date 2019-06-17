@@ -17,5 +17,6 @@ export default {
   body{
     position: relative;
     overflow-y: auto;
+    overflow-x: hidden;
   }
 </style>
