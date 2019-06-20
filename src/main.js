@@ -56,5 +56,5 @@ Vue.component('footer-section', Footer)
 new Vue({
   router,
   store,
-  render: h => h(App) // components: { App }, template: '<App/>' el: '#app'
+  render: h => h(App) // components: { App }, template: '<App/>', el: '#app'
 }).$mount('#app')

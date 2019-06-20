@@ -34,7 +34,7 @@
           <div class="portfolio-intro-text" :style="`transform:translateY(${translation * (-1)}%)`">
             <div class="text">
               <div>
-                <h3>Full Stack Developer</h3>
+                <h3>Software Engineer</h3>
                 <p>I build Apps from Start to finish using industry Standard practices</p>
                 <button class="rounded-pill">View me on Github</button>
               </div>
@@ -60,14 +60,14 @@
   </section>
 </template>
 <script>
-  export default {
-    name : 'about-my-skill',
-    props: {
-      indicatorTranslation: {},
-      stickGallery        : {},
-      translation         : {}
-    }
+export default {
+  name : 'about-my-skill',
+  props: {
+    indicatorTranslation: {},
+    stickGallery        : {},
+    translation         : {}
   }
+}
 </script>
 <style lang="scss" >
   @import "../assets/css/colors";

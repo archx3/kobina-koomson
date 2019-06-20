@@ -17,5 +17,5 @@ deploy:
   provider: surge
   project: ./dist/
   skip_cleanup: true
-  domain: kobina.surge.sh
+  domain: http://www.kobina.me
 

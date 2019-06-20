@@ -73,7 +73,7 @@
     <!-- Contact Us Section End -->
 <!--    <skills-levels/>-->
     <my-clients />
-
+<!--    <services/>-->
     <contact-me/>
 
     <!-- Counter SECTION Start-->
@@ -166,16 +166,18 @@
 </template>
 
 <script>
-import { mapGetters }   from 'vuex'
-// @ is an alias to /src
-import HeaderWrap       from './HeaderWrap'
-import PortfolioGallery from './PortfolioGallery'
-import ContactMe        from './ContactMe'
-import MyClients        from './MyClients'
-import AboutMe          from './AboutMe'
-export default {
+  import { mapGetters }   from 'vuex'
+  // @ is an alias to /src
+  import HeaderWrap       from './HeaderWrap'
+  import PortfolioGallery from './PortfolioGallery'
+  import ContactMe        from './ContactMe'
+  import MyClients        from './MyClients'
+  import AboutMe          from './AboutMe'
+  import Services         from './Services'
+
+  export default {
   name      : 'home',
-  components: { AboutMe, MyClients, ContactMe, PortfolioGallery, HeaderWrap,},
+  components: { Services, AboutMe, MyClients, ContactMe, PortfolioGallery, HeaderWrap,},
   props     : [],
   data () {
     return {

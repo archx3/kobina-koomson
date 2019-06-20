@@ -6,7 +6,6 @@
 
     <!-- Hero Area Start -->
     <div id="hero-area" class="hero-area-bg container-full-bg">
-<!--      <img src="../assets/img/background/hero16x9-3-br.jpg" class="fph" alt="">-->
       <div class="col-12" :class="{'fade-blur' : bgChanged}" :style="`background-image:url(${bgImage})`">
       </div>
       <div class="overlay"></div>
@@ -59,11 +58,11 @@ export default {
     return {
       officialName : 'Kobina G. Koomson',
       skillsText : [
-        "I'm a FULL STACK DEVELOPER,",
+        "I'm a SOFTWARE ENGINEER,",
         "A UI/UX DESIGNER,",
         "AND A GRAPHIC DESIGNER",
         "Put together...",
-        "FULL STACK DEVELOPER | UI/UX & GRAPHIC DESIGNER"],
+        "SOFTWARE ENGINEER | UI/UX & GRAPHIC DESIGNER"],
       nameTyped :false,
       skillsTyped :false,
       bgImage : '/img/background/hero16x9-3-br-sm.jpg',
