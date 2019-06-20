@@ -166,18 +166,18 @@
 </template>
 
 <script>
-  import { mapGetters }   from 'vuex'
-  // @ is an alias to /src
-  import HeaderWrap       from './HeaderWrap'
-  import PortfolioGallery from './PortfolioGallery'
-  import ContactMe        from './ContactMe'
-  import MyClients        from './MyClients'
-  import AboutMe          from './AboutMe'
-  import Services         from './Services'
+import { mapGetters }   from 'vuex'
+// @ is an alias to /src
+import HeaderWrap       from './HeaderWrap'
+import PortfolioGallery from './PortfolioGallery'
+import ContactMe        from './ContactMe'
+import MyClients        from './MyClients'
+import AboutMe          from './AboutMe'
+// import Services         from './Services'
 
-  export default {
+export default {
   name      : 'home',
-  components: { Services, AboutMe, MyClients, ContactMe, PortfolioGallery, HeaderWrap,},
+  components: { AboutMe, MyClients, ContactMe, PortfolioGallery, HeaderWrap },
   props     : [],
   data () {
     return {

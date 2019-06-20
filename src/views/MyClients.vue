@@ -115,10 +115,10 @@ export default {
       ],
       testimonials             : [
         {
-          giverName : 'Jack Dorsey',
-          giverTitle: 'CEO, Twitter',
+          giverName : 'Abdul Quadri Sotomiwa',
+          giverTitle: 'Product Management Expert',
           pic       : 'autor.png',
-          message   : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dolorem eveniet fugiat harum iusto nulla tenetur. Eius iure molestiae rem?'
+          message   : `'George is a passionately driven front end Engineer. He understands complex technologies and is able to creatively present them in a simple, engaging manner. I am always awed at how he converts mockup designs to engaging interfaces with tech. Within working in a team, he is a collaborative team player, and can be relied upon to lead multi-functional projects diligently and through example. My greatest respect for him stems from him being always ready to provide a helping hand wherever necessary. I recommend him highly.'`
         },
         {
           giverName : 'Michael Owusu Addo',
