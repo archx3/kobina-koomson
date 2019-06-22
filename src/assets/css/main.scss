@@ -2119,34 +2119,36 @@ footer {
 @media(min-width: 1200px){
   $suffix : 'xl';
   .hide-#{$suffix}{
-    display: none;
+    display: none !important;
   }
 }
-//Lg
-@media(min-width: 992px){
-  $suffix : 'lg';
+
+
+//xs
+@media(min-width: 440px){
+  $suffix : 'xs';
   .hide-#{$suffix}{
-    display: none ;
-  }
-}
-//md
-@media(min-width: 768px){
-  $suffix : 'md';
-  .hide-#{$suffix}{
-    display: none ;
+    display: none !important;
   }
 }
 //sm
 @media(min-width: 576px){
   $suffix : 'sm';
   .hide-#{$suffix}{
-    display: none ;
+    display: none !important;
   }
 }
-//xs
-@media(min-width: 440px){
-  $suffix : 'xs';
+//md
+@media(min-width: 768px){
+  $suffix : 'md';
   .hide-#{$suffix}{
-    display: none;
+    display: none !important;
+  }
+}
+//Lg
+@media(min-width: 992px){
+  $suffix : 'lg';
+  .hide-#{$suffix}{
+    display: none !important;
   }
 }

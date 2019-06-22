@@ -36,9 +36,11 @@
                       <div class="col-xs-4 col-md-4 client text-center"
                            v-for="(client, index) in clients" :key="index"
                            v-scroll-reveal.reset="{delay : 50 + (index * 150)}">
-                        <a href="#" class="hex-mask">
-                          <img class="ctr-hv" :src="client.logo" width="90" :alt="client.name">
-                        </a>
+                        <div :data-tooltip="client.name" :tooltip-pos="(index) > 2 ? 'down' : 'up'">
+                          <a href="#" class="hex-mask">
+                            <img class="ctr-hv" :src="client.logo" width="90" :alt="client.name">
+                          </a>
+                        </div>
                         <div class="empty-space h70-md h30-sm"></div>
                       </div>
                     </div>
@@ -77,11 +79,11 @@
               <div class="row">
                 <div class="col-md-10 offset-md-1">
                   <p class="quote-marks">“</p>
-                  <carousel :autoplay="true" :perPage="1" paginationActiveColor="#ffcf02"
+                  <carousel :autoPlay="true" :perPage="1" paginationActiveColor="#ffcf02"
                             paginationColor="#000" :paginationPadding="5">
                     <slide class="text-center testimony" v-for="testimony in testimonials" :key="testimony.giverName">
                       <img :src="`img/testimony-author/${testimony.pic}`"
-                           :alt="`${testimony.giverName} pic`" class="images-box">
+                           :alt="`${testimony.giverName} pic`" class="images-box fade-blur">
 
                       <p class="message mb-15">{{testimony.message}}</p>
                       <h5>{{testimony.giverName}}</h5>
@@ -115,16 +117,16 @@ export default {
       ],
       testimonials             : [
         {
-          giverName : 'Jack Dorsey',
-          giverTitle: 'CEO, Twitter',
-          pic       : 'autor.png',
-          message   : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dolorem eveniet fugiat harum iusto nulla tenetur. Eius iure molestiae rem?'
+          giverName : 'Abdul Quadri Sotomiwa',
+          giverTitle: 'Product Design Expert',
+          pic       : 'aqs.jpg',
+          message   : `George is a passion driven Engineer. He understands complex technologies and is able to present them in a simple, engaging manner. I am always awed at how he converts mockup designs to engaging interfaces. He is a team player, and can be relied upon to lead multi-functional projects diligently. My respect for him stems from him being always ready to provide a helping hand wherever necessary. I recommend him highly.`
         },
         {
-          giverName : 'Michael Owusu Addo',
-          giverTitle: 'CEO, Sarkcess Music',
-          pic       : 'autor.png',
-          message   : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dolorem eveniet fugiat harum iusto nulla tenetur. Eius iure molestiae rem?'
+          giverName : 'Godwin Micthual',
+          giverTitle: 'Cofounder, Unorthodox Reviews',
+          pic       : 'mitch.jpg',
+          message   : 'Choosing to work with George has been one of the decisions in my life. His attention to detail and innovation is quite exemplary'
         }
       ]
     }
@@ -174,6 +176,13 @@ export default {
   .VueCarousel{
     z-index: 3;
   }
+
+  .images-box{
+    max-height: 90px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+  }
 </style>
 <style lang="scss">
   @import "../assets/css/colors";
@@ -204,7 +213,7 @@ export default {
     color: #ffcf02;
     position: absolute;
     z-index: 1;
-    top: 85%;
+    top: 230px;
     user-select: none;
   }
 

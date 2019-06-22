@@ -14,20 +14,17 @@
         <div class="row justify-content-center main-actions">
           <div class=" col-lg-9 col-sm-12">
             <div class="contents page-header-inner text-center home-text">
-              <!--              @onComplete="nameTypeComplete()"-->
               <vue-typed-js
                 :strings="introStrings" @onComplete="nameTypeComplete()"
-                :show-cursor="false" :type-speed="60" :back-speed="20">
-                <h3 class="my-name"><span class="typing"></span></h3>
+                :show-cursor="false" :type-speed="50" :back-speed="15">
+                <h3 class="my-name"><span class="typing" ref="nameEl"></span></h3>
               </vue-typed-js>
-              <!-- @onComplete="skillsTypeComplete()"-->
               <vue-typed-js
                 v-if="nameTyped" :strings="skillsText" @onComplete="skillsTypeComplete()"
                 :show-cursor="false" :type-speed="30" :back-speed="15">
                 <p id="skillHighlight" class="skill-highlight mb-lg-3"><span class="typing"></span></p>
               </vue-typed-js>
               <div v-if="skillsTyped" class="bg-clr14 abs btm85 left-ctr rc3 w250 min-h-50 ha zi35 pd15 tri-b-ctr ctr-h more-tooltip">
-                <!--      <button class="abs right5 top0 bg-clr-tr bdr0 h20 min-h20 w20 min-w20 pd3 ac fts20">×</button>-->
                 <p class="bld3 fts18">Click on the button below to see a few of my works...</p>
               </div>
             </div>
@@ -35,107 +32,167 @@
         </div>
       </div>
     </div>
-    <div v-if="skillsTyped" v-scroll-to="'#skills-section'" class="about-d-chevron pd4 abs">
+    <div v-scroll-to="'#about-section'" class="about-d-chevron pd4 abs">
     </div>
     <!-- Hero Area End -->
     <div v-if="skillsTyped" class=" ctr-h more-tooltip">
       <!--      <button class="abs right5 top0 bg-clr-tr bdr0 h20 min-h20 w20 min-w20 pd3 ac fts20">×</button>-->
-      <p class="bld3 fts18">Don't worry about GDPR. I neither store visitor data nor transmit visitor data in any form to any destination.</p>
+      <p class="bld3 fts18">Don't worry about GDPR. I neither store visitor data nor transmit visitor data in any form to any
+        destination.
+        <button class="rounded-pill">OK</button>
+      </p>
     </div>
     <div class="molecule-bg abs left0 btm0 w400 h200 zi0 bg-nr bl-cap"></div>
   </header>
 </template>
 <script>
-import Vue from 'vue'
-import NavBar from '../components/Nav'
-import VueTypedJs from 'vue-typed-js';
+import Vue        from 'vue'
+import NavBar     from '../components/Nav'
+import VueTypedJs from 'vue-typed-js'
 
 Vue.use(VueTypedJs)
+
+/**
+ * @param arrayLike {ArrayLike}
+ */
+function toArray (arrayLike) {
+  let arrayBuffer = [];
+  for (let i = 0, len = arrayLike.length; i < len; i++) {
+    arrayBuffer.push(arrayLike[i]);
+  }
+  return arrayBuffer;
+}
+
 export default {
   name      : 'header-wrap',
   components: { NavBar },
   data () {
     return {
-      officialName : 'Kobina G. Koomson',
-      skillsText : [
-        "I'm a SOFTWARE ENGINEER,",
-        "A UI/UX DESIGNER,",
-        "AND A GRAPHIC DESIGNER",
-        "Put together...",
-        "SOFTWARE ENGINEER | UI/UX & GRAPHIC DESIGNER"],
-      nameTyped :false,
-      skillsTyped :false,
-      bgImage : '/img/background/hero16x9-3-br-sm.jpg',
-      bgChanged : false
+      officialName: 'Kobina G. Koomson',
+      skillsText  : [
+        'I\'m a SOFTWARE ENGINEER,',
+        'A UI/UX DESIGNER,',
+        'AND A GRAPHIC DESIGNER',
+        'Put together...',
+        'SOFTWARE ENGINEER | UI/UX & GRAPHIC DESIGNER'],
+      nameTyped   : false,
+      skillsTyped : false,
+      bgImage     : '/img/background/hero16x9-3-br-sm.jpg',
+      bgChanged   : false,
+      lastScrollTop : 0,
+      jumpIndex : 0,
+      shadowOfficialName : [],
     }
   },
-  props : [],
-  computed : {
-    introStrings: function ()
-    {
+  props     : [],
+  computed  : {
+    introStrings: function () {
       return [
         '<span class=\'font-weight-light\'>Hi,</span>',
         '<span class=\'font-weight-light\'>Welcome to my <br>' +
-        ' <span class=\'clr14\'>homepage</span></span>',
+          ' <span class=\'clr14\'>homepage</span></span>',
         '<span class=\'font-weight-light\'>Relax, while <span class=\' clr14\'>I</span> tell you a lil about myself</span>',
         '<span class=\'font-weight-light\'>You can call me</span> <br> <span class=\'clr14\'>The Arch</span>',
         '<span class=\'font-weight-light\'>more officially, </span>',
-        `<span class='official-name'> ${this.officialName}</span>`]
+        `<span class='official-name'> ${this.getOfficialName}</span>`]
     },
+    getOfficialName () {
+      console.log(`ton ${this.officialName}`);
+      return toArray(this.officialName)
+        .map(char => {
+          return '<span>' +  char + '</span>'
+        }).join('')
+    },
+    nameLength () {
+      return this.officialName.length
+    },
+    nextMultiplier () {
+      return Math.floor(200 / this.officialName.length)
+    }
   },
-  methods : {
-    nameTypeComplete : function (self)
-    {
-      console.log('here');
-      this.nameTyped = true;
+  methods   : {
+    scrollHandlerForName : function () {
+      let delta = window.scrollY;
+      // let st = this.$refs.nameEl.scrollTop;
+      var scrollTop = (document.documentElement || document.body.parentNode || document.body).scrollTop;
+      this.jumpIndex = Math.floor(scrollTop / this.nextMultiplier)
+      if (delta > 20)
+      {
+        if (delta > this.lastScrollTop)
+        {
+          // console.log('going down', this.jumpIndex, scrollTop, this.nextMultiplier);
+          for (let i = 0; i < this.jumpIndex; ++i) {
+            // Bd.addClass(officialNameLetters[i], "invisible");
 
-      let len                 = this.officialName.length,
-        lastScrollTop = 0,
-        officialNameLetters = this.officialName.split();
+            let char = this.officialName.shift()
+            // console.log(this.officialName);
+            this.shadowOfficialName.push(char);
+          }
+          if (this.jumpIndex === this.nameLength) {
+            // Bd.addClass(officialName, "hidden");
+          }
+        } else {
+          // console.log('going up');
+          for (let i = this.jumpIndex; i < this.nameLength; ++i) {
+            // Bd.removeClass(officialNameLetters[i], "invisible");
+            this.officialName.unshift(this.shadowOfficialName.pop())
+          }
+        // Bd.removeClass(officialName, "hidden");
+        }
+        this.lastScrollTop = delta
+      }
+    },
+    nameTypeComplete  : function (self) {
+      this.nameTyped = true
+      this.officialName = this.officialName.split()
 
+      var officialName = this.$refs.nameEl,
+        officialNameLetters = toArray(officialName.children[0].children),
+        len                 = officialNameLetters.length;
       let st, index;
       const nextMultiplier = Math.floor(200 / len);
-      // msg
-      window.addEventListener('scroll', function (e)
+
+      window.addEventListener("scroll", function ()
       {
-        st = window.scrollTop;
+        st = (document.documentElement || document.body.parentNode || document.body).scrollTop;
 
         index = Math.floor(st / nextMultiplier);
         if (st < 200)
         {
-          if (st > lastScrollTop)
+          if (st > this.lastScrollTop)
           {
             for (let i = 0; i < index; ++i)
             {
-              // Bd.addClass(officialNameLetters[i], "invisible");
+              officialNameLetters[i].style.visibility = 'hidden'
             }
             if (index === len)
             {
-              // Bd.addClass(officialName, "hidden");
+              officialName.style.display = 'none'
             }
           }
           else
           {
+            // console.log('going up', index, st, nextMultiplier);
             for (let i = index; i < len; ++i)
             {
-              // Bd.removeClass(officialNameLetters[i], "invisible");
+              officialNameLetters[i].style.visibility = 'visible'
             }
-            // Bd.removeClass(officialName, "hidden");
+            officialName.style.display = ''
           }
-          lastScrollTop = st;
+          this.lastScrollTop = st;
         }
-      })
+      });
     },
-    skillsTypeComplete : function () {
-      console.log('here too');
-      this.skillsTyped = true;
+    skillsTypeComplete: function () {
+      // console.log('here too')
+      this.skillsTyped = true
     }
   },
   mounted () {
     var timer = setTimeout(() => {
       // let el = $('.bgs-cov'), img = new Image();
-      this.bgImage = "/img/background/hero16x9-3-br.jpg";
-      this.bgChanged = true;
+      this.bgImage = '/img/background/hero16x9-3-br.jpg'
+      this.bgChanged = true
 
       clearTimeout(timer)
     }, 4000)
@@ -145,6 +202,7 @@ export default {
 <style scoped lang="scss">
   @import "../assets/css/colors";
   @import "../assets/css/media-queries";
+
   /* ==========================================================================
 3. Hero SECTIONS
 ========================================================================== */
@@ -156,14 +214,14 @@ export default {
     background-size: cover;
     background-position: center center;
 
-    img{
+    img {
       width: 100vw;
       /*display: none;*/
       filter: blur(4px);
       position: absolute;
     }
 
-    .col-12{
+    .col-12 {
       padding: 0;
       background-repeat: no-repeat;
       /*filter: blur(4px);*/
@@ -172,6 +230,7 @@ export default {
       background-position: center center;
     }
   }
+
   .overlay {
     position: absolute;
     width: 100%;
@@ -181,9 +240,10 @@ export default {
     /*background: rgba(0, 0, 0, 0);*/
     opacity: .8;
     /*z-index: 1;*/
-    background: linear-gradient(45deg,#181b27 58%,#443329 66%,rgba(255,153,50,0.65) 100%);
+    background: linear-gradient(45deg, #181b27 58%, #443329 66%, rgba(255, 153, 50, 0.65) 100%);
     /*display: none;*/
   }
+
   #hero-area {
     color: #fff;
     overflow: hidden;
@@ -202,7 +262,7 @@ export default {
 
   }
 
-  .main-actions{
+  .main-actions {
     /*margin-top: 40%;*/
     margin-left: auto;
     margin-right: auto;
@@ -214,21 +274,22 @@ export default {
 
   }
 
-  .home-text{
-    h3{
-    font-size: 57px;
+  .home-text {
+    h3 {
+      font-size: 57px;
       margin: 0 auto;
-      span.offcial-name span{
+
+      span.offcial-name span {
         display: unset;
       }
-  }
+    }
   }
 
-  span.offcial-name span{
+  span.offcial-name span {
     display: unset;
   }
 
-  .skill-highlight{
+  .skill-highlight {
     width: auto;
     margin: 0 auto;
     text-transform: uppercase;
@@ -242,12 +303,13 @@ export default {
     background-color: $accent-color;
     margin-bottom: 10px;
   }
-  .about-d-chevron{
+
+  .about-d-chevron {
     height: 45px;
     width: 45px;
     bottom: 22.5px;
     left: calc(50% - 22.5px);
-    background: url(../assets/img/scroll.gif) 50% 50% no-repeat rgba(215,181,94,0);
+    background: url(../assets/img/scroll.gif) 50% 50% no-repeat rgba(215, 181, 94, 0);
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
@@ -266,23 +328,25 @@ export default {
     }
   }
 
-  @keyframes fadeBlur
-  {
-    0%
-    {filter : blur(5px);}
-    70%
-    {filter : blur(0px);}
-    100%
-    {filter : grayscale(0.65);}
+  @keyframes fadeBlur {
+    0% {
+      filter: blur(5px);
+    }
+    70% {
+      filter: blur(0px);
+    }
+    100% {
+      filter: grayscale(0.65);
+    }
   }
 
-  .fade-blur
-  {
-    animation-name     : fadeBlur;
-    animation-duration : .8s;
-    filter             : grayscale(0.65);
+  .fade-blur {
+    animation-name: fadeBlur;
+    animation-duration: .8s;
+    filter: grayscale(0.65);
   }
-  .more-tooltip{
+
+  .more-tooltip {
     background-color: $accent-color;
     width: 250px;
     height: auto;
@@ -291,6 +355,7 @@ export default {
     color: #000;
     padding: 10px;
     position: relative;
+
     &::before, &::after {
       content: "";
       position: absolute;
@@ -300,24 +365,29 @@ export default {
       border-width: 10px;
       border-color: transparent;
     }
+
     &::before {
       bottom: -20px;
       left: calc(50% - 10px);
       border-top-color: #ffcf02;
     }
 
-    p{
+    p {
       font-size: 16px;
       font-weight: 400;
     }
   }
-  .bot-85{
+
+  .bot-85 {
     /*bottom: 85px;*/
   }
-  @media ( max-width: 992px) {
-    .main-actions{ margin-top: calc(65%);}
 
-    .skill-highlight{
+  @media (max-width: 992px) {
+    .main-actions {
+      margin-top: calc(65%);
+    }
+
+    .skill-highlight {
       -webkit-border-radius: 0;
       -moz-border-radius: 0;
       border-radius: 0;
@@ -326,22 +396,23 @@ export default {
 </style>
 <style lang="scss">
   @import "../assets/css/media-queries";
+
   .fade-blur {
     animation-name: fadeBlur;
     animation-duration: .7s;
     filter: grayscale(0.65);
   }
 
-  @media ( max-width: 760px) {
-    .skill-highlight{
+  @media (max-width: 760px) {
+    .skill-highlight {
       -webkit-border-radius: 0;
       -moz-border-radius: 0;
       border-radius: 0;
     }
   }
-  @media (min-width: $breakpoints('sm'))
-  {
-    .official-name{
+
+  @media (min-width: $breakpoints ('sm')) {
+    .official-name {
       font-weight: bold;
       font-size: 40px;
     }
