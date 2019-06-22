@@ -1,28 +1,28 @@
 <template>
   <!--The starting div-->
-  <div id="app" class="blk fp global-host ys rltv">
+  <div id="app" ref="globalHost" class="blk fp global-host ys rltv">
 
     <!-- Header Area wrapper SECTION Starts -->
     <header-wrap :year="year" />
     <!-- Header Area wrapper End -->
 
-    <about-me/>
+    <about-me id="about-section"/>
     <!-- Gallery SECTION Start -->
     <section id="skills-section" class="vh-100 skills-section" :class="{'fixed-top' : stickGallery}">
       <div class="container">
         <div class="row portfolio-section min-vh-100 vw-100 justify-content-between">
-          <div class="col-lg-6 col-md-6 col-xs-12 portfolio-intro-pic fade-blur min-vh-100">
-            <div class="row " v-show="indicatorTranslation === 0">
-              <img src="../assets/img/background/hero16x9-3-br.jpg" class="vh-100" alt="">
+          <div class="col-lg-6 col-md-4 col-sm-2 col-xs-12 portfolio-intro-pic fade-blur min-vh-100">
+            <div class="row no-padding" v-show="indicatorTranslation === 0">
+              <img src="../assets/img/background/programming.jpg" class="vh-100" alt="">
             </div>
-            <div class="row" v-show="indicatorTranslation === 33">
-              <img src="../assets/img/background/ui-ux-lg.png" class="vh-100" alt="">
+            <div class="row no-padding" v-show="indicatorTranslation === 33">
+              <img src="../assets/img/background/ui-kit.jpeg" class="vh-100" alt="">
             </div>
-            <div class="row" v-show="indicatorTranslation === 66">
-              <img src="../assets/img/background/hero16x9-3-br.jpg" class="vh-100" alt="">
+            <div class="row no-padding" v-show="indicatorTranslation === 66">
+              <img src="../assets/img/background/gdesign.jpg" class="vh-100" alt="">
             </div>
           </div>
-          <div class="I3u14I7M col-lg-2 portfolio-section-indicator hide-sm hide-xs" >
+          <div class="I3u14I7M col-lg-2 col-sm-1 portfolio-section-indicator hide-md" >
             <div class="_2tn0DybF">
               <div class="z_W9K9qB" :style="`transform:translateY(${indicatorTranslation * (-1)}%)`">
                 <button class="_24Kb_y7t undefined" aria-label="slide 1" @click="translation=19"></button>
@@ -32,8 +32,8 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 col-xs-12 min-vh-100 portfolio-description" style="color: #000">
-            <div class="portfolio-intro-text" :style="`transform:translateY(${translation * (-1)}%)`">
+          <div class="col-lg-4 col-md-8 col-sm-9 min-vh-100 portfolio-description" style="color: #000">
+            <div class="portfolio-intro-text offset-md-2 offset-sm-2" :style="`transform:translateY(${translation * (-1)}%)`">
               <div class="text">
                 <div>
                   <h3>Full Stack Developer</h3>
@@ -66,15 +66,15 @@
       <gallery-preview :image-sets="galleryData.graphics" v-once/>
     </div>-->
 
-    <portfolio-gallery/>
+    <portfolio-gallery id="gallery-section"/>
 
     <!-- Contact Us SECTION -->
     <!--    <contact-us/>-->
     <!-- Contact Us Section End -->
 <!--    <skills-levels/>-->
-    <my-clients />
+    <my-clients id="customers"/>
 <!--    <services/>-->
-    <contact-me/>
+    <contact-me id="contact"/>
 
     <!-- Counter SECTION Start-->
     <!--<section class="counter-section section-padding">
@@ -174,6 +174,27 @@ import ContactMe        from './ContactMe'
 import MyClients        from './MyClients'
 import AboutMe          from './AboutMe'
 // import Services         from './Services'
+// import Vue         from 'vue'
+import VueScrollTo from 'vue-scrollto'
+
+// Vue.use(VueScrollTo)
+
+// You can also pass in the default options
+let VueScrollOptions = {
+  container : 'body',
+  duration  : 500,
+  easing    : 'ease',
+  offset    : 0,
+  force     : true,
+  cancelable: false,
+  onStart   : false,
+  onDone    : function () {
+    console.log('scroll-done')
+  },
+  onCancel  : false,
+  x         : false,
+  y         : true
+};
 
 export default {
   name      : 'home',
@@ -316,17 +337,56 @@ export default {
   mounted () {
     this.winHeight = window.innerHeight
     // memoise this so we don't calc them all the time
-    this.skillsEntryPoint = (this.winHeight * 2)
-    this.skillsExitPoint = Math.floor((this.winHeight * 3) - this.winHeight / 3)
-    window.addEventListener('scroll', this.handleScrollForGallery)
-    window.addEventListener('scroll', this.handleScroll2)
+    this.skillsEntryPoint = (this.winHeight * 2);
+    this.skillsExitPoint = Math.floor((this.winHeight * 3) - this.winHeight / 3);
+
+    // let oneThirdWinHeight = Math.floor(this.winHeight / 3),
+    //   twoThirdsWinHeight = this.winHeight - Math.floor(this.winHeight / 3),
+    //   halfWinHeight = Math.floor(this.winHeight / 2),
+    //   sections = [
+    //     twoThirdsWinHeight,
+    //     (this.winHeight * 2) - twoThirdsWinHeight,
+    //     (this.winHeight * 5) - twoThirdsWinHeight,
+    //     (this.winHeight * 6) - oneThirdWinHeight,
+    //     (this.winHeight * 7) + twoThirdsWinHeight,
+    // ];
+    // console.log('tth', twoThirdsWinHeight, sections);
+    // let cancelScroll;
+
+    window.addEventListener('scroll', this.handleScrollForGallery);
+    window.addEventListener('scroll', this.handleScroll2);
+    /* window.addEventListener('scroll', () => {
+      console.log(window.scrollY, window.scrollY > sections[0] && window.scrollY < sections[1]);
+
+      if (window.scrollY > sections[0] && window.scrollY < sections[1])
+      {
+        // cancelScroll = VueScrollTo.scrollTo('#about-section', 500, VueScrollOptions)
+        // window.scrollY = this.winHeight;
+        if (window.scrollY !== this.winHeight) {
+          cancelScroll = this.$scrollTo('#about-section')
+          cancelScroll()
+        }
+      }
+      else if (window.scrollY > sections[1] && window.scrollY < sections[2])
+      {
+        // cancelScroll = VueScrollTo.scrollTo('#skills-section', 500, VueScrollOptions)
+      }
+      else if (window.scrollY > sections[2] && window.scrollY < sections[3])
+      {
+        // cancelScroll = VueScrollTo.scrollTo('#gallery-section', 500, VueScrollOptions)
+      }
+
+      // cancelScroll = this.$scrollTo(element, duration, options)
+      // to cancel scrolling you can call the returned function
+      // cancelScroll()
+    }); */
   }
 }
 </script>
 
 <style lang="scss" scoped>
   @import "../assets/css/colors";
-
+  $single-column-width : 100/12;
   .skills-section {
     overflow: hidden;
 
@@ -490,6 +550,20 @@ export default {
   }
   .fixed-top{
     z-index: 998;
+  }
+  @media (max-width: 576px) {
+    .skills-section{
+      position: relative !important;
+      .portfolio-intro-pic{
+        display: none;
+      }
+      .portfolio-intro-text{
+        margin-left: $single-column-width*1%;
+      }
+      .portfolio-section-indicator{
+        display: none;
+      }
+    }
   }
 </style>
 <style lang="scss">

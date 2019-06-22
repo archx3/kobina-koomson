@@ -29,8 +29,8 @@
                       <h4>Brief Contact Info</h4>
                       <div class="empty-space h15-md"></div>
                       <ul class="normal-4">
-                        <li>+233 260721202</li>
-                        <li>georgeranch31@gmail.com</li>
+                        <li><a href="tel:+233260721202" class="text-white">+233 260721202</a></li>
+                        <li><a href="mailto:georgeranch31@gmail.com" class="text-white">georgeranch31@gmail.com</a></li>
                         <li>Accra, Ghana</li>
                       </ul>
                       <div class="empty-space h40-md"></div>
@@ -55,7 +55,8 @@
                   </div>
                 </div>
                 <div class="empty-space h50-md"></div>
-                <input class="rounded-pill flex-fill" type="submit" value="View My Resume">
+                <a href="https://drive.google.com/open?id=1-snYSJh9QlB0-0rjKrWCeX3SJ-N4PNi9" target="_blank"
+                   class="rounded-pill flex-fill offset-md-2 offset-sm-1" type="submit">View My Resume</a>
               </div>
               <div class="empty-space h50-md h20-sm"></div>
             </div>

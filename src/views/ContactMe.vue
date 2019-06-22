@@ -5,7 +5,7 @@
         <!--map col-->
         <div class="col-md-6 fade-blur">
           <object style="border:0; height: 100%; width: 100%;"
-                  data="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1403.963542442263!2d-0.22358266736137394!3d5.565746290338953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9bd5cfbe06cb%3A0x4bd95b00aacc9581!2sGhana+Tech+Lab!5e0!3m2!1sen!2sgh!4v1555851842833!5m2!1sen!2sgh"></object>
+                  data="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.6794577123587!2d-0.2648326855924582!3d5.614264795929929!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf98e2b2892191%3A0x597774872f955171!2sCash+Link%2C+Nii+Okaiman+West!5e0!3m2!1sen!2sgh!4v1561061452166!5m2!1sen!2sgh"></object>
         </div>
         <!--form col-->
         <div class="col-md-6">

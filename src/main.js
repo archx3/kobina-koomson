@@ -11,6 +11,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 
 import './assets/fonts/line-icons.css'
 import './assets/css/animate.css'
+import './assets/css/tooltip.scss'
 import './assets/css/bloom-utilities.scss'
 import './assets/css/main.scss'
 
