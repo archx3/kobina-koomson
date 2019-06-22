@@ -88,9 +88,9 @@ export default {
           category : ['Development', 'User Experience']
         },
         {
-          image : 'acacia-p.jpg',
-          name: 'Acacia Branding',
-          category : ['Branding', 'Print']
+          image : 'sharehouse-p.jpg',
+          name: 'Sharehouse',
+          category : ['Development', 'User Experience']
         },
         {
           image : 'portfolio1.jpg',
@@ -108,11 +108,6 @@ export default {
           category : 'Development'
         },
         {
-          image : 'sharehouse-p.jpg',
-          name: 'Sharehouse',
-          category : ['Development', 'User Experience']
-        },
-        {
           image : 'moov-p.png',
           name: 'Moov',
           category : 'Branding'
@@ -120,6 +115,11 @@ export default {
         {
           image : 'bosch-p.jpg',
           name: 'Bosch Ghana (SSR)',
+          category : ['Branding', 'Print']
+        },
+        {
+          image : 'acacia-p.jpg',
+          name: 'Acacia Branding',
           category : ['Branding', 'Print']
         },
       ],

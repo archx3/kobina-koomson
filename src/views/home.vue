@@ -33,26 +33,26 @@
             </div>
           </div>
           <div class="col-lg-4 col-md-8 col-sm-9 min-vh-100 portfolio-description" style="color: #000">
-            <div class="portfolio-intro-text offset-md-2 offset-sm-2" :style="`transform:translateY(${translation * (-1)}%)`">
+            <div class="portfolio-intro-text offset-md-1 offset-sm-1" :style="`transform:translateY(${translation * (-1)}%)`">
               <div class="text">
                 <div>
                   <h3>Full Stack Developer</h3>
                   <p>I build Apps from Start to finish using industry Standard practices</p>
-                  <button class="rounded-pill">View me on Github</button>
+                  <a href="https://github.com/archX3" class="rounded-pill">View me on Github</a>
                 </div>
               </div>
               <div class="text">
                 <div>
                   <h3>UI/UX Designer</h3>
                   <p>I try to create the best user experience by designing and building beautiful and endearing interactivity</p>
-                  <button class="rounded-pill">See Samples</button>
+                  <a href="#" class="rounded-pill">See Samples</a>
                 </div>
               </div>
               <div class="text">
                 <div>
                   <h3>Graphic Designer</h3>
                   <p>I craft modern and sexy art you can't get enough of. Sweet eye candy.</p>
-                  <button class="rounded-pill">See Samples</button>
+                  <a href="#"  class="rounded-pill">See Samples</a>
                 </div>
               </div>
             </div>

@@ -85,6 +85,11 @@
                 <router-link tag="a" :to="listItem.link">
                   {{listItem.name}}</router-link>
               </li>
+              <li v-for="listItem in extLinkList" :key="listItem.name"
+                  @click="handleMobNav" :class="{ active : activeNavItem ===  listItem.name }">
+                <router-link tag="a" :to="listItem.link">
+                  {{listItem.name}}</router-link>
+              </li>
               <!--<li class="has-dropdown"><a href="/solutions/" target="_self">Our <span>Solutions</span></a><ul><li><a href="/solutions/#cloud" target="_self" class="scrollto" data-hash="#cloud">Cloud</a></li><li><a href="/solutions/#connectivity" target="_self" class="scrollto" data-hash="#connectivity">Connectivity</a></li><li><a href="/solutions/#data-centres" target="_self" class="scrollto" data-hash="#data-centres">Data Centres</a></li><li><a href="/solutions/#security" target="_self" class="scrollto" data-hash="#security">Security</a></li><li><a href="/solutions/#communications" target="_self" class="scrollto" data-hash="#communications">Communications</a></li><li class="has-dropdown"><a href="/solutions/#wholesale" target="_self" class="scrollto" data-hash="#wholesale">Wholesale</a></li></ul></li>-->
             </ul>
           </div>
@@ -131,6 +136,8 @@ export default {
       extNavList    : [
         { name: 'Blog', link: '#', icon: 'blog.svg' },
         { name: 'Logofolio', link: '#', icon: 'logofolio.svg' },
+      ],
+      extLinkList    : [
         { name: 'Github', link: 'https://github.com/archX3', icon: 'github.svg' },
       ],
       topNavCollapse: false,

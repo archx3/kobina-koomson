@@ -100,7 +100,7 @@
                       </div>
                     </div>
                     <div class="text-center  mt-md-3 mt-sm-3">
-                      <input class="rounded-pill flex-fill" type="submit" value="LEAVE ME A MESSAGE">
+                      <input class="rounded-pill flex-fill" type="button" value="LEAVE ME A MESSAGE">
                     </div>
                   </form>
                 </div>
