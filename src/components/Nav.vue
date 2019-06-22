@@ -366,7 +366,7 @@ export default {
     }
 
     .navbar-nav {
-      .nav-link {
+      a, .nav-link {
         background: $dark-b-gray;
         color: #fff !important;
 
@@ -822,12 +822,12 @@ export default {
 
   .burger-bun-top {
     top: 0;
-    transform-origin: 34px -1px;
+    transform-origin: 30px 1px;
   }
 
   .burger-bun-bot {
     bottom: 0;
-    transform-origin: 26px 7px;
+    transform-origin: 26px 2px;
   }
 
   //.burger-filling {
