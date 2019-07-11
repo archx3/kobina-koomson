@@ -46,8 +46,8 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-  @import "../assets/css/colors";
-  @import "../assets/css/light-box";
+  @import "../assets/styles/scss/colors";
+  @import "../assets/styles/scss/light-box";
 
   section {
   }

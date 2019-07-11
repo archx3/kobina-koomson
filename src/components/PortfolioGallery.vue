@@ -32,11 +32,11 @@
                 </li>
               </ul>-->
 <!--              <div class="empty-space h25-xs h45-md"></div>-->
-              <div class="col-md-10 offset-md-1 col-sm-10 offset-sm-1 col-xs-8 offset-xs-2">
+              <div class="col-md-10 offset-md-1 col-sm-10 offset-sm-1 col-xs-8 offset-xs-2 text-center">
                 <carousel class="swiper-wrapper" :perPage="5" :perPageCustom="[[480, 2], [768, 5]]" :paginationEnabled="false">
                   <slide class="text-center swiper-slide" v-for="(portfolio, index) in getPortfolioList" :key="index">
-                    <a class="portfolio-wrap lightbox" @click="selectedImageIndex = index">
-                      <img :src="`/img/portfolio/${portfolio.image}`" alt="">
+                    <router-link :to="`/portfolio/${index}`" class="portfolio-wrap lightbox" @click="selectedImageIndex = index">
+                      <img :src="`/img/portfolio/${portfolio.thumbnail}`" alt="">
                       <span class="bg-hover">
                             <span class="lines">
                               <span></span>
@@ -49,7 +49,7 @@
                               <span></span>
                             </span>
                           </span>
-                    </a>
+                    </router-link>
                     <p class="font-weight-bold description">{{portfolio.name}}</p>
                     <p class="category"><span>— </span>
                       {{typeof portfolio.category === 'string' ? portfolio.category : portfolio.category.join(', ')}}
@@ -57,17 +57,18 @@
                   </slide>
                 </carousel>
                 <div class="empty-space h50-md fl"></div>
-                <input class="rounded-pill flex-fill" type="submit" value="See Details & More">
+                <router-link to="/portfolio" class="rounded-pill flex-fill m-auto d-inline-block" >See Details & More</router-link>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <smart-light-box :images="portfolioData" :selected-image-index="selectedImageIndex"/>
+<!--    <smart-light-box :images="portfolioData" :selected-image-index="selectedImageIndex"/>-->
   </section>
 </template>
 <script>
+import { mapGetters }         from 'vuex';
 import { Carousel, Slide } from 'vue-carousel'
 import SmartLightBox       from './SmartLightBox'
 
@@ -76,60 +77,13 @@ export default {
   name: 'portfolio-gallery',
   data () {
     return {
-      portfolioData : [
-        {
-          image : 'aickono-p.jpg',
-          name: 'UI/UX for Aickono',
-          category : 'User Experience'
-        },
-        {
-          image : 'codbit-p.jpg',
-          name: 'Codbit RMaaS',
-          category : ['Development', 'User Experience']
-        },
-        {
-          image : 'sharehouse-p.jpg',
-          name: 'Sharehouse',
-          category : ['Development', 'User Experience']
-        },
-        {
-          image : 'portfolio1.jpg',
-          name: 'Branding for Mango',
-          category : ['Print']
-        },
-        {
-          image : 'front-desk-p.jpg',
-          name: 'Front Dəsk',
-          category : 'User Experience, Development'
-        },
-        {
-          image : 'chekkit-p.jpg',
-          name: 'Chekkit App',
-          category : 'Development'
-        },
-        {
-          image : 'moov-p.png',
-          name: 'Moov',
-          category : 'Branding'
-        },
-        {
-          image : 'bosch-p.jpg',
-          name: 'Bosch Ghana (SSR)',
-          category : ['Branding', 'Print']
-        },
-        {
-          image : 'acacia-p.jpg',
-          name: 'Acacia Branding',
-          category : ['Branding', 'Print']
-        },
-      ],
-      categories : ['Development', 'User Experience', 'Branding', 'Print'],
       activeCategory : '',
       selectedImageIndex : null,
       portfolioSortKey : ''
     }
   },
   computed : {
+    ...mapGetters('portfolio', { portfolioData : 'portfolioData', categories : 'categories' }),
     getPortfolioList : function () {
       if (this.activeCategory === '')
       {
@@ -150,14 +104,11 @@ export default {
     }
   },
   methods : {
-    setCategory : function (category) {
-      this.activeCategory = category;
-    }
   }
 }
 </script>
 <style lang="scss" scoped>
-  @import "../assets/css/colors";
+  @import "../assets/styles/scss/colors";
 
   .container-fluid, .row, .container{
     &::before{

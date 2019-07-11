@@ -21,7 +21,7 @@ export default {
 }
 </script>
 <style scoped lang="scss">
-  @import "../assets/css/colors";
+  @import "../assets/styles/scss/colors";
   .under-construction{
     min-width: 450px;
     height: auto;

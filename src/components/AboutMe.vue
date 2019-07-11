@@ -54,7 +54,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="empty-space h50-md"></div>
+                <div class="empty-space h30-md h15-sm"></div>
                 <a href="https://drive.google.com/open?id=1-snYSJh9QlB0-0rjKrWCeX3SJ-N4PNi9" target="_blank"
                    class="rounded-pill flex-fill offset-md-2 offset-sm-1" type="submit">View My Resume</a>
               </div>
@@ -91,7 +91,7 @@ export default {
   }
 </style>
 <style lang="scss">
-  @import "../assets/css/colors";
+  @import "../assets/styles/scss/colors";
 
   section {
   }

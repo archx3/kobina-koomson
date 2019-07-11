@@ -156,7 +156,7 @@ export default {
   }
 </style>
 <style lang="scss">
-  @import "../assets/css/colors";
+  @import "../assets/styles/scss/colors";
   :root{
     --inputBg: rgba(0, 0, 0, 0.3);
   }

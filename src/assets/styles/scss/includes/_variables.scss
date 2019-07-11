@@ -1,0 +1,39 @@
+// Color Variables
+
+$accent-color : #ffcf02;
+$accent-color-light : #ffdc0c;
+
+$accent-gradient : linear-gradient(65deg, $accent-color 0, $accent-color-light 100%);
+$b-gray : #818999;
+$dark-b-gray : #181b27;
+
+
+//$primary-color: #ffbc3b;
+$primary-color: $accent-color;
+//$secondary-color: #1a1a37;
+$secondary-color: $dark-b-gray;
+
+$primary-text-color: $accent-color;
+$primary-text-color-light: $accent-color-light;
+
+$secondary-text-color: #fff;
+$secondary-text-color-light: #dadada;
+//$text-color-dark: #1e1e4b;
+$text-color-dark: #000;
+
+$body-color: $secondary-color;
+$border-color: $accent-color;
+
+$black: #000;
+$white: #fff;
+$light: #f8f9fe;
+$gray: #f8f8f8;
+
+//transitions
+$transition-all-02-l: all 0.2s linear;
+$transitin-all-02-eio: all 0.2s ease-in-out;
+
+// Font Variables
+$primary-font: "segoe ui", "helvetica", "arial", "Open Sans", sans-serif;
+$secondary-font: 'futura-bold';
+$icon-font: 'lni';

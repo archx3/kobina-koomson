@@ -68,7 +68,7 @@ export default {
 }
 </script>
 <style scoped lang="scss">
-  @import "../assets/css/colors";
+  @import "../assets/styles/scss/colors";
 
   /*!
  * Nivo Lightbox v1.3.1

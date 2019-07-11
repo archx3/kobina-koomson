@@ -6,33 +6,27 @@
         <div class="col-lg-6 col-md-6 col-sm-12">
           <div class="cell-view page-height" style="height: 331px; min-height: 480px;">
             <!-- my-customers-->
-            <div class="my-customers">
+            <div class="my-customers text-center">
               <div class="empty-space h50-md h0-sm heading-top-bar offset-md-2 offset-sm-1"></div>
               <div class="row">
                 <div class="col-md-8 offset-md-2 col-sm-10 offset-sm-1">
                   <article class="bigger line-article text-left">
-                    <h2 class="heading text-left" v-scroll-reveal.reset="{delay : 200}">
+                    <h2 class="heading text-left" v-scroll-reveal="{delay : 200}">
                       <span class="font-weight-light">My </span>
                       <span class="font-weight-bold">customers.</span>
                     </h2>
-                    <p  v-scroll-reveal.reset="{delay : 250}">
+                    <p  v-scroll-reveal="{delay : 250}">
                       I'm happy always to help in boosting the metrics of these awesome brands and many more of all sizes who trust
                       that they'll get the best of results if they hand their goals to me.
                     </p>
                   </article>
                 </div>
               </div>
-              <div class="empty-space h60-md h30-xs"></div>
+              <div class="empty-space h60-md h30-xs text-center"></div>
               <div class="row">
                 <div class="col-md-8 offset-md-2 col-sm-10 offset-sm-1 d-flex">
                   <div class="container">
-                    <div class="row">
-                      <!--<div class="col-xs-4 col-md-6 text-center"
-                           :class="{'text-center' : (index+1) % 2 === 0,
-                        'text-right' : (index+1) % 3 === 0,
-                        'text-left' : (index+1) % 3 !== 0 && (index+1) % 2 !== 0}"
-                           v-for="(client, index) in clients" :key="index"
-                           v-scroll-reveal.reset="{delay : 50 + (index * 150)}">-->
+                    <div class="row justify-content-center">
                       <div class="col-xs-4 col-md-4 client text-center"
                            v-for="(client, index) in clients" :key="index"
                            v-scroll-reveal.reset="{delay : 50 + (index * 150)}">
@@ -47,13 +41,14 @@
                   </div>
                 </div>
               </div>
+              <router-link to="/portfolio" class="rounded-pill flex-fill m-auto d-inline-block" >See More</router-link>
               <div class="empty-space h50-md h20-sm"></div>
             </div>
           </div>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12 position-relative testimonials">
           <div class="clip clip-right">
-            <div class="bg fix-right fade-blur" style="background-image:url(img/background/testimonials.jpg);"></div>
+            <div class="bg fix-right fade-blur" v-background="'img/background/testimonials.jpg'"></div>
             <div class="bg-span40"></div>
           </div>
           <div class="cell-view page-height" style="height: 682px; min-height: 682px;">
@@ -72,7 +67,7 @@
                       <span class="font-weight-light">Here's </span>
                       <span class="font-weight-bold">what some say.</span>
                     </h3>
-                    <div class="empty-space h55-md h30-xs"></div>
+                    <div class="empty-space h15-md h10-xs"></div>
                   </article>
                 </div>
               </div>
@@ -82,7 +77,7 @@
                   <carousel :autoPlay="true" :perPage="1" paginationActiveColor="#ffcf02"
                             paginationColor="#000" :paginationPadding="5">
                     <slide class="text-center testimony" v-for="testimony in testimonials" :key="testimony.giverName">
-                      <img :src="`img/testimony-author/${testimony.pic}`"
+                      <img :src="`/img/testimony-author/${testimony.pic}`"
                            :alt="`${testimony.giverName} pic`" class="images-box fade-blur">
 
                       <p class="message mb-15">{{testimony.message}}</p>
@@ -108,7 +103,7 @@ export default {
     return {
       clients                  : [
         { name: 'Ghana Cocoa Board', logo: '/img/logos/cocobod-logo-b.png' },
-        { name: 'Creative Arts Council', logo: '/img/logos/cac-logo-b.png' },
+        // { name: 'Creative Arts Council', logo: '/img/logos/cac-logo-b.png' },
         { name: 'Webster University', logo: '/img/logos/webster-uni-logo-b.png' },
         { name: 'Acacia Medical Center', logo: '/img/logos/amc-logo-b.png' },
         { name: 'Codbit Ghana Ltd', logo: '/img/logos/codbit-logo-b.png' },
@@ -126,7 +121,7 @@ export default {
           giverName : 'Godwin Micthual',
           giverTitle: 'Cofounder, Unorthodox Reviews',
           pic       : 'mitch.jpg',
-          message   : 'Choosing to work with George has been one of the decisions in my life. His attention to detail and innovation is quite exemplary'
+          message   : 'Choosing to work with George has been one of the best decisions in my life. His attention to detail and innovation is quite exemplary'
         }
       ]
     }
@@ -136,7 +131,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-  @import "../assets/css/colors";
+  @import "../assets/styles/scss/colors";
 
   .hex-mask {
     -webkit-clip-path: url("../assets/img/hex-mask.svg#hexagonPath");
@@ -177,16 +172,15 @@ export default {
     z-index: 3;
   }
 
+</style>
+<style lang="scss">
+  @import "../assets/styles/scss/colors";
   .images-box{
     max-height: 90px;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
   }
-</style>
-<style lang="scss">
-  @import "../assets/css/colors";
-
   section {
   }
 
@@ -213,7 +207,8 @@ export default {
     color: #ffcf02;
     position: absolute;
     z-index: 1;
-    top: 230px;
+    top: 0;
+    line-height: 1;
     user-select: none;
   }
 
