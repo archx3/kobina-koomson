@@ -27,7 +27,7 @@
      <article class="bigger text-left offset-md-1 offset-sm-1" style="z-index: 10">
       <div class="empty-space h60-md h25-xs"></div>
       <h3 class="heading text-left">
-       <span class="font-weight-light">This are </span>
+       <span class="font-weight-light">These are </span>
        <span class="font-weight-bold">My Expertise.</span>
       </h3>
       <div class="empty-space h15-md h10-xs"></div>

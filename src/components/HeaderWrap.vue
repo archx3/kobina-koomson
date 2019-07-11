@@ -70,7 +70,7 @@ function toArray (arrayLike)
 
 export default {
   name       : 'header-wrap',
-  components : { NavBar},
+  components : { NavBar },
   data ()
   {
     return {
