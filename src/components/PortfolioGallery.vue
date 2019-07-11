@@ -73,7 +73,7 @@ import { Carousel, Slide } from 'vue-carousel'
 import SmartLightBox       from './SmartLightBox'
 
 export default {
-  components: { SmartLightBox, Slide, Carousel },
+  components: { Slide, Carousel },
   name: 'portfolio-gallery',
   data () {
     return {
