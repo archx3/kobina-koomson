@@ -70,7 +70,7 @@
 <script>
 import { mapGetters }         from 'vuex';
 import { Carousel, Slide } from 'vue-carousel'
-import SmartLightBox       from './SmartLightBox'
+// import SmartLightBox       from './SmartLightBox'
 
 export default {
   components: { Slide, Carousel },
