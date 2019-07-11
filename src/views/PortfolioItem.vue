@@ -80,7 +80,7 @@
          <div class="col-md-8 offset-md-2 col-sm-10 offset-sm-1">
           <article class="bigger text-left">
            <h6 class="heading text-left" v-scroll-reveal="{delay : 200}">
-            <span class="font-weight-bold">Concept </span>
+            <span class="font-weight-bold">Concept and Process</span>
            </h6>
            <p v-scroll-reveal="{delay : 250}">{{info.processAndConcept}}</p>
           </article>
