@@ -170,7 +170,7 @@ export default {
 }
 </script>
 <style lang="scss">
-  @import "../assets/css/colors";
+  @import "../assets/styles/scss/colors";
 
   section {
   }

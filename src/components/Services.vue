@@ -207,7 +207,7 @@ export default {
 
 </style>
 <style lang="scss">
-  @import "../assets/css/colors";
+  @import "../assets/styles/scss/colors";
 
   /*-------------------------------------------------------------------------------------------------------------------------------*/
   /* 29 - SERVICES 1 */

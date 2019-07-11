@@ -2,14 +2,12 @@ import Vue  from 'vue';
 import Vuex from 'vuex';
 // import lodash from 'lodash'
 
-import events from './models/events'
-import community from './models/community'
+import portfolio from './models/Portfolio'
 
 Vue.use(Vuex);
 
 export const store = new Vuex.Store({
   modules : {
-    events,
-    community
+    portfolio
   }
 });

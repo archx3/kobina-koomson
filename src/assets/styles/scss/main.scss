@@ -1,16 +1,12 @@
-//@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:500,700");
 
-@import "colors";
+@import "includes/variables";
 
 html {
   overflow-x: hidden;
 }
 
 body {
-  background: #181b27;
-  font-size: 15px;
-  font-weight: 400;
-  font-family: "segoe ui", "helvetica", "arial", "Open Sans", sans-serif;
+  background: $dark-b-gray;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -20,12 +16,6 @@ body {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   //overflow-x: hidden;
-}
-
-h1, h2, h3, h4, h5 {
-  //font-size: 36px;
-  font-weight: 700;
-  //font-family: 'Roboto', sans-serif;
 }
 
 a {
@@ -41,13 +31,6 @@ a:hover {
   a:focus {
     outline: none;
   }
-}
-
-p {
-  font-weight: 400;
-  font-family: 'Open Sans', sans-serif;
-  margin: 0;
-  font-size: 14px;
 }
 
 ul, ol {
@@ -116,17 +99,6 @@ ul li, ol li {
   display: block;
   position: relative;
   margin-bottom: 10px;
-
-  &:before {
-    content: "[";
-    color: $accent-color;
-    padding-right: 10px;
-  }
-  &:after {
-    content: "]";
-    color: $accent-color;
-    padding-left: 10px;
-  }
 }
 
 .section-subcontent {
@@ -197,7 +169,7 @@ ul li, ol li {
   padding: 10px 30px;
   line-height: 22px;
   border-radius: 30px;
-  font-family: 'Roboto', sans-serif;
+  font-family: $primary-font;
   cursor: pointer;
   font-weight: 500;
   color: #fff;
@@ -313,8 +285,6 @@ a.back-to-top i {
   width: 40px;
   height: 40px;
   line-height: 40px;
-  color: #fff;
-  background-image: $accent-gradient;
   border-radius: 30px;
   text-align: center;
   transition: $transitin-all-02-eio;
@@ -804,7 +774,7 @@ h1 {
 }
 
 .counter-section {
-  background: url(../img/background/countdown.jpg) no-repeat center;
+  background: url(../../img/background/countdown.jpg) no-repeat center;
   //background-size: auto auto;
   padding: 80px 0;
   background-size: cover;
@@ -866,7 +836,7 @@ h1 {
 
 /* Sponsors Area */
 #sponsors {
-  background: url(../img/background/countdown.jpg) no-repeat center;
+  background: url(../../img/background/countdown.jpg) no-repeat center;
   //background-attachment: scroll;
   //background-size: auto auto;
   background-size: cover;
@@ -1911,7 +1881,7 @@ footer {
   border: none;
   position: relative;
   height: auto;
-  font-family: 'Roboto', sans-serif;
+  font-family: $primary-font;
   border-radius: 4px;
   text-align: center;
   font-weight: 400;
@@ -1926,7 +1896,7 @@ footer {
   line-height: 45px;
   font-weight: 700;
   //letter-spacing: 0.3;
-  font-family: 'Roboto', sans-serif;
+  font-family: $primary-font;
   display: block;
   color: #fff;
   margin-bottom: 10px;
@@ -2151,4 +2121,9 @@ footer {
   .hide-#{$suffix}{
     display: none !important;
   }
+}
+
+.bg-cover{
+  -webkit-background-size: cover;
+  background-size: cover;
 }

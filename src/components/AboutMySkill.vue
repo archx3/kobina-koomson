@@ -70,7 +70,7 @@ export default {
 }
 </script>
 <style lang="scss" >
-  @import "../assets/css/colors";
+  @import "../assets/styles/scss/colors";
 
   .skills-section {
     overflow: hidden;
@@ -135,7 +135,7 @@ export default {
   }
 </style>
 <style lang="scss">
-  @import "../assets/css/colors";
+  @import "../assets/styles/scss/colors";
 
   section {
   }

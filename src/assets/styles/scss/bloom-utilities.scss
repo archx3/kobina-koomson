@@ -1,10 +1,9 @@
-@import "colors";
+@import "/includes/variables";
 
 /*padding class*/
 .padding-0-30 {
   padding: 0 30px;
 }
-
 
 .empty-space {
   position: relative;
@@ -302,7 +301,6 @@
 
 /*tupografy*/
 .h2-small, .h3-big, .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: 'Roboto Slab', serif;
   margin: 0;
   padding: 0;
 }
@@ -320,7 +318,6 @@
 .h2 {
   font-size: 32px;
   line-height: 32px;
-  color: white;
 }
 
 .h2-small {
@@ -1912,7 +1909,7 @@ footer .follow .entry:before {
 /*LEFT RIGHT services*/
 
 /*skill-circle*/
-.circle {
+.sk-circle {
   height: 160px;
   width: 160px;
   margin-left: auto;
@@ -2049,6 +2046,10 @@ form {
   .to-left {
     left: 0;
   }
+}
+
+.card{
+  background-color: transparent;
 }
 
 /*LEFT RIGHT*/
