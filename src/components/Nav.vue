@@ -10,15 +10,14 @@
        <li v-for="listItem in homeNavList "
            :key="listItem.name" @click="setActiveNavItem(listItem.name)"
            class="nav-item" :class="{ active : activeNavItem ===  listItem.name }">
-        <a class="nav-link" v-scroll-to="listItem.link" :data-tooltip="listItem.name" tooltip-pos="down">
+        <a class="nav-link cur-ptr" v-scroll-to="listItem.link" :data-tooltip="listItem.name" tooltip-pos="down">
          <img type="image/svg+xml" :src="`/img/icons/${listItem.icon}`">
         </a>
        </li>
       </template>
       <template v-else>
-       <li v-for="listItem in homeNavList "
-           :key="listItem.name" @click="setActiveNavItem(listItem.name)"
-           class="nav-item" :class="{ active : activeNavItem ===  listItem.name }">
+       <li v-for="listItem in homeNavList " :key="listItem.name"
+           class="nav-item">
         <router-link class="nav-link" :to="`/${listItem.link}`" :data-tooltip="listItem.name" tooltip-pos="down">
          <img type="image/svg+xml" :src="`/img/icons/${listItem.icon}`">
         </router-link>
@@ -88,7 +87,7 @@
      <div class="row cont v-align-transform" style="top: 341px;">
       <ul>
        <li v-for="listItem in homeNavList " :key="listItem.name"
-           @click="handleMobNav" :class="{ active : activeNavItem ===  listItem.name }">
+           @click="handleMobNav" class=" cur-ptr" :class="{ active : activeNavItem ===  listItem.name }">
         <a v-scroll-to="listItem.link">{{listItem.name}}</a>
        </li>
        <li v-for="listItem in extNavList" :key="listItem.name"
@@ -97,11 +96,20 @@
          {{listItem.name}}
         </router-link>
        </li>
+
        <li v-for="listItem in extLinkList" :key="listItem.name"
            @click="handleMobNav" :class="{ active : activeNavItem ===  listItem.name }">
         <router-link tag="a" :to="listItem.link">
          {{listItem.name}}
         </router-link>
+        <ul>
+         <li v-for="childItem in listItem.children" :key="childItem.name"
+             @click="handleMobNav" :class="{ active : activeNavItem ===  childItem.name }">
+          <a :href="childItem.link">
+           {{childItem.name}}
+          </a>
+         </li>
+        </ul>
        </li>
        <!--<li class="has-dropdown"><a href="/solutions/" target="_self">Our <span>Solutions</span></a><ul><li><a href="/solutions/#cloud" target="_self" class="scrollto" data-hash="#cloud">Cloud</a></li><li><a href="/solutions/#connectivity" target="_self" class="scrollto" data-hash="#connectivity">Connectivity</a></li><li><a href="/solutions/#data-centres" target="_self" class="scrollto" data-hash="#data-centres">Data Centres</a></li><li><a href="/solutions/#security" target="_self" class="scrollto" data-hash="#security">Security</a></li><li><a href="/solutions/#communications" target="_self" class="scrollto" data-hash="#communications">Communications</a></li><li class="has-dropdown"><a href="/solutions/#wholesale" target="_self" class="scrollto" data-hash="#wholesale">Wholesale</a></li></ul></li>-->
       </ul>
@@ -150,12 +158,12 @@ export default {
       ],
       extNavList     : [
         { name : 'Blog', link : '#', icon : 'blog.svg' },
-        { name : 'Logofolio', link : '#', icon : 'logofolio.svg' },
+        { name : 'Logofolio', link : 'logofolio', icon : 'logofolio.svg' },
       ],
       extLinkList    : [
         {
           name     : 'External',
-          link     : 'https://github.com/archX3',
+          link     : '#',
           icon     : 'github.svg',
           children : [
             {
@@ -165,19 +173,19 @@ export default {
             },
             {
               name : 'LinkedIn',
-              link : 'https://github.com/archX3',
+              link : 'https://www.linkedin.com/in/kobina-koomson/',
               icon : 'github.svg',
             },
             {
               name : 'Behance',
-              link : 'https://github.com/archX3',
+              link : 'https://www.behance.net/georgeranc8053',
               icon : 'github.svg',
             },
-            {
-              name : 'Freepik',
-              link : 'https://github.com/archX3',
-              icon : 'github.svg',
-            },
+            // {
+            //   name : 'Freepik',
+            //   link : 'https://github.com/archX3',
+            //   icon : 'github.svg',
+            // },
           ]
         },
       ],
@@ -1407,7 +1415,7 @@ export default {
 
  @media only screen and (max-width: 1681px) {
   #nav ul li {
-   padding: 25px;
+   padding: 5px 25px;
   }
  }
 
@@ -1416,7 +1424,7 @@ export default {
    display: block;
    text-align: center;
    margin: 0 0 10px;
-   padding: 25px;
+   padding: 5px 25px;
   }
  }
 
