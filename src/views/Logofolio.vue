@@ -59,48 +59,48 @@ import HighlightBanner from "./HighlightBanner";
 
 Vue.use(VueTypedJs);
 export default {
-   name       : "PortfolioItem",
-   components : { HighlightBanner, NavBar },
-   props      : [],
-   data ()
-   {
-      return {
-         bgImage : '/img/portfolio/background-46.jpg',
-         info    : null,
-      }
-   },
-   computed   : {
-      id () { return this.$route.params.id },
-      ...mapGetters('portfolio', { portfolioItem : `portfolioItem`, portfolioLen : 'portfolioLength' }),
-      getRelatedItems ()
+  name       : "PortfolioItem",
+  components : { HighlightBanner, NavBar },
+  props      : [],
+  data ()
+  {
+    return {
+      bgImage : '/img/portfolio/background-46.jpg',
+      info    : null,
+    }
+  },
+  computed   : {
+    id () { return this.$route.params.id },
+    ...mapGetters('portfolio', { portfolioItem : `portfolioItem`, portfolioLen : 'portfolioLength' }),
+    getRelatedItems ()
+    {
+      let items = [], tracker = [];
+      while (items.length < 3)
       {
-         let items = [], tracker = [];
-         while (items.length < 3)
-         {
-            let newItem = Math.floor(Math.random() * this.portfolioLen);
-            console.log('i.io.ni', newItem, items, items.indexOf(newItem) < 0);
-            if (newItem !== this.id && (tracker.indexOf(newItem) < 0))
-            {
-               let tempItem = this.portfolioItem(newItem);
-               tracker.push(newItem);
-               tempItem['id'] = newItem;
-               items.push(tempItem);
-            }
-         }
-         return items;
+        let newItem = Math.floor(Math.random() * this.portfolioLen);
+        console.log('i.io.ni', newItem, items, items.indexOf(newItem) < 0);
+        if (newItem !== this.id && (tracker.indexOf(newItem) < 0))
+        {
+          let tempItem = this.portfolioItem(newItem);
+          tracker.push(newItem);
+          tempItem['id'] = newItem;
+          items.push(tempItem);
+        }
       }
-   },
-   methods    : {},
-   mounted ()
-   {
-      this.info = this.portfolioItem(this.id);
-   },
-   created ()
-   {
-   },
-   destroyed ()
-   {
-   }
+      return items;
+    }
+  },
+  methods    : {},
+  mounted ()
+  {
+    this.info = this.portfolioItem(this.id);
+  },
+  created ()
+  {
+  },
+  destroyed ()
+  {
+  }
 }
 </script>
 <style lang="scss" scoped>
