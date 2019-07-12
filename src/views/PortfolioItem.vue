@@ -80,7 +80,7 @@
          <div class="col-md-8 offset-md-2 col-sm-10 offset-sm-1">
           <article class="bigger text-left">
            <h6 class="heading text-left" v-scroll-reveal="{delay : 200}">
-            <span class="font-weight-bold">Concept </span>
+            <span class="font-weight-bold">Concept and Process</span>
            </h6>
            <p v-scroll-reveal="{delay : 250}">{{info.processAndConcept}}</p>
           </article>
@@ -212,7 +212,7 @@
     </article>
     <div class="row">
      <div v-for="(item, i) in getRelatedItems" :key="i" class="col-xs-4">
-      <router-link class="portfolio-detail-related-entry" :to="`/${item.id}`">
+      <router-link class="portfolio-detail-related-entry" :to="`/portfolio/${item.id}`">
        <div class="background full-size" v-background="`/img/portfolio/${item.bannerImage}`"></div>
        <div class="text hidden-xs">
         <div class="wide-container">
