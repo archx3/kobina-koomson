@@ -111,6 +111,16 @@
      _this.setY();
      _this.setX();
 
+     const RandVals = [0.1, -0.1];
+     setInterval(function ()
+       {
+         _this.x += RandVals[Math.floor(Math.random() * 2)];
+         _this.setX();
+
+         _this.y += RandVals[Math.floor(Math.random() * 2)];
+         _this.setY();
+       },1000);
+
      window.addEventListener("mousemove", function (e)
      {
        e = e || window.event;
