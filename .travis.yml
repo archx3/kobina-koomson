@@ -12,6 +12,7 @@ install:
   - npm install -g codecov
 script:
   - npm run build
+  - echo '<h1>Hello, catch all</h1>' > ./dist/200.html
   - codecov
 deploy:
   provider: surge
