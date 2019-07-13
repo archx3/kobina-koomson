@@ -15,11 +15,16 @@ import Footer        from './components/FooterSection'
 import HeaderWrap    from "./components/HeaderWrap";
 import PageTitle     from "./layouts/PageTitle";
 import ExtPageLayout from "./layouts/ExtPageLayout";
+import Loader        from "./components/Loader";
+import LazyImage        from "./components/LazyImage";
+import LazyBackground        from "./directives/LazyBackground";
 
 Vue.component('header-wrap', HeaderWrap);
 Vue.component('footer-section', Footer);
 Vue.component('page-title', PageTitle);
 Vue.component('ext-page-layout', ExtPageLayout);
+Vue.component('loader', Loader);
+Vue.component('lazy-image', LazyImage);
 
 export const bus = new Vue();
 Vue.config.productionTip = false;
@@ -36,6 +41,7 @@ Vue.use(VueScrollReveal, {
 });
 
 // custom directives
+Vue.directive('lazy-background', LazyBackground);
 Vue.directive('background', function (el, binding) {
   if (typeof binding.value === 'string') {
     el.style.backgroundImage =  `url(${binding.value})`;
@@ -50,6 +56,7 @@ Vue.directive('background', function (el, binding) {
     }
   }
 });
+// Vue.directive('lazy-load', LazyLoad);
 
 const router = new VueRouter({
   routes : Routes,

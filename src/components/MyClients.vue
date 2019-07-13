@@ -48,7 +48,11 @@
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12 position-relative testimonials">
           <div class="clip clip-right">
-            <div class="bg fix-right fade-blur" v-background="'img/background/testimonials.jpg'"></div>
+            <div class="bg fix-right fade-blur" v-lazy-background="{
+            blur : true,
+            lowResSrc : 'https://kobina.sirv.com/Images/kobina-koomson-w/background/testimonials.jpg?q=3',
+            highResSrc : 'https://kobina.sirv.com/Images/kobina-koomson-w/background/testimonials.jpg'
+            }"></div>
             <div class="bg-span40"></div>
           </div>
           <div class="cell-view page-height" style="height: 682px; min-height: 682px;">

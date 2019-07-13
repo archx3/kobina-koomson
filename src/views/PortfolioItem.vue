@@ -5,7 +5,10 @@
    <nav-bar external-page></nav-bar>
    <!-- Navbar End -->
 
-   <section class="overlay bg-cover" v-background="`/img/portfolio/${info.bannerImage}`">
+   <section class="overlay bg-cover"
+            v-lazy-background="{
+            highResSrc : `https://kobina.sirv.com/Images/kobina-koomson-w/portfolio/${info.bannerImage}`,
+            lowResSrc : `https://kobina.sirv.com/Images/kobina-koomson-w/portfolio/${info.bannerImage}?q=6&blur=25`}">
     <div class="overlay hero-section bg-cover vh-100">
      <div class="container h-100">
       <div class="row h-100">
@@ -23,7 +26,7 @@
     </div>
    </section>
   </header>
-  <highlight-banner>
+  <highlight-banner  v-if="info">
    <h2 slot="head" class="heading text-center" v-scroll-reveal.reset="{delay : 200}">
     <span class="font-weight-bold">Before</span>
     <span class="font-weight-light"> We </span>
@@ -102,10 +105,20 @@
     <div class="wide-container">
      <div v-if="section.image" class="portfolio-detail-entry p-l-5 p-md-4 p-sm-1">
       <template v-if="Array.isArray(section.image)">
-       <img v-for="(img, i) in section.image" :key="i" :src="`/img/portfolio/${img}`" class=""
-            style="max-width: 100%" :alt="`${section.head} Image ${i}`">
+       <!--Multiple Images-->
+       <lazy-image
+        v-for="(img, i) in section.image" :key="i"
+        image-style="max-width: 100%"
+        :alt="`${section.head} Image ${i}`"
+        :low-res-src="`https://kobina.sirv.com/Images/kobina-koomson-w/portfolio/${img}?q=3`"
+        :src="`https://kobina.sirv.com/Images/kobina-koomson-w/portfolio/${img}`"/>
       </template>
-      <img v-else :src="`/img/portfolio/${section.image}`" class="" style="max-width: 100%" :alt="`${section.head} Image`">
+      <!--Single Image-->
+      <lazy-image v-else
+                  image-style="max-width: 100%"
+                  :alt="`${section.head} Image`"
+                  :low-res-src="`https://kobina.sirv.com/Images/kobina-koomson-w/portfolio/${section.image}?q=3`"
+                  :src="`https://kobina.sirv.com/Images/kobina-koomson-w/portfolio/${section.image}`"/>
      </div>
     </div>
     <!--  Foot-->
@@ -142,10 +155,19 @@
     <div class="wide-container">
      <div v-if="section.image" class="portfolio-detail-entry p-l-5 p-md-4 p-sm-1">
       <template v-if="Array.isArray(section.image)">
-       <img v-for="(img, i) in section.image" :key="i" :src="`/img/portfolio/${img}`" class=""
-            style="max-width: 100%" :alt="`${section.head} Image ${i}`">
+       <lazy-image
+        v-for="(img, i) in section.image" :key="i"
+        image-style="max-width: 100%"
+        :alt="`${section.head} Image ${i}`"
+        :low-res-src="`https://kobina.sirv.com/Images/kobina-koomson-w/portfolio/${img}?q=3`"
+        :src="`https://kobina.sirv.com/Images/kobina-koomson-w/portfolio/${img}`"/>
       </template>
-      <img v-else :src="`/img/portfolio/${section.image}`" class="" style="max-width: 100%" :alt="`${section.head} Image`">
+      <lazy-image
+       v-else
+       image-style="max-width: 100%"
+       :alt="`${section.head} Image`"
+       :low-res-src="`https://kobina.sirv.com/Images/kobina-koomson-w/portfolio/${section.image}?q=3`"
+       :src="`https://kobina.sirv.com/Images/kobina-koomson-w/portfolio/${section.image}`"/>
      </div>
     </div>
     <!--  Foot-->
@@ -169,7 +191,7 @@
   <!--/Blog-->
   <div class="empty-space h60-md h30-xs"></div>
   <!--Section What Client Says-->
-  <section v-if="info.testimony" class="clients-section left-right">
+  <section v-if="info && info.testimony" class="clients-section left-right">
    <div class="container-fluid">
     <div class="empty-space h35-md h20-xs"></div>
     <article class="bigger text-center heading-top-bar ctr">
@@ -213,7 +235,12 @@
     <div class="row">
      <div v-for="(item, i) in getRelatedItems" :key="i" class="col-xs-4">
       <router-link class="portfolio-detail-related-entry" :to="`/portfolio/${item.id}`">
-       <div class="background full-size" v-background="`/img/portfolio/${item.bannerImage}`"></div>
+       <div class="background full-size"
+            v-lazy-background="{
+            blur : true,
+            lowResSrc : `https://kobina.sirv.com/Images/kobina-koomson-w/portfolio/${item.bannerImage}?q=3&h=200`,
+            highResSrc : `https://kobina.sirv.com/Images/kobina-koomson-w/portfolio/${item.bannerImage}?h=200`}">
+       </div>
        <div class="text hidden-xs">
         <div class="wide-container">
          <h3 class="h3-big white">{{item.name}}</h3>
@@ -256,7 +283,6 @@ export default {
       while (items.length < 3)
       {
         let newItem = Math.floor(Math.random() * this.portfolioLen);
-        console.log('i.io.ni', newItem, items, items.indexOf(newItem) < 0);
         if (newItem !== this.id && (tracker.indexOf(newItem) < 0))
         {
           let tempItem = this.portfolioItem(newItem);
@@ -268,7 +294,12 @@ export default {
       return items;
     }
   },
-  methods    : {},
+  methods    : {
+    openRelated (e, payload)
+    {
+      this.$router.push({ path : `/portfolio/${payload.id}` });
+    }
+  },
   mounted ()
   {
     this.info = this.portfolioItem(this.id);

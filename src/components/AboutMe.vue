@@ -67,10 +67,16 @@
         <div class="col-lg-6 col-md-6 col-sm-12 position-relative padding-right-none fade-blur">
           <carousel :perPage="1" :paginationEnabled="false">
             <slide class="text-center overflow-hidden">
-              <img src="/img/background/about-slide-1.jpg" alt="">
+              <lazy-image
+               alt="Sample Artwork 1"
+               :low-res-src="`https://kobina.sirv.com/Images/kobina-koomson-w/background/about-slide-1.jpg?q=3`"
+               :src="`https://kobina.sirv.com/Images/kobina-koomson-w/background/about-slide-1.jpg`"/>
             </slide>
             <slide class="text-center">
-              <img src="/img/background/about-slide-2.jpg" alt="">
+              <lazy-image
+               alt="Sample Artwork 1"
+               :low-res-src="`https://kobina.sirv.com/Images/kobina-koomson-w/background/about-slide-2.jpg?q=3`"
+               :src="`https://kobina.sirv.com/Images/kobina-koomson-w/background/about-slide-2.jpg?q=70`"/>
             </slide>
           </carousel>
         </div>
