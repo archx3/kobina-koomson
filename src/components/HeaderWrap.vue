@@ -355,19 +355,6 @@ export default {
   }
  }
 
- @keyframes fadeBlur {
-  0% {
-  }
-  100% {
-   filter: grayscale(0.65);
-  }
- }
-
- .fade-blur {
-  /*animation-name: fadeBlur;*/
-  /*animation-duration: .8s;*/
- }
-
  .more-tooltip {
   background-color: $accent-color;
   width: 250px;
@@ -416,9 +403,18 @@ export default {
  @import "../assets/styles/scss/media-queries";
  @import "../assets/styles/scss/includes/mixins";
 
- .fade-blur {
+ @keyframes fadeBlur {
+  0% {
+   filter: grayscale(0);
+  }
+  100% {
+   filter: grayscale(0.65);
+  }
+ }
+
+ .fade-blur, .fade-blur.blurry-bg-vision.loaded {
   animation-name: fadeBlur;
-  animation-duration: .7s;
+  animation-duration: .8s;
   filter: grayscale(0.65);
  }
 

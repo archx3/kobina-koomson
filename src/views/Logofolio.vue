@@ -35,7 +35,7 @@ import { mapGetters } from 'vuex'
 import LazyImage      from "../components/LazyImage";
 export default {
   name       : "PortfolioItem",
-  components : {LazyImage},
+  components : { LazyImage },
   props      : [],
   data ()
   {
