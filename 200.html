@@ -89,6 +89,66 @@
  <p>But <span class="bold">DONT panic</span>, just make sure you watch your oxygen levels</p>
 
  <h3 class="medium">Push the button below to</h3> <a class="btn rounded-pill bold" style="text-transform: none;" href="http://kobina.me">Get Back Home</a>
+ <script>
+ let app = {
+   y     : 20,
+   x     : 15,
+   lastX : 0,
+   lastY : 0,
+   img : null,
+   setY : function ()
+   {
+     this.img.style.top = this.y + '%';
+   },
+   setX : function ()
+   {
+     this.img.style.right = this.x + '%';
+   },
+   mouseMoveHandler : function (e)
+   {
+     let _this = this;
+     _this.img = document.images[0];
+     _this.setY();
+     _this.setX();
+
+     window.addEventListener("mousemove", function (e)
+     {
+       e = e || window.event;
+       let delta = 0.1;
+
+       if ((e.clientX > _this.lastX) && (_this.x > 10 && _this.x < 40))
+       {
+         _this.x += delta;
+         _this.setX();
+       }
+       else if ((e.clientX < _this.lastX) && (_this.x > 10 && _this.x < 40))
+       {
+         _this.x -= delta;
+         _this.setX();
+
+       }
+
+       if ((e.clientY > _this.lastY) && (_this.y > 10 && _this.y < 40))
+       {
+         _this.y -= delta;
+         _this.setY();
+       }
+       else if ((e.clientY < _this.lastY) && (_this.y > 10 && _this.y < 40))
+       {
+         _this.y += delta;
+         _this.setY();
+       }
+
+       _this.lastX = e.clientX;
+       _this.lastY = e.clientY;
+     })
+   }
+ };
+ window.addEventListener("load", function (e)
+ {
+   app.mouseMoveHandler()
+ });
+ </script>
 </div>
 </body>
 </html>
