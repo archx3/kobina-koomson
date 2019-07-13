@@ -6,7 +6,12 @@
 
   <!-- Hero Area Start -->
   <div id="hero-area" class="hero-area-bg container-full-bg">
-   <div class="col-12" :class="{'fade-blur' : bgChanged}" :style="`background-image:url(${bgImage})`">
+   <div class="col-12" :class="{'fade-blur' : bgChanged}"
+        v-lazy-background="{
+        blur : true,
+        lowResSrc : 'https://kobina.sirv.com/Images/kobina-koomson-w/background/hero16x9-3-br.jpg?q=3',
+        highResSrc : 'https://kobina.sirv.com/Images/kobina-koomson-w/background/hero16x9-3-br.jpg?',
+        }">
    </div>
    <div class="overlay"></div>
 
@@ -16,7 +21,7 @@
       <div class="contents page-header-inner text-center home-text">
        <vue-typed-js
         :strings="introStrings" @onComplete="nameTypeComplete()"
-        :show-cursor="false" :type-speed="50" :back-speed="15">
+        :show-cursor="false" :type-speed="30" :back-speed="15">
         <h3 class="my-name"><span class="typing" ref="nameEl"></span></h3>
        </vue-typed-js>
         <vue-typed-js  v-if="nameTyped"
@@ -77,7 +82,7 @@ export default {
       officialName       : 'Kobina G. Koomson',
       nameTyped          : false,
       skillsTyped        : false,
-      bgImage            : '/img/background/hero16x9-3-br-sm.jpg',
+      bgImage            : 'https://kobina.sirv.com/Images/kobina-koomson-w/background/hero16x9-3-br.jpg?q=3',
       bgChanged          : false,
       lastScrollTop      : 0,
       jumpIndex          : 0,
@@ -213,14 +218,6 @@ export default {
   },
   mounted ()
   {
-    var timer = setTimeout(() =>
-    {
-      // let el = $('.bgs-cov'), img = new Image();
-      this.bgImage = '/img/background/hero16x9-3-br.jpg'
-      this.bgChanged = true
-
-      clearTimeout(timer)
-    }, 4000)
   }
 }
 </script>
@@ -242,17 +239,22 @@ export default {
   img {
    width: 100vw;
    /*display: none;*/
-   filter: blur(4px);
+   filter: blur(8px);
    position: absolute;
   }
 
   .col-12 {
    padding: 0;
    background-repeat: no-repeat;
-   /*filter: blur(4px);*/
+   /*filter: blur(8px);*/
    /*background-attachment: fixed;*/
+   transition: all .8s ease-out;
    background-size: cover;
    background-position: center center;
+
+   &.loaded{
+    filter: blur(0) grayscale(0.65);
+   }
   }
  }
 
@@ -353,24 +355,6 @@ export default {
   }
  }
 
- @keyframes fadeBlur {
-  0% {
-   filter: blur(5px);
-  }
-  70% {
-   filter: blur(0px);
-  }
-  100% {
-   filter: grayscale(0.65);
-  }
- }
-
- .fade-blur {
-  animation-name: fadeBlur;
-  animation-duration: .8s;
-  filter: grayscale(0.65);
- }
-
  .more-tooltip {
   background-color: $accent-color;
   width: 250px;
@@ -419,9 +403,18 @@ export default {
  @import "../assets/styles/scss/media-queries";
  @import "../assets/styles/scss/includes/mixins";
 
- .fade-blur {
+ @keyframes fadeBlur {
+  0% {
+   filter: grayscale(0);
+  }
+  100% {
+   filter: grayscale(0.65);
+  }
+ }
+
+ .fade-blur, .fade-blur.blurry-bg-vision.loaded {
   animation-name: fadeBlur;
-  animation-duration: .7s;
+  animation-duration: .8s;
   filter: grayscale(0.65);
  }
 

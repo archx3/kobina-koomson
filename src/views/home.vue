@@ -55,7 +55,7 @@ import ContactMe        from '../components/ContactMe'
 import MyClients        from '../components/MyClients'
 import AboutMe          from '../components/AboutMe'
 // import SkillsGallery   from './Services'
-import SkillsGallery    from "./SkillsGallery";
+import SkillsGallery    from "../components/SkillsGallery";
 // import Vue         from 'vue'
 
 export default {

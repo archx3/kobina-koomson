@@ -29,8 +29,12 @@
          <div class="image-container" :class="{routing}" :ref="`port${i+1}`"
               @mouseenter="mouseEnterHandler" @mouseleave="mouseOutHandler"
               @mousemove="mouseMoveHandler" @click="clickHandler($event, {ref: `port${i+1}`, itemId : i})">
-          <img class="card-img-top rounded-0 border-0" :src="`/img/portfolio/${item.bannerImage}`"
-               alt="event thumb">
+          <lazy-image
+           image-class="card-img-top rounded-0 border-0"
+           height="554"
+           :alt="item.bannerImage"
+           :low-res-src="`https://kobina.sirv.com/Images/kobina-koomson-w/portfolio/${item.bannerImage}?q=3`"
+           :src="`https://kobina.sirv.com/Images/kobina-koomson-w/portfolio/${item.bannerImage}`"/>
           <div class="card-img-overlay justify-content-center"></div>
          </div>
          <!--        card Over-->
@@ -39,7 +43,7 @@
            <a href="#" class="link" @click.prevent="clickHandler($event, {ref: `port${i+1}`, itemId : i})"><i class="lni-link"></i>
            </a>
            <h2 class="heading h2" slot="main-heading">
-            <span class="font-weight-bold stroke">{{item.name}}</span>
+            <span class="font-weight-bold loading-text stroke" :data-text="item.name">{{item.name}}</span>
            </h2>
           </div>
          </div>
@@ -594,6 +598,7 @@ export default {
    }
 
    h2 {
+    pointer-events: all;
     span {
      position: relative;
      display: inline-block;
@@ -604,7 +609,7 @@ export default {
 
      &.stroke {
       -webkit-text-stroke: 1px $primary-color;
-      -webkit-text-fill-color: transparent;
+      /*-webkit-text-fill-color: transparent;*/
       text-fill-color: transparent;
       color: transparent;
      }

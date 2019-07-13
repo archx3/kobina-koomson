@@ -49,7 +49,7 @@ export default {
           giverName : 'Edem Titiati',
           giverTitle: 'C.E.O, Aickono llc',
           pic       : 'mitch.jpg',
-          message   : 'Choosing to work with George has been one of the best decisions in my life. His attention to detail and innovation is quite exemplary'
+          message   : 'Choosing to work with George has been one of the best decisions in my life. His attention to detail and innovation is quite exemplary. He promised to turn our app design into something exquisite, and he did.'
         }
       },
       {
@@ -101,13 +101,7 @@ export default {
             head : 'Wrapping up',
             body : 'Overall, it was a good project. I was happy to receive positive feedback from stakeholders. I even happier to have been able to surpass the unique challenges the project presented. Feels priceless',
           }
-        ],
-        testimony : {
-          giverName : 'Nii Tackie',
-          giverTitle: 'Software Engineer, Codbit Gh ltd.',
-          pic       : 'mitch.jpg',
-          message   : 'sample feed back'
-        }
+        ]
       },
       {
         thumbnail : 'bosch-thumb-s.png',
@@ -130,13 +124,7 @@ export default {
             body : '',
             image : ['bosch-1.png', 'bosch-2.png', 'bosch-3.png', 'bosch.png']
           },
-        ],
-        testimony : {
-          giverName : 'Edem Titiati',
-          giverTitle: 'C.E.O, Aickono llc',
-          pic       : 'mitch.jpg',
-          message   : 'Choosing to work with George has been one of the best decisions in my life. His attention to detail and innovation is quite exemplary'
-        }
+        ]
       },
       {
         thumbnail : 'sh-thumb-s.png',
@@ -168,13 +156,7 @@ export default {
             body : 'After an intensive three weeks of mostly back and forths trying to explain the entire concept to a newer team member, We built an Investor-pitch ready MVP. This was later torn down after a successful pitch to make way for a more stable and resilient product.',
             image : 'sh-2.png'
           },
-        ],
-        testimony : {
-          giverName : 'Edem Titiati',
-          giverTitle: 'C.E.O, Aickono llc',
-          pic       : 'mitch.jpg',
-          message   : 'Choosing to work with George has been one of the best decisions in my life. His attention to detail and innovation is quite exemplary'
-        }
+        ]
       },
       /* {
        thumbnail : 'mango-thumb-s.jpg',
@@ -206,13 +188,7 @@ export default {
             body : 'I designed the UI for the app with knowledge from data gathered from our research, having discovered that a solution for tablets would be the best choice.',
             image : [ 'fd-1.png',  'fd-3.png', 'fd-4.png', 'fd-5.png', 'fd-2.png', ]
           },
-        ],
-        testimony : {
-          giverName : 'Edem Titiati',
-          giverTitle: 'C.E.O, Aickono llc',
-          pic       : 'mitch.jpg',
-          message   : 'Choosing to work with George has been one of the best decisions in my life. His attention to detail and innovation is quite exemplary'
-        }
+        ]
       },
       /* {
         thumbnail : 'chekkit-app-thumb-s.png',
@@ -282,13 +258,7 @@ export default {
             body : "I then went on to create branding items to create a feeling of brand credibility",
             image : [ 'moov-2.png', 'moov-3.png', 'moov-4.png', 'moov-5.png', 'moov-6.png', ]
           },
-        ],
-        testimony : {
-          giverName : 'Edem Titiati',
-          giverTitle: 'C.E.O, Aickono llc',
-          pic       : 'mitch.jpg',
-          message   : 'Choosing to work with George has been one of the best decisions in my life. His attention to detail and innovation is quite exemplary'
-        }
+        ]
       },
       {
         thumbnail : 'acacia-thumb-s.png',
@@ -308,13 +278,7 @@ export default {
             body : '',
             image : [ 'amc-2.png', 'amc-3.png', 'amc-4.png', 'amc-5.png',  'amc-6.png', ]
           },
-        ],
-        testimony : {
-          giverName : 'Edem Titiati',
-          giverTitle: 'C.E.O, Aickono llc',
-          pic       : 'mitch.jpg',
-          message   : 'Choosing to work with George has been one of the best decisions in my life. His attention to detail and innovation is quite exemplary'
-        }
+        ]
       },
     ],
     categories    : ['Development', 'User Experience', 'Branding', 'Print'],

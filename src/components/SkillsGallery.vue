@@ -4,13 +4,25 @@
    <div class="row portfolio-section min-vh-100 vw-100 justify-content-between">
     <div class=" col-md-6 col-xs-0 portfolio-intro-pic min-vh-100">
      <div class="row no-padding" v-show="indicatorTranslation === 0">
-      <img src="../assets/img/background/prog-n.png" class="vh-100" alt="">
+      <lazy-image
+       image-class="vh-100"
+       alt="Programmer Coding"
+       :low-res-src="`https://kobina.sirv.com/Images/kobina-koomson-w/background/prog-n.png?q=16`"
+       :src="`https://kobina.sirv.com/Images/kobina-koomson-w/background/prog-n.png`"/>
      </div>
      <div class="row no-padding" v-show="indicatorTranslation === 33">
-      <img src="../assets/img/background/ui-des-n.png" class="vh-100" alt="">
+      <lazy-image
+       image-class="vh-100"
+       alt="Mock up of a music player on an Iphone"
+       :low-res-src="`https://kobina.sirv.com/Images/kobina-koomson-w/background/ui-des-n.png?q=16`"
+       :src="`https://kobina.sirv.com/Images/kobina-koomson-w/background/ui-des-n.png`"/>
      </div>
      <div class="row no-padding" v-show="indicatorTranslation === 66">
-      <img src="../assets/img/background/g-des-n.png" class="vh-100" alt="">
+      <lazy-image
+       image-class="vh-100"
+       alt="Graphic Design Artwork"
+       :low-res-src="`https://kobina.sirv.com/Images/kobina-koomson-w/background/g-des-n.png?q=16`"
+       :src="`https://kobina.sirv.com/Images/kobina-koomson-w/background/g-des-n.png`"/>
      </div>
     </div>
     <div class=" col-md-1 I3u14I7M portfolio-section-indicator">
@@ -37,7 +49,7 @@
        <div>
         <h3>Software Engineering</h3>
         <p>I build Apps from Start to finish using industry Standard practices</p>
-        <a href="/portfolio?d" class="rounded-pill">See Samples</a>
+        <a href="/portfolio" class="rounded-pill">See Samples</a>
         <a href="https://github.com/archX3" class="rounded-pill">View me on Github</a>
        </div>
       </div>
@@ -45,14 +57,14 @@
        <div>
         <h3>UI/UX Design</h3>
         <p>I try to create the best user experience by designing and building beautiful and endearing interactivity</p>
-        <a href="/portfolio?u" class="rounded-pill">See Samples</a>
+        <a href="/portfolio" class="rounded-pill">See Samples</a>
        </div>
       </div>
       <div class="text">
        <div>
         <h3>Graphic Design</h3>
         <p>I craft modern and sexy art you can't get enough of. Sweet eye candy.</p>
-        <a href="portfolio?g" class="rounded-pill">See Samples</a>
+        <a href="/portfolio" class="rounded-pill">See Samples</a>
        </div>
       </div>
      </div>

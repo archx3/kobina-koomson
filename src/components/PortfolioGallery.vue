@@ -36,7 +36,13 @@
                 <carousel class="swiper-wrapper" :perPage="5" :perPageCustom="[[480, 2], [768, 5]]" :paginationEnabled="false">
                   <slide class="text-center swiper-slide" v-for="(portfolio, index) in getPortfolioList" :key="index">
                     <router-link :to="`/portfolio/${index}`" class="portfolio-wrap lightbox" @click="selectedImageIndex = index">
-                      <img :src="`/img/portfolio/${portfolio.thumbnail}`" alt="">
+
+                      <!--<img :src="`/img/portfolio/${portfolio.thumbnail}`"
+                           :src="`/img/portfolio/${portfolio.thumbnail}`"
+                           alt="">-->
+                      <lazy-image
+                       :low-res-src="`https://kobina.sirv.com/Images/kobina-koomson-w/portfolio/${portfolio.thumbnail}?q=16`"
+                       :src="`https://kobina.sirv.com/Images/kobina-koomson-w/portfolio/${portfolio.thumbnail}`"/>
                       <span class="bg-hover">
                             <span class="lines">
                               <span></span>
