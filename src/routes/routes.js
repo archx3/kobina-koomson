@@ -22,4 +22,5 @@ export default [
     name : 'blog-post',
     component: () => import(/* webpackChunkName: "teacher" */ '../views/BlogPosts.vue')
   },
+  { path: '*', component: () => import(/* webpackChunkName: "notfound" */ '../views/NotFound.vue')}
 ]

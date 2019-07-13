@@ -1,0 +1,162 @@
+<template>
+ <div id='app'>
+  <img
+   :style="{top : `${y}%`, right : `${x}%`}"
+   src="https://kobina.sirv.com/Images/kobina-koomson-w/background/digital-astronaut.png" alt="Digital Astronaut">
+
+  <div class="content err">
+   <h1><span class="name">Error</span><span class="code">4O4</span></h1>
+   <p>Hmm... You seem really lost</p>
+   <p>But <span class="bold">DONT panic</span>, just make sure you watch your oxygen levels</p>
+
+   <h3 class="medium">Push the button below to</h3> <a class="btn rounded-pill bold" style="text-transform: none;"
+                                                       href="http://kobina.me">Get Back Home</a>
+  </div>
+ </div>
+</template>
+
+<script>
+export default {
+  name : "NotFound",
+  data ()
+  {
+    return {
+      y     : 20,
+      x     : 15,
+      lastX : 0,
+      lastY : 0
+    }
+  },
+  mounted ()
+  {
+    let _this = this;
+    window.addEventListener("mousemove", function (e)
+    {
+      e = e || window.event;
+      let delta = 0.05;
+
+      if ((e.clientX > _this.lastX) && (_this.x > 10 && _this.x < 40))
+      {
+        _this.x -= delta;
+      }
+      else if ((e.clientX < _this.lastX) && (_this.x > 10 && _this.x < 40))
+      {
+        _this.x += delta;
+      }
+
+      if ((e.clientY > _this.lastY) && (_this.y > 10 && _this.y < 40))
+      {
+        _this.y -= delta;
+      }
+      else if ((e.clientY < _this.lastY) && (_this.y > 10 && _this.y < 40))
+      {
+        _this.y += delta;
+      }
+
+      _this.lastX = e.clientX;
+      _this.lastY = e.clientY;
+    })
+  }
+}
+</script>
+
+<style lang="css" scoped>
+ body, html
+ {
+  height: 100%;
+  width: 100%;
+  /*overflow: hidden;*/
+ }
+
+ *
+ {
+  margin: 0;
+  padding: 0;
+  border: 0;
+ }
+
+ body
+ {
+  background-color: #181b27;
+  color: #ffcf02;
+  font-family: "segoe ui", "helvetica", "arial", "Open Sans", sans-serif;
+  font-weight: 500;
+  -webkit-font-smoothing: subpixel-antialiased;
+  font-size: 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+ }
+
+ .btn
+ {
+  margin: 0 10px 0;
+  font-size: 18px;
+  padding: 12px 40px;
+  text-transform: uppercase;
+ }
+
+ .err
+ {
+  /*padding:25% 20%;*/
+  margin: auto;
+  width: 50%;
+  height: 50%;
+ }
+
+ .code
+ {
+  font-size: 250px;
+ }
+
+ @media (max-width: 575px)
+ {
+  .code
+  {
+   font-size: 100px;
+  }
+ }
+
+ .rounded-pill
+ {
+  width: auto;
+  margin: 10px auto;
+  padding: 5px 20px;
+  border-radius: 20px;
+  font-weight: 400;
+  background-color: #181b27;
+  border: 1px solid #ffcf02;
+  color: #ffcf02;
+  margin-bottom: 10px;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  display: inline-block;
+  text-transform: none;
+ }
+
+ .rounded-pill
+ {
+  border-radius: 50rem !important;
+ }
+
+ p
+ {
+  margin-bottom: 5px;
+ }
+
+ .bold
+ {
+  font-weight: bold;
+ }
+
+ .medium
+ {
+  font-weight: bolder;
+ }
+
+ img
+ {
+  text-align: right;
+  position: absolute;
+ }
+</style>
