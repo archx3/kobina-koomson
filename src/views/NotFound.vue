@@ -33,15 +33,15 @@ export default {
     window.addEventListener("mousemove", function (e)
     {
       e = e || window.event;
-      let delta = 0.05;
+      let delta = 0.1;
 
       if ((e.clientX > _this.lastX) && (_this.x > 10 && _this.x < 40))
       {
-        _this.x -= delta;
+        _this.x += delta;
       }
       else if ((e.clientX < _this.lastX) && (_this.x > 10 && _this.x < 40))
       {
-        _this.x += delta;
+        _this.x -= delta;
       }
 
       if ((e.clientY > _this.lastY) && (_this.y > 10 && _this.y < 40))
