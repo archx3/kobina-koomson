@@ -1,28 +1,34 @@
 import inViewPort from 'in-viewport';
+import { SIRV_BASE_URL } from "@/config/config";
 
 function setBackGround (el, image) {
   el.style.backgroundImage = `url(${image})`;
 }
 
 function loadImage (el, binding) {
-  if (binding.value.lowResSrc) {
-    setBackGround(el, binding.value["lowResSrc"]);
+  const { blur, src } = binding.value;
+  const url = `${SIRV_BASE_URL}${src}`;
+
+  if (src) {
+    setBackGround(el, url + "?q=3");
   }
 
-  if (binding.value.blur) {
+  if (blur) {
     el.classList.add("blurry-bg-vision")
   }
 
   const imageElement = new Image();
-  imageElement.src = binding.value["highResSrc"];
-  // console.log(binding.value, imageElement.src);
+  imageElement.src = url;
 
   imageElement.addEventListener("load", function () {
-    setTimeout(() => el.classList.add("loaded"), 100);
+    let timeout;
+    timeout = setTimeout(() => {
+      clearTimeout(timeout);
+      el.classList.add("loaded")
+    }, 100);
 
-    if (binding.value.highResSrc) {
+    if (src) {
       setBackGround(el, imageElement.src);
-      // imageElement.removeEventListener("load", setHighResImage);
     }
   });
 
