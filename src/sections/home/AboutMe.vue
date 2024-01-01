@@ -2,7 +2,7 @@
   <section class="about-section left-right">
     <div class="container-fluid">
       <div class="row fpv85 flex-cols-4-2 pdt5 pdlr20p justify-content-between">
-        <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="col">
           <div class="cell-view page-height" style="height: 331px; min-height: 480px;">
             <!-- my-customers-->
             <div class="my-customers">
@@ -64,7 +64,8 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-12 position-relative padding-right-none fade-blur">
+
+      <!--        <div class="col-lg-6 col-md-6 col-sm-12 position-relative padding-right-none fade-blur">
           <carousel :perPage="1" :paginationEnabled="false">
             <slide class="text-center overflow-hidden">
               <lazy-image
@@ -79,7 +80,7 @@
                :src="`https://kobina.sirv.com/Images/kobina-koomson-w/background/about-slide-2.jpg?q=70`"/>
             </slide>
           </carousel>
-        </div>
+        </div>-->
       </div>
     </div>
   </section>
@@ -99,7 +100,7 @@ export default {
   }
 </style>
 <style lang="scss">
-  @import "../assets/styles/scss/colors";
+  @import "../../assets/styles/scss/colors";
 
   section {
   }
