@@ -1,11 +1,14 @@
 // Color Variables
 
 $accent-color : #ffcf02;
+$accent-color : #fff;
 $accent-color-light : #ffdc0c;
 
 $accent-gradient : linear-gradient(65deg, $accent-color 0, $accent-color-light 100%);
 $b-gray : #818999;
 $dark-b-gray : #181b27;
+$dark-b-gray : #000;
+
 
 
 //$primary-color: #ffbc3b;
@@ -14,7 +17,8 @@ $primary-color: $accent-color;
 $secondary-color: $dark-b-gray;
 
 $primary-text-color: $accent-color;
-$primary-text-color-light: $accent-color-light;
+//$primary-text-color-light: $accent-color-light;
+//$primary-text-color-light: $accent-color-light;
 
 $secondary-text-color: #fff;
 $secondary-text-color-light: #dadada;
