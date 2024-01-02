@@ -11,13 +11,15 @@ import VueScrollReveal from 'vue-scroll-reveal';
 import 'bootstrap/dist/css/bootstrap.css'
 import './assets/styles/scss/style.scss'
 
-import Footer        from './components/FooterSection'
-import HeaderWrap    from "./components/HeaderWrap";
+import Footer        from './layout-components/FooterSection.vue'
+import HeaderWrap    from "./layout-components/HeaderWrap.vue";
 import PageTitle     from "./layouts/PageTitle";
 import ExtPageLayout from "./layouts/ExtPageLayout";
 import Loader        from "./components/Loader";
 import LazyImage        from "./components/LazyImage";
 import LazyBackground        from "./directives/LazyBackground";
+import { BContainer, BCol, BRow } from "bootstrap-vue";
+import LazyBackground2 from "@/directives/LazyBackground2";
 
 Vue.component('header-wrap', HeaderWrap);
 Vue.component('footer-section', Footer);
@@ -25,6 +27,9 @@ Vue.component('page-title', PageTitle);
 Vue.component('ext-page-layout', ExtPageLayout);
 Vue.component('loader', Loader);
 Vue.component('lazy-image', LazyImage);
+Vue.component('b-container', BContainer);
+Vue.component('b-col', BCol);
+Vue.component('b-row', BRow);
 
 export const bus = new Vue();
 Vue.config.productionTip = false;
@@ -42,6 +47,7 @@ Vue.use(VueScrollReveal, {
 
 // custom directives
 Vue.directive('lazy-background', LazyBackground);
+Vue.directive('lazy-background-2', LazyBackground2);
 Vue.directive('background', function (el, binding) {
   if (typeof binding.value === 'string') {
     el.style.backgroundImage =  `url(${binding.value})`;

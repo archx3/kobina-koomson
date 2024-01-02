@@ -49,11 +49,11 @@
 <script>
 import { mapGetters }   from 'vuex'
 // @ is an alias to /src
-import HeaderWrap       from '../components/HeaderWrap'
+import HeaderWrap       from '../layout-components/HeaderWrap.vue'
 import PortfolioGallery from '../components/PortfolioGallery'
 import ContactMe        from '../components/ContactMe'
 import MyClients        from '../components/MyClients'
-import AboutMe          from '../components/AboutMe'
+import AboutMe          from '../sections/home/AboutMe.vue'
 // import SkillsGallery   from './Services'
 import SkillsGallery    from "../components/SkillsGallery";
 // import Vue         from 'vue'

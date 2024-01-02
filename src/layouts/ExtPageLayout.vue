@@ -24,7 +24,7 @@
 
 <script>
 // import HeaderWrap from '../views/HeaderWrap'
-import NavBar    from '../components/Nav'
+import NavBar    from '../layout-components/Nav.vue'
 export default {
   name       : "ext-page-layout",
   components : { NavBar },
