@@ -30,6 +30,7 @@ Vue.component('lazy-image', LazyImage);
 Vue.component('b-container', BContainer);
 Vue.component('b-col', BCol);
 Vue.component('b-row', BRow);
+Vue.component('b-row', BRow);
 
 export const bus = new Vue();
 Vue.config.productionTip = false;

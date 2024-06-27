@@ -8,11 +8,11 @@
 
     <about-me id="about-section"/>
     <!-- Gallery SECTION Start -->
-    <skills-gallery ></skills-gallery>
+<!--    <skills-gallery ></skills-gallery>-->
 
-    <portfolio-gallery id="gallery-section"/>
+<!--    <portfolio-gallery id="gallery-section"/>-->
 <!--    <skills-levels/>-->
-    <my-clients id="customers"/>
+<!--    <my-clients id="customers"/>-->
 <!--    <services/>-->
     <contact-me id="contact"/>
 
@@ -53,9 +53,9 @@ import HeaderWrap       from '../layout-components/HeaderWrap.vue'
 import PortfolioGallery from '../components/PortfolioGallery'
 import ContactMe        from '../components/ContactMe'
 import MyClients        from '../components/MyClients'
-import AboutMe          from '../sections/home/AboutMe.vue'
+import AboutMe          from '../sections/home/about-me.vue'
 // import SkillsGallery   from './Services'
-import SkillsGallery    from "../components/SkillsGallery";
+import SkillsGallery    from "../components/skills-gallery.vue";
 // import Vue         from 'vue'
 
 export default {

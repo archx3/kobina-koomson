@@ -1,82 +1,96 @@
 <template>
-  <nav class="navbar  navbar-expand-sm navbar-expand-xs bg-inverse fixed-top scrolling-navbar top-nav-collapse"
+  <nav class="navbar frosted-glass navbar-expand-sm navbar-expand-xs bg-inverse fixed-top scrolling-navbar "
        :class="{ 'top-nav-collapse' : topNavCollapse, 'nav-active' : mobNavShow}">
-    <div class="container">
+    <b-container>
       <transition name="collapsing">
-        <div class=" navbar-collapse" id="navbarCollapse" style="z-index: 10">
-          <ul class="navbar-nav mr-auto w-100 justify-content-end">
-            <!--List Items-->
-            <template v-if="!externalPage">
-              <li v-for="listItem in homeNavList "
-                  :key="listItem.name" @click="setActiveNavItem(listItem.name)"
-                  class="nav-item" :class="{ active : activeNavItem ===  listItem.name }">
-                <a class="nav-link cur-ptr" v-scroll-to="listItem.link">
-                  <!--         <img type="image/svg+xml" :src="`/img/icons/${listItem.icon}`">-->
-                  {{ listItem.name }}
-                </a>
-              </li>
-            </template>
-            <template v-else>
-              <li v-for="listItem in homeNavList " :key="listItem.name"
-                  class="nav-item">
-                <router-link class="nav-link" :to="`/${listItem.link}`">
-                  <!--         <img type="image/svg+xml" :src="`/img/icons/${listItem.icon}`">-->
+        <b-row class=" navbar-collapse justify-content-between" id="navbarCollapse" style="z-index: 10">
+          <!--Brand-->
+          <b-col class="col-auto">
+            <ul>
+              <li class="nav-item">
+                <router-link class="nav-link" to="/">
+                  <div class="navbar-brand">
+                    <div class="insignia">
+                      <img src="/img/insignia/kobina-head-bw.png" alt="insignia-head" class="mr-2 insignia-head">
+                      <img src="/img/insignia/kobina-insignia-w.svg" height="45" alt="insignia">
+                    </div>
+                  </div>
                 </router-link>
               </li>
-            </template>
-            <li class="search-inp-li rltv">
-              <input id="search-inp" class="rc25 pdl25 pdr15 w100 search-inp bg-nr bgp-x-9 bgp-y-51p" type="text"
-                     title=""
-                     placeholder="SEARCH">
-              <label for="search-inp">
-              </label>
-            </li>
-            <!--<li v-for="listItem in extNavList " :data-tooltip="listItem.name"
-                :key="listItem.name" @click="setActiveNavItem(listItem.name)"
-                class="nav-item" :class="{ active : activeNavItem ===  listItem.name }">
-              <router-link tag="a" class="nav-link" :data-tooltip="listItem.name" tooltip-pos="down" :to="listItem.link">
-                <img type="image/svg+xml" :src="`img/icons/${listItem.icon}`">
-              </router-link>
-            </li>-->
+            </ul>
+          </b-col>
 
-            <li class="nav-item hamburger-li">
-              <a href="#" @click="handleMobNav">
-                <div class="hamburglar is-open"
-                     :class="{'is-closed' : !mobNavShow, 'is-open' : mobNavShow}"
-                     data-toggle="collapse" data-target="#navbarCollapse"
-                     aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                  <div class="burger-icon d-flex">
-                    <div class="burger m-auto">
-                      <span class="burger-bun-top"></span>
-<!--                      <span class="burger-filling"></span>-->
-                      <span class="burger-bun-bot"></span>
+          <b-col sm="auto">
+            <ul class="navbar-nav justify-content-end">
+              <!--List Items-->
+              <template v-if="!externalPage">
+                <li v-for="listItem in homeNavList "
+                    :key="listItem.name" @click="setActiveNavItem(listItem.name)"
+                    class="nav-item" :class="{ active : activeNavItem ===  listItem.name }">
+                  <a class="nav-link cur-ptr" v-scroll-to="listItem.link">
+                    {{ listItem.name }}
+                  </a>
+                </li>
+              </template>
+              <template v-else>
+                <li v-for="listItem in homeNavList " :key="listItem.name"
+                    class="nav-item">
+                  <router-link class="nav-link" :to="`/${listItem.link}`">
+                    <!--         <img type="image/svg+xml" :src="`/img/icons/${listItem.icon}`">-->
+                  </router-link>
+                </li>
+              </template>
+              <li class="search-inp-li rltv">
+                <input id="search-inp" class="rc25 pdl25 pdr15 w100 search-inp bg-nr" type="text"
+                       title=""
+                       placeholder="SEARCH">
+                <label for="search-inp">
+                </label>
+              </li>
+              <li class="">
+                <a class="nav-link" href="#">
+                  <b-button variant="light" size="sm">Download Resumé</b-button>
+                </a>
+              </li>
+              <li class="nav-item hamburger-li">
+                <a href="#" @click="handleMobNav">
+                  <div class="hamburglar is-open"
+                       :class="{'is-closed' : !mobNavShow, 'is-open' : mobNavShow}"
+                       data-toggle="collapse" data-target="#navbarCollapse"
+                       aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <div class="burger-icon d-flex">
+                      <div class="burger m-auto">
+                        <span class="burger-bun-top"></span>
+                        <!--                      <span class="burger-filling"></span>-->
+                        <span class="burger-bun-bot"></span>
+                      </div>
                     </div>
-                  </div>
 
-                  <!-- svg ring containter -->
-                  <div class="burger-ring">
-                    <!--<svg class="svg-ring">
-                      <path class="path" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1"
-                            d="M 20 2 C 16.3 2 2 16.3 2 20 s 14.3 32 32 32 s 32 -14.3 32 -32 S 51.7 2 20 2"/>
+                    <!-- svg ring containter -->
+                    <div class="burger-ring">
+                      <!--<svg class="svg-ring">
+                        <path class="path" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1"
+                              d="M 20 2 C 16.3 2 2 16.3 2 20 s 14.3 32 32 32 s 32 -14.3 32 -32 S 51.7 2 20 2"/>
+                      </svg>-->
+                    </div>
+                    <!-- the masked path that animates the fill to the ring -->
+                    <!--<svg width="0" height="0">
+                      <mask id="mask">
+                        <path xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#ff0000" stroke-miterlimit="10" stroke-width="1"
+                              d="M 34 2 c 11.6 0 21.8 6.2 27.4 15.5 c 2.9 4.8 5 16.5 -9.4 16.5 h -4"/>
+                      </mask>
                     </svg>-->
-                  </div>
-                  <!-- the masked path that animates the fill to the ring -->
-                  <!--<svg width="0" height="0">
-                    <mask id="mask">
-                      <path xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#ff0000" stroke-miterlimit="10" stroke-width="1"
-                            d="M 34 2 c 11.6 0 21.8 6.2 27.4 15.5 c 2.9 4.8 5 16.5 -9.4 16.5 h -4"/>
-                    </mask>
-                  </svg>-->
-                  <div class="path-burger">
-                    <div class="animate-path">
-                      <div class="path-rotation"></div>
+                    <div class="path-burger">
+                      <div class="animate-path">
+                        <div class="path-rotation"></div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </a>
-            </li>
-          </ul>
-        </div>
+                </a>
+              </li>
+            </ul>
+          </b-col>
+        </b-row>
       </transition>
 
       <nav id="nav">
@@ -121,13 +135,15 @@
           </div>
         </div>
       </nav>
-    </div>
+    </b-container>
   </nav>
 </template>
 
 <script>
 import Vue from 'vue'
 import VueScrollTo from 'vue-scrollto'
+import { BButton } from "bootstrap-vue";
+import { HOME_NAV_TABLE } from "@/config/nav-config";
 
 // Vue.use(VueScrollTo)
 
@@ -153,13 +169,7 @@ export default {
   data () {
     return {
       activeNavItem: this.active || 'Home',
-      homeNavList: this.navListSet || [
-        { name: 'Home', link: '#app', icon: 'home.svg' },
-        { name: 'About', link: '#about-section', icon: 'help.svg' },
-        { name: 'Portfolio', link: '#gallery-section', icon: 'picture.svg' },
-        { name: 'Customers', link: '#customers', icon: 'happy-client.svg' },
-        { name: 'Contact', link: '#contact', icon: 'headset.svg' }
-      ],
+      homeNavList: this.navListSet || HOME_NAV_TABLE,
       extNavList: [
         { name: 'Blog', link: '#', icon: 'blog.svg' },
         { name: 'Logofolio', link: 'logofolio', icon: 'logofolio.svg' },
@@ -196,6 +206,9 @@ export default {
       topNavCollapse: false,
       mobNavShow: false,
     }
+  },
+  components: {
+    BButton
   },
   props: {
     'navListSet': {},
@@ -245,12 +258,23 @@ $hamburger-link-padding: 4px;
 
   div {
     min-width: 100px;
-    min-height: 100px;
+    //min-height: 100px;
     -webkit-background-size: contain;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
     transition: all 400ms ease-in-out;
+  }
+
+  img {
+    vertical-align: middle;
+    height: 30px;
+    pointer-events: none;
+    transition: none !important;
+
+    &.insignia-head {
+      height: 45px;
+    }
   }
 }
 
@@ -261,13 +285,6 @@ $hamburger-link-padding: 4px;
 
 .nav-link {
   //background: #000;
-
-  img {
-    vertical-align: middle;
-    height: 30px;
-    pointer-events: none;
-    transition: none !important;
-  }
 
   &:hover img {
     filter: invert(1);
@@ -407,6 +424,7 @@ $hamburger-link-padding: 4px;
 }
 
 .top-nav-collapse {
+  position: sticky !important;
   z-index: 999;
   top: 0 !important;
   min-height: 50px;
@@ -421,7 +439,7 @@ $hamburger-link-padding: 4px;
 
   .navbar-brand {
     div {
-      max-width: 45px;
+      //max-width: 45px;
       min-height: 45px;
     }
   }
@@ -800,6 +818,7 @@ $scale: 1; // icon scale 68/68 default
 
 .hamburger-li {
   display: flex;
+
   a {
     display: block;
     color: #fff;
@@ -956,22 +975,22 @@ $scale: 1; // icon scale 68/68 default
 @keyframes bun-bot-out {
   0% {
     //left: 0;
-    top : calc(100% - 5px);
+    top: calc(100% - 5px);
     transform: rotate(0deg);
   }
   20% {
     //left: 0;
-    top : 50%;
+    top: 50%;
     transform: translateY(-50%) rotate(-15deg);
   }
   80% {
     //left: -5px;
-    top : 50%;
+    top: 50%;
     transform: translateY(-50%) rotate(60deg);
   }
   100% {
     //left: -5px;
-    top : 50%;
+    top: 50%;
     transform: translateY(-50%) rotate(45deg);
   }
 }

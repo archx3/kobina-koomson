@@ -1,0 +1,105 @@
+:root {
+  // Custom variable values only support SassScript inside `#{}`.
+  @each $color, $value in $colors {
+    --#{$color}: #{$value};
+  }
+  @each $color, $value in $theme-colors {
+    --#{$color}: #{$value};
+  }
+
+  @each $bp, $value in $grid-breakpoints {
+    --breakpoint-#{$bp}: #{$value};
+  }
+
+  // Use `inspect` for lists so that quoted items keep the quotes.
+  // See https://github.com/sass/sass/issues/2383#issuecomment-336349172
+  --font-family-sans-serif: #{inspect($font-family-sans-serif)};
+  --font-family-monospace: #{inspect($font-family-monospace)};
+  scroll-behavior: smooth;
+}
+
+:root {
+  // Custom variable values only support SassScript inside `#{}`.
+  @each $color, $value in $color-pallet-universal {
+    --#{$color}: #{$value};
+  }
+}
+
+:root {
+  // Custom variable values only support SassScript inside `#{}`.
+  @each $color, $value in $color-pallet {
+    --#{$color}: #{$value};
+  }
+
+  @each $color, $value in $button-color-pallet {
+    --#{$color}: #{$value};
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root{
+    // Custom variable values only support SassScript inside `#{}`.
+    @each $color, $value in $color-pallet-dark {
+      --#{$color}: #{$value};
+    }
+
+    @each $color, $value in $button-color-pallet-dark {
+      --#{$color}: #{$value};
+    }
+
+    --disabled-bg: #504e4e !important;
+    --disabled-fg: #5c5b5b !important;
+    --disabled-text: #5c5b5b !important;
+    --disabled-border-color: #5c5b5b !important;
+    --disabled-text-shadow: 1px 1px 0 #b3b0b0;
+
+    --accent-color : #{$obsidian-gold-neue} !important;
+    --bg-accent-color : #{$obsidian-gold-neue} !important;
+    --bg-accent : #{$obsidian-gold-neue} !important;
+  }
+}
+
+:root.dark, :root[data-theme="dark"] {
+  // Custom variable values only support SassScript inside `#{}`.
+  @each $color, $value in $color-pallet-dark {
+    --#{$color}: #{$value};
+  }
+
+  @each $color, $value in $button-color-pallet-dark {
+    --#{$color}: #{$value};
+  }
+
+  --disabled-bg: #504e4e !important;
+  --disabled-fg: #5c5b5b !important;
+  --disabled-text: #5c5b5b !important;
+  --disabled-border-color: #5c5b5b !important;
+  --disabled-text-shadow: 1px 1px 0 #b3b0b0;
+
+  --accent-color : #{$obsidian-gold-neue} !important;
+  --bg-accent-color : #{$obsidian-gold-neue} !important;
+  --bg-accent : #{$obsidian-gold-neue} !important;
+}
+
+:root[data-theme="light"] {
+  // Custom variable values only support SassScript inside `#{}`.
+  @each $color, $value in $color-pallet {
+    --#{$color}: #{$value} !important;
+  }
+
+  @each $color, $value in $button-color-pallet {
+    --#{$color}: #{$value} !important;
+  }
+
+  --disabled-bg: rgba(238, 238, 238, 1) !important;
+  --disabled-fg: #d4d4d4 !important;
+  --disabled-text: #d4d4d4 !important;
+  --disabled-border-color: #e2e3e4 !important;
+  --disabled-text-shadow: 1px 1px 0 #fff;
+
+  --accent-color : #{$obsidian-gold} !important;
+  --bg-accent-color : #{$obsidian-gold} !important;
+  --bg-accent : #{$obsidian-gold} !important;
+}
+
+
+
