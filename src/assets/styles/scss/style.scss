@@ -4,15 +4,11 @@
 PROJECT:	Kobina Koomson Website
 VERSION:	Versoin 3.3.2
 -------------------------------------------------------------------*/
-
-/*------------------------------------------------------------------
-[TABLE OF CONTENTS]
--------------------------------------------------------------------*/
 @import "functions";
 @import "./includes/_mixins";
 @import "mixins";
-
 @import "variables";
+@import "root";
 
 @import "./includes/_typography";
 
