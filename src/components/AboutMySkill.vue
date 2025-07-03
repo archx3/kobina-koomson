@@ -136,29 +136,29 @@ export default {
 </style>
 <style lang="scss">
   @import "../assets/styles/scss/colors";
-
-  section {
-  }
-
-  .rounded-pill {
-    width: auto;
-    margin: 0 auto;
-    padding: 5px 20px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    border-radius: 20px;
-    font-weight: 400;
-    background-color: $dark-b-gray;
-    border: 1px solid $accent-color;
-    color: $accent-color;
-    margin-bottom: 10px;
-    transition: all .3s ease;
-
-    &:hover {
-      border: 1px solid transparent;
-      /*border: none;*/
-      background-color: $accent-color;
-      color: $dark-b-gray;
-    }
-  }
+  //
+  //section {
+  //}
+  //
+  //.rounded-pill {
+  //  width: auto;
+  //  margin: 0 auto;
+  //  padding: 5px 20px;
+  //  -webkit-border-radius: 20px;
+  //  -moz-border-radius: 20px;
+  //  border-radius: 20px;
+  //  font-weight: 400;
+  //  background-color: $dark-b-gray;
+  //  border: 1px solid $accent-color;
+  //  color: $accent-color;
+  //  margin-bottom: 10px;
+  //  transition: all .3s ease;
+  //
+  //  &:hover {
+  //    border: 1px solid transparent;
+  //    /*border: none;*/
+  //    background-color: $accent-color;
+  //    color: $dark-b-gray;
+  //  }
+  //}
 </style>
