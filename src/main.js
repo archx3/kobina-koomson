@@ -9,9 +9,11 @@ import VueScrollReveal from 'vue-scroll-reveal';
 
 // import stylesheets
 import 'bootstrap/dist/css/bootstrap.css'
+// import 'primeicons/primeicons.css'
 import './assets/styles/scss/style.scss'
 
 import Footer        from './layout-components/FooterSection.vue'
+import MiniFooter        from './layout-components/mini-footer.vue'
 import HeaderWrap    from "./layout-components/HeaderWrap.vue";
 import PageTitle     from "./layouts/PageTitle";
 import ExtPageLayout from "./layouts/ExtPageLayout";
@@ -23,6 +25,7 @@ import LazyBackground2 from "@/directives/LazyBackground2";
 
 Vue.component('header-wrap', HeaderWrap);
 Vue.component('footer-section', Footer);
+Vue.component('mini-footer', MiniFooter);
 Vue.component('page-title', PageTitle);
 Vue.component('ext-page-layout', ExtPageLayout);
 Vue.component('loader', Loader);
@@ -63,7 +66,6 @@ Vue.directive('background', function (el, binding) {
     }
   }
 });
-// Vue.directive('lazy-load', LazyLoad);
 
 const router = new VueRouter({
   routes : Routes,

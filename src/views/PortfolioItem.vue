@@ -258,7 +258,7 @@
 <script>
 import Vue             from 'vue'
 import { mapGetters }  from 'vuex'
-import NavBar          from '../layout-components/Nav.vue'
+import NavBar          from '../layout-components/nav.vue'
 import VueTypedJs      from 'vue-typed-js'
 import HighlightBanner from "./HighlightBanner";
 

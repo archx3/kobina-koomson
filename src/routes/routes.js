@@ -6,6 +6,14 @@ export default [
     name : 'portfolio',
     component: () => import(/* webpackChunkName: "teachers" */ '../views/Portfolio.vue')
   },
+  { path : '/contact',
+    name : 'contact',
+    component: () => import(/* webpackChunkName: "teachers" */ '../views/contact.vue')
+  },
+  { path : '/resume',
+    name : 'resume',
+    component: () => import(/* webpackChunkName: "resume" */ '../views/resume.vue')
+  },
   { path : '/portfolio/:id',
     name : 'portfolio-name',
     component: () => import(/* webpackChunkName: "teacher" */ '../views/PortfolioItem.vue')
