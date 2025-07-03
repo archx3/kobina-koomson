@@ -1,13 +1,12 @@
 <template>
   <header id="home">
     <!-- Navbar Start -->
-    <nav-bar></nav-bar>
+    <nav-bar/>
     <!-- Navbar End -->
 
     <!-- Hero Area Start -->
     <div id="hero-area" class="hero-area-bg container-full-bg vh-100">
-      <div class="col-12" :class="{'fade-blur' : bgChanged}"
-           v-lazy-background-2="{ blur : true, src : '-g-background/hero16x9-3-br.jpg?',}">
+      <div class="col-12" :class="{'fade-blur' : bgChanged}" v-lazy-background-2="{ blur : true, src : '-g-background/hero16x9-3-br.jpg?',}">
       </div>
       <!--      <div class="overlay"></div>-->
 
@@ -15,11 +14,14 @@
         <div class="row justify-content-center main-actions">
           <div class=" col-lg-9 col-sm-12">
             <div class="contents page-header-inner text-center home-text">
-              <vue-typed-js
-                  :strings="introStrings" @onComplete="nameTypeComplete()"
-                  :show-cursor="false" :type-speed="30" :back-speed="15">
-                <h3 class="my-name"><span class="typing" ref="nameEl"></span></h3>
-              </vue-typed-js>
+<!--              <vue-typed-js-->
+<!--                  :strings="introStrings" @onComplete="nameTypeComplete()"-->
+<!--                  :show-cursor="false" :type-speed="30" :back-speed="15">-->
+<!--                <h3 class="my-name"><span class="typing" ref="nameEl"></span></h3>-->
+<!--              </vue-typed-js>-->
+              <h3 class="my-name">
+                <span class='font-weight-light'>Hi, I'm <span class='official-name font-weight-bold'>{{ name }}</span></span>
+              </h3>
               <vue-typed-js v-if="nameTyped"
                             :strings="skillsText" @onComplete="skillsTypeComplete()"
                             :show-cursor="false" :type-speed="30" :back-speed="15">
@@ -37,7 +39,7 @@
         </div>
       </div>
     </div>
-    <div v-if="skillsTyped" v-scroll-to="'#about-section'" class="about-d-chevron pd4 abs"></div>
+<!--    <div v-if="skillsTyped" v-scroll-to="'#about-section'" class="about-d-chevron pd4 abs"></div>-->
     <!-- Hero Area End -->
     <!--<div v-if="skillsTyped" class=" ctr-h more-tooltip">
       &lt;!&ndash;      <button class="abs right5 top0 bg-clr-tr bdr0 h20 min-h20 w20 min-w20 pd3 ac fts20">×</button>&ndash;&gt;
@@ -46,12 +48,12 @@
         <button class="rounded-pill">OK</button>
       </p>
     </div>-->
-    <div class="molecule-bg abs left0 btm0 w400 h200 zi0 bg-nr bl-cap"></div>
+<!--    <div class="molecule-bg abs left0 btm0 w400 h200 zi0 bg-nr bl-cap"></div>-->
   </header>
 </template>
 <script>
 import Vue from 'vue'
-import NavBar from './Nav.vue'
+import NavBar from './nav.vue'
 import VueTypedJs from 'vue-typed-js'
 
 Vue.use(VueTypedJs);
@@ -73,6 +75,7 @@ export default {
   data () {
     return {
       officialName: 'Kobina G. Koomson',
+      name: 'Kobina',
       nameTyped: false,
       skillsTyped: false,
       bgImage: 'https://kobina.sirv.com/Images/kobina-koomson-w/background/hero16x9-3-br.jpg?q=3',
@@ -97,7 +100,7 @@ export default {
         // "A UI/UX DESIGNER,",
         // "AND A GRAPHIC DESIGNER",
         // "Put together...",
-        "SOFTWARE ENGINEER | UI/UX &amp; GRAPHIC DESIGNER"
+        "a SOFTWARE ENGINEER | UI/UX &amp; GRAPHIC DESIGNER"
       ]
     },
     getOfficialName () {
@@ -265,7 +268,7 @@ export default {
 
 .home-text {
   h3 {
-    font-size: 57px;
+    font-size: 107px;
     margin: 0 auto;
     color: #fff !important;
 
@@ -275,8 +278,11 @@ export default {
   }
 }
 
-span.offcial-name span {
-  display: unset;
+span.offcial-name {
+  font-size: 90px;
+  span {
+    display: unset;
+  }
 }
 
 .skill-highlight {

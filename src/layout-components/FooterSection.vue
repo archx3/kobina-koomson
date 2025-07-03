@@ -1,6 +1,6 @@
 <template>
-  <footer>
-    <div class="container">
+  <footer class="position-absolute fixed-bottom">
+    <div class="container wide">
       <div class="row justify-content-center">
         <div class="col-md-11">
           <p class="copyright">Copyright © Kobina George Koomson. {{year}}</p>

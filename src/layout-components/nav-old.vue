@@ -1,6 +1,8 @@
 <template>
   <nav class="navbar frosted-glass navbar-expand-sm navbar-expand-xs bg-inverse fixed-top scrolling-navbar "
-       :class="{ 'top-nav-collapse' : topNavCollapse, 'nav-active' : mobNavShow}">
+       :class="{ 'top-nav-collapse' : topNavCollapse, 'nav-active' : mobNavShow}"
+       aria-labelledby="nav"
+  >
     <b-container>
       <transition name="collapsing">
         <b-row class=" navbar-collapse justify-content-between" id="navbarCollapse" style="z-index: 10">
@@ -10,9 +12,15 @@
               <li class="nav-item">
                 <router-link class="nav-link" to="/">
                   <div class="navbar-brand">
-                    <div class="insignia">
+                    <div class="insignia d-flex">
                       <img src="/img/insignia/kobina-head-bw.png" alt="insignia-head" class="mr-2 insignia-head">
-                      <img src="/img/insignia/kobina-insignia-w.svg" height="45" alt="insignia">
+<!--                      <img src="/img/insignia/kobina-insignia-w.svg" height="45" alt="insignia">-->
+                      <h5 class="my-auto mr-1">
+                        Kobina Koomson
+                      </h5>
+                      <p class="my-auto border-left border-primary h-100">
+                        <span class="text-primary">Software Engineer</span>
+                      </p>
                     </div>
                   </div>
                 </router-link>
@@ -40,16 +48,16 @@
                   </router-link>
                 </li>
               </template>
-              <li class="search-inp-li rltv">
-                <input id="search-inp" class="rc25 pdl25 pdr15 w100 search-inp bg-nr" type="text"
-                       title=""
-                       placeholder="SEARCH">
-                <label for="search-inp">
-                </label>
-              </li>
+              <!-- <li class="search-inp-li rltv">-->
+              <!-- <input id="search-inp" class="rc25 pdl25 pdr15 w100 search-inp bg-nr" type="text"-->
+              <!--  title=""-->
+              <!--  placeholder="SEARCH">-->
+              <!--  <label for="search-inp">-->
+              <!--  </label>-->
+              <!--   </li>-->
               <li class="">
                 <a class="nav-link" href="#">
-                  <b-button variant="light" size="sm">Download Resumé</b-button>
+                  <b-button variant="light" size="sm" class="px-3 py-1">Download Resumé</b-button>
                 </a>
               </li>
               <li class="nav-item hamburger-li">
@@ -140,8 +148,8 @@
 </template>
 
 <script>
-import Vue from 'vue'
-import VueScrollTo from 'vue-scrollto'
+import Vue from "vue";
+import VueScrollTo from "vue-scrollto";
 import { BButton } from "bootstrap-vue";
 import { HOME_NAV_TABLE } from "@/config/nav-config";
 
@@ -149,15 +157,15 @@ import { HOME_NAV_TABLE } from "@/config/nav-config";
 
 // You can also pass in the default options
 Vue.use(VueScrollTo, {
-  container: 'body',
+  container: "body",
   duration: 500,
-  easing: 'ease',
+  easing: "ease",
   offset: 0,
   force: true,
   cancelable: false,
   onStart: false,
-  onDone: function () {
-    console.log('scroll-done')
+  onDone: function() {
+    console.log("scroll-done");
   },
   onCancel: false,
   x: false,
@@ -165,82 +173,82 @@ Vue.use(VueScrollTo, {
 });
 
 export default {
-  name: 'NavBar',
+  name: "NavBar",
   data () {
     return {
-      activeNavItem: this.active || 'Home',
+      activeNavItem: this.active || "Home",
       homeNavList: this.navListSet || HOME_NAV_TABLE,
       extNavList: [
-        { name: 'Blog', link: '#', icon: 'blog.svg' },
-        { name: 'Logofolio', link: 'logofolio', icon: 'logofolio.svg' },
+        { name: "Blog", link: "#", icon: "blog.svg" },
+        { name: "Logofolio", link: "logofolio", icon: "logofolio.svg" }
       ],
       extLinkList: [
         {
-          name: 'External',
-          link: '#',
-          icon: 'github.svg',
+          name: "External",
+          link: "#",
+          icon: "github.svg",
           children: [
             {
-              name: 'Github',
-              link: 'https://github.com/archX3',
-              icon: 'github.svg',
+              name: "Github",
+              link: "https://github.com/archX3",
+              icon: "github.svg"
             },
             {
-              name: 'LinkedIn',
-              link: 'https://www.linkedin.com/in/kobina-koomson/',
-              icon: 'github.svg',
+              name: "LinkedIn",
+              link: "https://www.linkedin.com/in/kobina-koomson/",
+              icon: "github.svg"
             },
             {
-              name: 'Behance',
-              link: 'https://www.behance.net/georgeranc8053',
-              icon: 'github.svg',
-            },
+              name: "Behance",
+              link: "https://www.behance.net/georgeranc8053",
+              icon: "github.svg"
+            }
             // {
             //   name : 'Freepik',
             //   link : 'https://github.com/archX3',
             //   icon : 'github.svg',
             // },
           ]
-        },
+        }
       ],
       topNavCollapse: false,
-      mobNavShow: false,
-    }
+      mobNavShow: false
+    };
   },
   components: {
     BButton
   },
   props: {
-    'navListSet': {},
-    'active': {},
-    'externalPage': {
+    "navListSet": {},
+    "active": {},
+    "externalPage": {
       default: () => false,
       type: Boolean
     }
   },
   computed: {
     year () {
-      return this.$route.params.year || new Date().getFullYear()
-    },
+      return this.$route.params.year || new Date().getFullYear();
+    }
   },
   methods: {
     setActiveNavItem (name) {
-      this.activeNavItem = name
+      this.activeNavItem = name;
     },
     handleMobNav () {
-      this.mobNavShow = !this.mobNavShow
+      this.mobNavShow = !this.mobNavShow;
     },
     handleScroll (e) {
-      this.topNavCollapse = window.scrollY > 60
+      this.topNavCollapse = window.scrollY > 60;
     }
   },
   created () {
-    window.addEventListener('scroll', this.handleScroll)
+    window.addEventListener("scroll", this.handleScroll);
   },
   destroyed () {
-    window.removeEventListener('scroll', this.handleScroll)
+    window.removeEventListener("scroll", this.handleScroll);
   }
-}
+};
 </script>
 
 <style scoped lang="scss">
@@ -1559,5 +1567,11 @@ $scale: 1; // icon scale 68/68 default
 
 #nav ul li > ul li a:hover {
   color: $accent-color-light;
+}
+
+.container {
+  &.wide {
+    max-width: 95%;
+  }
 }
 </style>
