@@ -2,14 +2,14 @@
   <div id="app" ref="globalHost" class="blk fp global-host ys position-relative">
     <nav-bar />
     <hero-section />
-    <mini-footer class="fixed-bottom" />
+    <mini-footer class="fixed-bottom-md" />
   </div>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
 import NavBar from "@/layout-components/nav.vue";
-import HeroSection from "@/layout-components/hero-section.vue";
+import HeroSection from "@/sections/home/hero-section.vue";
 
 export default {
   name: "home",

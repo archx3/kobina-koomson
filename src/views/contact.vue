@@ -15,7 +15,7 @@ import MyClients        from '../components/MyClients'
 import AboutMe          from '../sections/home/about-me.vue'
 import SkillsGallery    from "../components/skills-gallery.vue";
 import NavBar from "@/layout-components/nav.vue";
-import HeroSection from "@/layout-components/hero-section.vue";
+import HeroSection from "@/sections/home/hero-section.vue";
 
 export default {
   name      : 'home',
