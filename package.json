@@ -58,10 +58,6 @@
     "coverageDirectory": "./coverage/",
     "collectCoverage": true
   },
-  "optionalDependencies": {
-    "chromedriver": "0.0.0",
-    "fsevents": "0.0.0"
-  },
   "resolutions": {
     "node-sass": "file:dependency-stub",
     "string-length": "4.0.2",
