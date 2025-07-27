@@ -1,7 +1,7 @@
 name: Deploy to Surge
 
 on:
-  push:
+  pull_request:
     branches:
       - master
 
@@ -10,37 +10,30 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the code
-      - name: Checkout Repository
+      - name: 📥 Checkout repo
         uses: actions/checkout@v4
 
-      # Step 2: Setup Node.js environment
-      - name: Set up Node.js
+      - name: ⎔ Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: 20
-          cache: 'npm'
+          node-version: 22
 
-      # Step 3: Install dependencies
-      - name: Install Dependencies
-        run: |
-          npm install -g npm@6.4.1
-          npm install
-          npm install -g codecov
+      - name: 📦️ Download deps
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: install --silent
 
-      # Step 4: Build the Vue.js app
       - name: Build Project
-        run: |
-          npm run build
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: yarn build
 
-      # Step 5: Prepare SPA Files
-      - name: Prepare SPA Files
+      - name: Add Custom 200 and 404 Pages
         run: |
           cp ./200.html ./dist/200.html
           cp ./404.html ./dist/404.html
 
-      # Step 6: Deploy to Surge
-      - name: Deploy to Surge
+      - name: 🚀 Deploy to Surge
         run: |
           npm install --global surge
           surge ./dist/ http://www.kobina.me
