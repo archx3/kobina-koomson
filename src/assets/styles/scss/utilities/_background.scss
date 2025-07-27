@@ -1,39 +1,39 @@
-// stylelint-disable declaration-no-important
-
-@each $color, $value in $theme-colors {
-  @include bg-variant(".bg-#{$color}", $value);
-}
-
-@if $enable-gradients {
-  @each $color, $value in $theme-colors {
-    @include bg-gradient-variant(".bg-gradient-#{$color}", $value);
-  }
-}
-
-.bg-accent {
-  background-color: var(--accent-color) !important;
-}
-
-.bg-input-bg {
-  background-color: $input-bg !important;
-}
-
-.bg-white {
-  background-color: $white !important;
-}
-
-.bg-transparent {
-  background-color: transparent !important;
-}
-
-.bg-dark {
-  background-color: $dark-b-gray !important;
-}
-
-.bg-oa-gold-gradient {
-  background: $accent-gradient !important;
-}
-
-.fg-oa-gold-gradient {
- color: $accent-gradient !important;
-}
+//// stylelint-disable declaration-no-important
+//
+//@each $color, $value in $theme-colors {
+//  @include bg-variant(".bg-#{$color}", $value);
+//}
+//
+//@if $enable-gradients {
+//  @each $color, $value in $theme-colors {
+//    @include bg-gradient-variant(".bg-gradient-#{$color}", $value);
+//  }
+//}
+//
+//.bg-accent {
+//  background-color: var(--accent-color) !important;
+//}
+//
+//.bg-input-bg {
+//  background-color: $input-bg !important;
+//}
+//
+//.bg-white {
+//  background-color: $white !important;
+//}
+//
+//.bg-transparent {
+//  background-color: transparent !important;
+//}
+//
+////.bg-dark {
+////  background-color: $dark-b-gray !important;
+////}
+//
+//.bg-oa-gold-gradient {
+//  background: $accent-gradient !important;
+//}
+//
+//.fg-oa-gold-gradient {
+// color: $accent-gradient !important;
+//}

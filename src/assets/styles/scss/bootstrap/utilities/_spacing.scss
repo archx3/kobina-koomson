@@ -2,12 +2,6 @@
 
 // Margin and Padding
 
-@for $i from 1 through 10 {
-  .gap-#{$i} {
-    gap: $i * 0.25 * 1rem; // 0.25rem is the base unit
-  }
-}
-
 @each $breakpoint in map-keys($grid-breakpoints) {
   @include media-breakpoint-up($breakpoint) {
     $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
@@ -32,13 +26,6 @@
         .#{$abbrev}x#{$infix}-#{$size} {
           #{$prop}-left: $length !important;
         }
-      }
-    }
-
-
-    @for $i from 0 through 10 {
-      .gap#{$infix}-#{$i} {
-        gap: $i * 0.25 * 1rem; // 0.25rem is the base unit
       }
     }
 

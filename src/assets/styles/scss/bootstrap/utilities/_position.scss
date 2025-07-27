@@ -28,16 +28,6 @@ $positions: static, relative, absolute, fixed, sticky;
   z-index: $zindex-fixed;
 }
 
-@media (min-width: 1060px) {
-  .fixed-bottom-md {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: $zindex-fixed;
-  }
-}
-
 .sticky-top {
   @supports (position: sticky) {
     position: sticky;

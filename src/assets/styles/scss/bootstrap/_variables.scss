@@ -1,4 +1,4 @@
-@import "./includes/variables";
+@import "../includes/variables";
 
 // Variables
 //
@@ -6,7 +6,14 @@
 // consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
 
 
-
+//
+// Color system
+//
+$budha-gold: #A8B400;
+$seance: #9C2AA0;
+$fin: #5E2750;
+$blue-lagoon: #007E92;
+$cerulean: #00B0CA;
 
 $white: #fff !default;
 $gray-100: #f8f9fa !default;
@@ -58,17 +65,7 @@ $teal: #00d2b5 !default;
 $cyan: #17a2b8 !default;
 // endregion
 
-//
-// Color system
-//
-$oa-gold: #6C6C6C;
-$budha-gold: #A8B400;
-$seance: #9C2AA0;
-$fin: #5E2750;
-$blue-lagoon: #007E92;
-$cerulean: #00B0CA;
-
-// region OA colors
+// region KR colors
 $smoke: #111111 !default;
 $erie: #161616 !default;
 $erie-2: #232323 !default;
@@ -86,43 +83,96 @@ $obsidian-gold-neue: #FFC700 !default;
 $obsidian-gold-neue-dark: #D8A904 !default;
 $obsidian-gray: #B3B3B3 !default;
 $obsidian-gray-light: #f8f8f8 !default;
-$obsidian-gray-2: #EBEBEB !default;
+$obsidian-gray-2: #b0b0b0 !default;
 $obsidian-platinum: #EBEBEB !default;
 $obsidian-red: #FF4B55 !default;
 $obsidian-green: #02BA6D !default;
 
 
+$kr-burgundy: #61044E !default;
+$kr-burgundy-dark: #3B0230 !default;
+$kr-burgundy-dark-2: #1c0117 !default;
+$kr-orange: #FF8F00 !default;
+$kr-orange-dark: #FF6600 !default;
+$kr-orange-dark-2: #FF2F00 !default;
+$kr-neon-red: #DF0462 !default;
+$kr-neon-red-light: #FF0066 !default;
+$kr-neon-red-dark: #B00951 !default;
+$kr-neon-red-dark-2: #84073d !default;
+
+$accent-color: $kr-orange !default;
+$accent-color-2: $kr-burgundy !default;
+$accent-color-3: $kr-neon-red !default;
+
+$kr-orange-transparent: rgba($kr-orange, .075) !default;
+$kr-burgundy-transparent: rgba($kr-burgundy, .075) !default;
+$kr-neon-red-transparent: rgba($kr-neon-red, .075) !default;
+
 // endregion
 
 // region universal (all themes) colors
-$link-text: $obsidian-gold-neue-dark !default;
+$link-text: $kr-orange-dark !default;
 $link-text-hover: darken($link-text, .3) !default;
 $link-text-focus: darken($link-text, .6) !default;
 $link-text-active: darken($link-text, .6) !default;
 
-$banner: $obsidian-gold-neue !default;
-$banner-hover: $obsidian-gold !default;
+$link-text-2: $kr-burgundy !default;
+$link-text-hover-2: darken($link-text-2, .3) !default;
+$link-text-focus-2: darken($link-text-2, .6) !default;
+$link-text-active-2: darken($link-text-2, .6) !default;
+
+$link-text-3: $kr-neon-red !default;
+$link-text-hover-3: darken($link-text-3, .3) !default;
+$link-text-focus-3: darken($link-text-3, .6) !default;
+$link-text-active-3: darken($link-text-3, .6) !default;
+
+$link-text-white: $kr-orange-dark !default;
+$link-text-hover-white: darken($link-text, .3) !default;
+$link-text-focus-white: darken($link-text, .6) !default;
+$link-text-active-white: darken($link-text, .6) !default;
+
+$banner: $kr-orange !default;
+$banner-hover: $kr-orange-dark !default;
 $banner-text: $white !default;
 $banner-hover-text: $black !default;
 $banner-text-muted: rgba(255, 255, 255, 0.8) !default;
 
-$accent-button-background: $obsidian-gold-neue !default;
-$accent-button-hover-background: $obsidian-gold-neue-dark !default;
-$accent-button-active-background: $obsidian-gold-2 !default;
+$accent-button-background: $accent-color !default;
+$accent-button-hover-background: $kr-orange-dark !default;
+$accent-button-active-background: $kr-orange-dark-2 !default;
 $accent-button-text: $black !default;
 $accent-button-text-hover: $black !default;
 $accent-button-text-active: $black !default;
+
+$accent-button-background-2: $accent-color-2 !default;
+$accent-button-hover-background-2: $kr-burgundy-dark !default;
+$accent-button-active-background-2: $kr-burgundy-dark-2 !default;
+$accent-button-text-2: $white !default;
+$accent-button-text-hover-2: $white !default;
+$accent-button-text-active-2: $white !default;
+
+$accent-button-background-3: $accent-color-3 !default;
+$accent-button-hover-background-3: $kr-neon-red-dark !default;
+$accent-button-active-background-3: $kr-neon-red-dark-2 !default;
+$accent-button-text-3: $white !default;
+$accent-button-text-hover-3: $white !default;
+$accent-button-text-active-3: $white !default;
+
 $input-error-outline: $obsidian-red !default;
 $input-success-outline: $obsidian-green !default;
-$input-focus-box-shadow-color: rgba(188, 152, 74, 0.25) !default;
-$input-focus-box-shadow: 0 0 0 0.2rem $input-focus-box-shadow-color !default;
 
 // endregion
 
 // region light theme colors
 $background: #F8F8F8 !default;
 $background-strong: #FFF !default;
-$accent-color: $obsidian-gold !default;
+$accent-color: $white !default;
+$accent-color-2: $kr-burgundy !default;
+$accent-color-3: $kr-neon-red !default;
+
+$accent-color-primary: $kr-orange !default;
+$accent-color-secondary: $kr-burgundy !default;
+$accent-color--tertiary: $kr-neon-red !default;
 
 $overlay-background: transparentize($white, .65) !default;
 
@@ -151,9 +201,13 @@ $card-outline-active: #d6dedf !default;
 $input-background: $white !default;
 $input-outline: $obsidian-gray-2 !default;
 $input-hover-outline: $obsidian-gray !default;
-$input-focus-outline: $obsidian-gold !default;
+$input-focus-outline: $accent-color-2 !default;
 $input-banner: #17a2b8 !default;
 $input-label: #6C6C6C !default;
+
+$input-focus-box-shadow-color: transparentize($input-focus-outline, .75) !default;
+$input-focus-box-shadow: 0 0 0 0.2rem $input-focus-box-shadow-color !default;
+
 $placeholder-text: #B3B3B3 !default;
 
 $switch-track-background: $obsidian-gray;
@@ -165,8 +219,9 @@ $switch-checked-track-background: $obsidian;
 $switch-checked-track-background-border: $obsidian;
 $switch-checked-toggle-background: $obsidian-gray-light;
 $switch-checked-toggle-border: $obsidian-gray-light;
+// endregion
 
-//$input-disabled-text,
+// region $input-disabled-text,
 $input-disabled-bg: #e9ecef !default;
 
 $primary-text: #2E2E2E !default;
@@ -202,7 +257,7 @@ $link-text-light-active: darken($primary-text, .8) !default;
 // region dark theme colors
 $background-dark: #000000 !default;
 $background-strong-dark: #000000 !default;
-$accent-color-dark: $obsidian-gold-neue !default;
+$accent-color-dark: $kr-orange !default;
 
 $overlay-background: #F8F8F8 !default;
 
@@ -219,7 +274,8 @@ $icon-hover-dark: #B3B3B3 !default;
 $icon-focus-dark: #fff !default;
 $icon-active-dark: #fff !default;
 
-$card-background-dark: #1C1C1E !default;
+$card-background-dark: #151517 !default;
+//$card-background-dark: #323132 !default;
 //$card-background-dark: $obsidian !default;
 //$card-hover-background-dark: #141414 !default;
 $card-hover-background-dark: $erie-2 !default;
@@ -227,15 +283,17 @@ $card-active-background-dark: $smoke !default;
 $card-icon-dark: #6C6C6C !default;
 $card-outline-dark: $obsidian !default;
 $card-outline-hover-dark: $obsidian-graphite !default;
-$card-outline-active-dark: $obsidian-gold-neue !default;
+$card-outline-active-dark: $accent-color !default;
 
 $input-background-dark: #161616 !default;
 $input-outline-dark: $obsidian-graphite !default;
 $input-hover-outline-dark: $obsidian-gray !default;
-$input-focus-outline-dark: $obsidian-gold-neue !default;
+$input-focus-outline-dark: $kr-orange !default;
 $input-banner-dark: #17a2b8 !default;
 $input-label-dark: #F8F8F8 !default;
 $placeholder-text-dark: $obsidian-graphite !default;
+$input-focus-box-shadow-color-dark: transparentize($input-focus-outline-dark, .75) !default;
+$input-focus-box-shadow-dark: 0 0 0 0.2rem $input-focus-box-shadow-color-dark !default;
 
 $input-disabled-bg-dark: #2a2a2c !default;
 $input-disabled-text-dark: $obsidian-graphite !default;
@@ -261,7 +319,7 @@ $secondary-muted-text-dark: rgba(255, 255, 255, 0.8) !default;
 $secondary-muted-text-2-dark: rgba(255, 255, 255, 0.8) !default;
 
 $button-background-dark: $white !default;
-$button-hover-background-dark: $obsidian-gray !default;
+$button-hover-background-dark: $obsidian-gray-2 !default;
 $button-active-background-dark: $obsidian-graphite !default;
 $button-text-dark: $black !default;
 $button-text-hover-dark: $black !default;
@@ -275,15 +333,15 @@ $secondary-button-text-hover-dark: $white !default;
 $secondary-button-text-active-dark: $white !default;
 
 $link-text-dark: $primary-text-dark !default;
-$link-text-dark-hover: darken($primary-text-dark, .3) !default;
-$link-text-dark-focus: darken($primary-text-dark, .6) !default;
-$link-text-dark-active: darken($primary-text-dark, .8) !default;
+$link-text-dark-hover: $obsidian-graphite !default;
+$link-text-dark-focus: darken($obsidian-graphite, .6) !default;
+$link-text-dark-active: darken($obsidian-graphite, .8) !default;
 // endregion
 
-// region agn ciolor
-$primary: $white !default;
+// region agn color
+$primary: $oa-gold !default;
 $primary-g: linear-gradient(135.64deg, #BC984A 34.81%, #8B6518 113.46%) !default;
-$secondary: $black !default;
+$secondary: $oa-matte-color !default;
 //$success: $green !default;
 $success: $obsidian-green !default;
 $info: $cyan !default;
@@ -318,6 +376,22 @@ $colors: map-merge(
 $color-pallet-universal: () !default;
 $color-pallet-universal: map-merge(
     (
+      "kr-burgundy":$kr-burgundy,
+      "kr-burgundy-dark":$kr-burgundy-dark,
+      "kr-burgundy-dark-2":$kr-burgundy-dark-2,
+      "kr-orange":$kr-orange,
+      "kr-orange-dark":$kr-orange-dark,
+      "kr-orange-dark-2":$kr-orange-dark-2,
+      "kr-neon-red":$kr-neon-red,
+      "kr-neon-red-light":$kr-neon-red-light,
+      "kr-neon-red-dark":$kr-neon-red-dark,
+      "kr-neon-red-dark-2":$kr-neon-red-dark-2,
+      "accent-color":$accent-color,
+      "accent-color-2":$accent-color-2,
+      "accent-color-3":$accent-color-3,
+      "kr-orange-transparent":$kr-orange-transparent,
+      "kr-burgundy-transparent":$kr-burgundy-transparent,
+      "kr-neon-red-transparent":$kr-neon-red-transparent,
       "smoke": #111111,
       "erie": #161616,
       "erie-2": #232323,
@@ -336,7 +410,7 @@ $color-pallet-universal: map-merge(
       "obsidian-platinum": #EBEBEB,
       "obsidian-red": #FF4B55,
       "obsidian-green": #02BA6D,
-      "link-text" : $obsidian-gold-neue-dark,
+      "link-text" : $accent-color,
       "link-text-hover" : darken($link-text, .3),
       "link-text-focus" : darken($link-text, .6),
       "link-text-active" : darken($link-text, .6),
@@ -354,6 +428,7 @@ $color-pallet-universal: map-merge(
       "input-error-outline": $input-error-outline,
       "input-success-outline": $input-success-outline,
       "input-focus-box-shadow-color": $input-focus-box-shadow-color,
+      //"input-focus-box-shadow": $input-focus-box-shadow,
     ),
     $color-pallet-universal
 );
@@ -366,6 +441,8 @@ $color-pallet: map-merge(
       "background-light" : $background,
       "background-dark" : $background-dark,
       "accent-color" : $accent-color,
+      "table-row-hover-background" : $kr-burgundy-transparent,
+      "table-row-selected-background" : $kr-burgundy,
       "drop-shadow" : $drop-shadow-color,
       "outline": $outline, // (divider)
       "outline-2": $outline-2, // (divider)
@@ -412,8 +489,11 @@ $color-pallet: map-merge(
       "primary-muted-text": $primary-muted-text,
       "primary-muted-text-2": $primary-muted-text-2,
       "secondary-text": $secondary-text,
+      "text-secondary": $secondary-text,
       "secondary-subtitle-text": $secondary-subtitle-text,
+      "text-secondary-subtitle": $secondary-subtitle-text,
       "secondary-muted-text": $secondary-muted-text,
+      "text-secondary-muted": $secondary-muted-text,
       "secondary-muted-text-2": $secondary-muted-text-2,
       "link-text-light" : $link-text-light,
       "link-text-light-hover" : $link-text-light-hover,
@@ -423,6 +503,7 @@ $color-pallet: map-merge(
       "link-text-white-hover" : $link-text-dark-hover,
       "link-text-white-focus" : $link-text-dark-focus,
       "link-text-white-active" : $link-text-dark-active,
+      "input-focus-box-shadow-color": $input-focus-box-shadow-color,
     ),
     $color-pallet
 );
@@ -435,6 +516,8 @@ $color-pallet-dark: map-merge(
       "background-light" : $background,
       "background-dark" : $background-dark,
       "accent-color" : $accent-color-dark,
+      "table-row-hover-background" : $kr-orange-transparent,
+      "table-row-selected-background" : $kr-orange,
       "drop-shadow" : $drop-shadow-color-dark,
       "outline": $outline-dark, // (divider)
       "outline-2": $outline-2-dark, // (divider)
@@ -484,14 +567,16 @@ $color-pallet-dark: map-merge(
       "secondary-subtitle-text": $secondary-subtitle-text-dark,
       "secondary-muted-text": $secondary-muted-text-dark,
       "secondary-muted-text-2": $secondary-muted-text-2-dark,
-      "link-text-dark" : $link-text-dark,
-      "link-text-dark-hover" : $link-text-dark-hover,
-      "link-text-dark-focus" : $link-text-dark-focus,
-      "link-text-dark-active" : $link-text-dark-active,
+      "link-text" : $link-text-dark,
+      "link-text-hover" : $link-text-dark-hover,
+      "link-text-focus" : $link-text-dark-focus,
+      "link-text-active" : $link-text-dark-active,
       "link-text-black" : $link-text-light,
       "link-text-black-hover" : $link-text-dark-hover,
       "link-text-black-focus" : $link-text-dark-focus,
       "link-text-black-active" : $link-text-dark-active,
+      "input-focus-box-shadow-color": $input-focus-box-shadow-color-dark,
+      //"input-focus-box-shadow": $input-focus-box-shadow-dark,
     ),
     $color-pallet-dark
 );
@@ -505,12 +590,21 @@ $button-color-pallet: map-merge(
       "button-text": $button-text,
       "button-text-hover": $button-text-hover,
       "button-text-active": $button-text-active,
+
       "secondary-button-background": $secondary-button-background,
       "secondary-button-hover-background": $secondary-button-hover-background,
       "secondary-button-active-background": $secondary-button-active-background,
       "secondary-button-text": $secondary-button-text,
       "secondary-button-text-hover": $secondary-button-text-hover,
       "secondary-button-text-active": $secondary-button-text-active,
+
+      "accent-button-background" : $accent-button-background-2,
+      "accent-button-hover-background" : $accent-button-hover-background-2,
+      "accent-button-active-background" : $accent-button-active-background-2,
+      "accent-button-text" : $accent-button-text-2,
+      "accent-button-text-hover" : $accent-button-text-hover-2,
+      "accent-button-text-active" : $accent-button-text-active-2,
+
     ),
     $button-color-pallet
 );
@@ -524,12 +618,20 @@ $button-color-pallet-dark: map-merge(
       "button-text": $button-text-dark,
       "button-text-hover": $button-text-hover-dark,
       "button-text-active": $button-text-active-dark,
+
       "secondary-button-background": $secondary-button-background-dark,
       "secondary-button-hover-background": $secondary-button-hover-background-dark,
       "secondary-button-active-background": $secondary-button-active-background-dark,
       "secondary-button-text": $secondary-button-text-dark,
       "secondary-button-text-hover": $secondary-button-text-hover-dark,
       "secondary-button-text-active": $secondary-button-text-active-dark,
+
+      "accent-button-background" : $accent-button-background,
+      "accent-button-hover-background" : $accent-button-hover-background,
+      "accent-button-active-background" : $accent-button-active-background,
+      "accent-button-text" : $accent-button-text,
+      "accent-button-text-hover" : $accent-button-text-hover,
+      "accent-button-text-active" : $accent-button-text-active,
     ),
     $button-color-pallet-dark
 );
@@ -546,11 +648,14 @@ $theme-colors: map-merge(
       "warning": $warning,
       "danger": $danger,
       "light": $light,
-      "dark": $obsidian-graphite,
-      "oa-gold-neue": $oa-gold-neue,
+      "dark": $erie,
+      //"oa-gold-neue": $oa-gold-neue,
+      "oa-gold-neue": $kr-orange,
       //"accent": $accent-color,
-      "accent": $obsidian-gold-neue,
-      "obsidian-gold-neue": $obsidian-gold-neue,
+      //"accent": $obsidian-gold-neue,
+      "accent": $accent-color,
+      //"obsidian-gold-neue": $obsidian-gold-neue,
+      "obsidian-gold-neue": $kr-orange,
       "obsidian": $obsidian,
       "obsidian-gray-2": $obsidian-gray-2,
       "budha-gold" : $budha-gold,
@@ -600,9 +705,41 @@ $spacers: map-merge(
       0: 0,
       1: ($spacer * .25),
       2: ($spacer * .5),
+      '2-5': ($spacer * .75),
+      '2_5': ($spacer * .75),
+      '25': ($spacer * .75),
       3: $spacer,
+      '3-5':$spacer * 1.25,
+      '3_5':$spacer * 1.25,
+      '35':$spacer * 1.25,
       4: ($spacer * 1.5),
-      5: ($spacer * 3)
+      '4-5':$spacer * 2,
+      '4_5':$spacer * 2,
+      '45':$spacer * 2,
+      5: ($spacer * 3),
+      '5\\.5': ($spacer * 3.5),
+      '5_5': ($spacer * 3.5),
+      6: ($spacer * 4),
+      '6\\.5': ($spacer * 4.5),
+      '6_5': ($spacer * 4.5),
+      7: ($spacer * 5),
+      '7\\.5': ($spacer * 5.5),
+      '7_5': ($spacer * 5.5),
+      8: ($spacer * 6),
+      '8\\.5': ($spacer * 6.5),
+      '8_5': ($spacer * 6.5),
+      9: ($spacer * 7),
+      '9\\.5': ($spacer * 7.5),
+      '9_5': ($spacer * 7.5),
+      10: ($spacer * 8),
+      '10\\.5': ($spacer * 8.5),
+      '10_5': ($spacer * 8.5),
+      11: ($spacer * 9),
+      '11\\.5': ($spacer * 9.5),
+      '11_5': ($spacer * 9.5),
+      12: ($spacer * 10),
+      '12\\.5': ($spacer * 10.5),
+      '12_5': ($spacer * 10.5),
     ),
     $spacers
 );
@@ -692,7 +829,7 @@ $container-max-widths: (
   sm: 540px,
   md: 720px,
   lg: 960px,
-  xl: 1140px
+  xl: 1336px
 ) !default;
 
 @include _assert-ascending($container-max-widths, "$container-max-widths");
@@ -716,9 +853,9 @@ $border-width: 1px !default;
 $border-color: $oa-border-color !default;
 //$border-color:                $gray-300 !default;
 
-$border-radius: 6px !default;
+$border-radius: 18px !default;
 $border-radius-lg: 6px !default;
-$border-radius-sm: 2px !default;
+$border-radius-sm: 16px !default;
 
 $rounded-pill: 50rem !default;
 
@@ -841,7 +978,7 @@ $table-caption-color: $text-muted !default;
 // Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
 
 $input-btn-padding-y: .375rem !default;
-$input-btn-padding-x: .75rem !default;
+$input-btn-padding-x: .85rem !default;
 $input-btn-line-height: $line-height-base !default;
 
 $input-btn-focus-width: .2rem !default;
@@ -889,7 +1026,7 @@ $btn-link-disabled-color: $gray-600 !default;
 $btn-block-spacing-y: .5rem !default;
 
 // Allows for customizing button radius independently from global border radius
-$btn-border-radius: $border-radius !default;
+$btn-border-radius: 20px !default;
 $btn-border-radius-lg: $border-radius-lg !default;
 $btn-border-radius-sm: $border-radius-sm !default;
 
@@ -1071,7 +1208,7 @@ $form-feedback-invalid-color: theme-color("danger") !default;
 
 // Dropdowns
 //
-// Dropdown menu container and contents.
+// Dropdown SIDEBAR_MENU container and contents.
 
 $dropdown-min-width: 10rem !default;
 $dropdown-padding-y: .5rem !default;
@@ -1307,6 +1444,7 @@ $modal-header-padding: 1rem !default;
 $modal-lg: 800px !default;
 $modal-md: 500px !default;
 $modal-sm: 390px !default;
+$modal-xl: 1200px !default;
 
 $modal-transition: transform .3s ease-out !default;
 
@@ -1322,7 +1460,7 @@ $alert-border-radius: $border-radius !default;
 $alert-link-font-weight: $font-weight-bold !default;
 $alert-border-width: $border-width !default;
 
-$alert-bg-level: -10 !default;
+$alert-bg-level: -8 !default;
 $alert-border-level: -9 !default;
 $alert-color-level: 6 !default;
 

@@ -17,8 +17,10 @@ VERSION:	Versoin 3.3.2
 @import '../css/animate.css';
 
 @import 'tooltip.scss';
+@import 'utilities/helper';
+@import 'utilities/sizing';
 
-@import 'bloom-utilities.scss';
+//@import 'bloom-utilities.scss';
 
 @import 'utilities';
 

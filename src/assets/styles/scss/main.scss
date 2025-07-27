@@ -101,13 +101,13 @@ ul li, ol li {
 
 
 .section-title {
-  font-size: 30px;
-  color: #212121;
-  line-height: 52px;
-  font-weight: 700;
-  text-align: center;
-  display: block;
-  position: relative;
+  //font-size: 30px;
+  //color: #212121;
+  //line-height: 52px;
+  //font-weight: 700;
+  //text-align: center;
+  //display: block;
+  //position: relative;
   margin-bottom: 10px;
 }
 
@@ -1136,9 +1136,9 @@ h1 {
 }
 
 /* Services Item */
-.intro {
-  background: #fff;
-}
+//.intro {
+  //background: #fff;
+//}
 
 .single-intro-text {
   padding: 45px 50px 40px 60px;
@@ -2202,3 +2202,8 @@ footer {
     }
   }
 }
+
+
+// let's create set of class names for spacing flex children like grid gaps gaps that's not start end center between around evenly
+
+

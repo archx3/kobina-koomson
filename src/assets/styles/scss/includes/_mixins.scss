@@ -89,6 +89,12 @@ $ipad: 810px;
   }
 }
 
+@mixin _ipad {
+  @media(min-width: $ipad) {
+    @content;
+  }
+}
+
 @mixin _kindle {
   @media(min-width: $kindle) {
     @content;

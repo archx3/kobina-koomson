@@ -1,5 +1,152 @@
 // Color Variables
 
+
+$oa-gold: #BC984A;
+$oa-gold-neue: #D9AB08;
+$obsidian-gray-2: #EBEBEB;
+$obsidian: #2E2E2E;
+
+$oa-gold-dark: #8B6518;
+$oa-dark-gray: #3D3C3A;
+$oa-matte-color: #FFFCF8;
+$oa-matte-color-2: rgba(254, 253, 250, 1);
+$oa-matte-color-3: rgba(191, 144, 80, 0.1);
+
+$oa-gold: #BC984A;
+$oa-gold-neue: #D9AB08;
+$obsidian-gray-2: #EBEBEB;
+$obsidian: #2E2E2E;
+
+$oa-gold-dark: #8B6518;
+$oa-dark-gray: #3D3C3A;
+$oa-matte-color: #FFFCF8;
+$oa-matte-color-2: rgba(254, 253, 250, 1);
+$oa-matte-color-3: rgba(191, 144, 80, 0.1);
+
+//$oa-gold: #1c2121;
+//$oa-gold-dark: #000000;
+//$oa-dark-gray: #3D3C3A;
+//$oa-matte-color: #d5d5d7;
+//$oa-matte-color-2: rgba(147, 137, 124, 0.1);
+//$oa-matte-color-3: rgba(147, 145, 142, 0.1);
+
+$accent-color-light: #ffdc0c;
+
+$accent-gradient: linear-gradient(90.56deg, #AD8C47 20.91%, #C8AD78 82.5%);
+$accent-gradient-dark-up: linear-gradient(204.56deg, #BC984A 19.79%, #8B6518 95.65%);
+$accent-gradient-up: linear-gradient(0deg, #AD8C47 20.91%, #C8AD78 82.5%);
+$accent-gradient-down: linear-gradient(90.56deg, #AD8C47 20.91%, #C8AD78 82.5%);
+$accent-gradient-light: linear-gradient(269.65deg, #F3ECE6 0.31%, #FBFAF8 33.88%);
+
+$dash-gradient: linear-gradient(204.56deg, #BC984A 19.79%, #8B6518 95.65%);
+
+$sidebar-gradient: linear-gradient(204.56deg, #BC984A 19.79%, #8B6518 95.65%);
+//$sidebar-gradient: linear-gradient(204.56deg, #BC9A4A 19.79%, #824C08 95.65%);
+$sidebar-shadow: 10px 10px 40px rgba(191, 144, 80, 0.4);
+
+
+
+//$accent-gradient: linear-gradient(90.56deg, #1b1c1c 20.91%, #d4d4d4 82.5%);
+//$accent-gradient-dark-up: linear-gradient(204.56deg, #BC984A 19.79%, #8B6518 95.65%);
+//$accent-gradient-up: linear-gradient(0deg, #AD8C47 20.91%, #C8AD78 82.5%);
+//$accent-gradient-down: linear-gradient(90.56deg, #AD8C47 20.91%, #C8AD78 82.5%);
+//$accent-gradient-light: linear-gradient(269.65deg, #F3ECE6 0.31%, #FBFAF8 33.88%);
+//
+//$dash-gradient: linear-gradient(204.56deg, #BC984A 19.79%, #8B6518 95.65%);
+//
+//$sidebar-gradient: linear-gradient(204.56deg, #505050 19.79%, #1c1c1c 95.65%);
+//$sidebar-gradient: linear-gradient(204.56deg, #BC9A4A 19.79%, #824C08 95.65%);
+//$sidebar-shadow: 10px 10px 40px rgba(94, 94, 93, 0.4);
+
+
+
+$dark-b-gray: #181b27;
+
+
+$primary-red: #E60000;
+$dark-red: #BD0000;
+$darker-red: #990000;
+$budha-gold: #A8B400;
+$seance: #9C2AA0;
+$primary-black: #000000;
+$mine-shaft: #333333;
+$dove-grey: #4A4D4E;
+$dust-grey: #666666;
+$silver-chalice: #999999;
+$silver: #AFAFAF;
+$gallery: #CCCCCC;
+$wild-sand: #EBEBEB;
+$fin: #5E2750;
+$blue-lagoon: #007E92;
+$cerulean: #00B0CA;
+$cerulean-green: #01a029;
+
+//$primary-color: #ffbc3b;
+
+//$secondary-color: #1a1a37;
+$secondary-color: $oa-matte-color;
+$secondary-color-2: $oa-matte-color-2;
+$secondary-color-3: $oa-matte-color-3;
+
+$primary-text-color: #000;
+$text-color: #000;
+//$primary-text-color: $accent-color;
+$primary-text-color-light: $accent-color-light;
+$text-color-light: #000;
+
+$secondary-text-color: #000;
+//$secondary-text-color-light: $oa-gold;
+//$text-color-dark: #1e1e4b;
+$body-color : #F5F5F5;
+$text-color-dark: #000;
+
+$border-color-primary : rgba(191, 144, 80, 0.4);
+//$border-color-primary : rgba(111, 115, 123, 0.4);
+
+$oa-border-color: #C5C0B8;
+$oa-border-color: #ced4da;
+
+$light: #f8f9fe;
+$gray: #f8f8f8;
+
+//
+$button-shadow: 0px 20px 30px rgba(106, 88, 50, 0.17);
+$box-shadow-dark: 0px 9px 35px rgba(106, 88, 50, 0.15);
+$box-shadow-light: 0px 20px 30px rgba(106, 88, 50, 0.17);
+
+//transitions
+$transition-all-02-l: all 0.2s linear;
+$transition-all-02-eio: all 0.2s ease-in-out;
+
+// Font Variables
+//$icon-font: 'lni';
+
+// Font Variables
+$primary-font: 'Inter', 'Poppins', "Open Sans", "segoe ui", "helvetica", "arial", sans-serif;
+$secondary-font: 'NewYork', serif;
+$icon-font: 'themify';
+
+// header specific varables
+$header-padding-y: 30;
+$header-image-height: 35px;
+
+$disabled-bg: #eee !important;
+$disabled-fg: #d4d4d4 !important;
+$disabled-border-color: #e2e3e4 !important;
+$disabled-text-shadow: 1px 1px 0 #fff;
+$divider-color: #d7e0e0;
+
+$disabled-bg-dark: #504e4e !important;
+$disabled-fg-dark: #5c5b5b !important;
+$disabled-border-color-dark: #5c5b5b !important;
+$disabled-text-shadow-dark: 1px 1px 0 #b3b0b0;
+$divider-color-dark: 1px 1px 0 #b3b0b0;
+$form-element-border: #d7e0e0;
+$form-element-border-2: #cad1d7;
+$placeholder-color: #e3e6ea;
+$placeholder-b-radius: 4px;
+/*******************/
+
 $accent-color : #ffcf02;
 $accent-color : #fff;
 $accent-color-light : #ffdc0c;
