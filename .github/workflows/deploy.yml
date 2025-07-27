@@ -36,7 +36,8 @@ jobs:
       - name: 🚀 Deploy to Surge
         run: |
           npm install --global surge
-          surge ./dist/ http://www.kobina.me --ssl
+          surge ./dist/ kobina.me --ssl
+          surge ./dist/ www.kobina.me --ssl
         env:
           SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
           SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
