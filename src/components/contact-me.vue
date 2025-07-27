@@ -44,12 +44,10 @@
           <div class="cell-view page-height">
             <div class="empty-space h50-md heading-top-bar"></div>
 
-
             <div class="row">
               <div class="col-md-8 offset-md-2 col-sm-10 offset-sm-1">
                 <!-- contact-info -->
                 <div class="contact-info text-left">
-
 
                   <form class="contact-form">
                     <div class="row col-xs-b30">
