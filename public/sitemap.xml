@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>http://kobin.me</loc>
+<changefreq>daily</changefreq>
+<priority>1.0</priority>
+<lastmod>2025-07-26T19:31:59.468Z</lastmod>
+</url>
+<url><loc>http://kobin.me/</loc>
+<changefreq>daily</changefreq>
+<priority>1.0</priority>
+<lastmod>2025-07-26T19:31:59.469Z</lastmod>
+</url>
+<url><loc>http://kobin.me/about</loc>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+<lastmod>2025-07-26T19:31:59.469Z</lastmod>
+</url>
+<url><loc>http://kobin.me/logofolio</loc>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+<lastmod>2025-07-26T19:31:59.469Z</lastmod>
+</url>
+<url>
+<loc>http://kobin.me/blog/google-doc-resume-download</loc>
+<changefreq>weekly</changefreq>
+<priority>0.6</priority>
+<lastmod>2025-07-26T00:00:00.000Z</lastmod>
+</url>
+</urlset>
