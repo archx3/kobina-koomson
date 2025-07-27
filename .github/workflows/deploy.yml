@@ -26,7 +26,7 @@ jobs:
       - name: Build Project
         uses: borales/actions-yarn@v4
         with:
-          cmd: yarn build
+          cmd: build
 
       - name: Add Custom 200 and 404 Pages
         run: |
