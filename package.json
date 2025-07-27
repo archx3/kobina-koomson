@@ -15,22 +15,24 @@
     "test:e2e": "vue-cli-service test:e2e"
   },
   "dependencies": {
-    "bootstrap": "^4.3.1",
     "bootstrap-vue": "^2.0.0-rc.16",
     "core-js": "^2.6.5",
     "gsap": "3.6.0",
+    "highlight.js": "^11.11.1",
     "in-viewport": "3.6.0",
-    "jquery": "3.4.1",
-    "v-wow": "^1.2.1",
+    "markdown-it": "12.3.2",
+    "raw-loader": "^4.0.2",
     "vue": "^2.7",
     "vue-carousel": "0.18.0",
     "vue-fullpage.js": "0.1.3",
+    "vue-meta": "2",
     "vue-resource": "^1.5.1",
     "vue-router": "^3.0.3",
     "vue-scroll-reveal": "^1.0.11",
     "vue-scroll-snap": "0.1.4",
     "vue-scrollactive": "0.8.0",
     "vue-scrollto": "^2.15.0",
+    "vue-template-compiler": "2.5.21",
     "vue-typed-js": "0.1.2",
     "vue-typer": "1.2.0",
     "vuex": "^3.0.1"
@@ -50,11 +52,21 @@
     "eslint-plugin-vue": "^5.0.0",
     "git-scripts": "^0.2.1",
     "sass-loader": "^7.1.0",
-    "surge": "^0.20.3",
-    "vue-template-compiler": "^2.5.21"
+    "surge": "^0.20.3"
   },
   "jest": {
     "coverageDirectory": "./coverage/",
     "collectCoverage": true
+  },
+  "optionalDependencies": {
+    "chromedriver": "0.0.0",
+    "fsevents": "0.0.0"
+  },
+  "resolutions": {
+    "node-sass": "file:dependency-stub",
+    "string-length": "4.0.2",
+    "strip-ansi": "6.0.1",
+    "fsevents": "file:dependency-stub",
+    "chromedriver": "file:dependency-stub"
   }
 }
