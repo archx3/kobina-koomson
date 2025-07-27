@@ -3,11 +3,12 @@ import { ADDRESS_DATA } from "@/config/address";
 export const HOME_NAV_TABLE = [
   // { name: 'Home', link: '#app', icon: 'home.svg' },
   // { name: 'About', link: '#about-section', icon: 'help.svg' },
-  // { name : 'Blog', link : '#blog-section', icon : 'blog.svg' },
+  { name: "About", link: "/about", icon: "headset.svg" },
+  { name : 'Blog', link : '/blog', icon : 'blog.svg' },
   // { name: 'Customers', link: '#customers', icon: 'happy-client.svg' },
-  { name: "Resume", link: "/resume", icon: "headset.svg" },
-  { name: "Portfolio", link: "/portfolio", icon: "picture.svg" },
-  { name: "Contact", link: "/contact", icon: "headset.svg" }
+
+  // { name: "Portfolio", link: "/portfolio", icon: "picture.svg" },
+  // { name: "Contact", link: "/contact", icon: "headset.svg" }
 ];
 
 export const EXTERNAL_NAV_LIST = [

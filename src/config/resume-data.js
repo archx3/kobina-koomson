@@ -1,16 +1,16 @@
 export default {
   personalInfo: {
     name: "George Kobina Koomson",
-    title: "Software Engineer",
+    title: "Software Engineer"
 
   },
   professionalSummary: "7+ years experienced, detail and result oriented engineer with a track record of spearheading teams to design efficient, user-centered solutions that drive client satisfaction. Armed with an extensive understanding of design patterns, data structures and algorithms and the SDLC. Highly skilled at system design, implementing front-end and back-end feature designs, API design and development, 3rd party API integration, Application maintenance, etc., by deploying a wide range of technologies across multiple frameworks and platforms. Proficient in liaising with key stakeholders including management, team members & remote clients to effectively conduct requirement gathering and optimise solutions as per client requirements. Lover of open standards, author and regular contributor to open source projects. Organiser and Regular participant of local hackathons and developer meetups.",
   skills: {
     programmingLanguages: {
-      proficient: ["JavaScript", "Python", "PHP", "HTML", "XML", "CSS", "SCSS"],
+      proficient: ["TypeScript", "JavaScript", "Python", "PHP", "HTML", "XML", "CSS", "SCSS"],
       familiar: ["Java", "C++", "Rust"]
     },
-    platformsFrameworks: ["React JS", "React Native", "Next Js", "Vue JS", "NuxtJs", "Node Js", "Express", "Django", "Android", "Bootstrap", "Tailwind"],
+    platformsFrameworks: ["React JS", "React Native", "Next Js", "Vue JS", "NuxtJs", "Node Js", "Express", "Django", "Android", "iOS", "Bootstrap", "Tailwind"],
     uiUxDesign: ["Figma", "Adobe XD", "Marvel app"],
     databaseOrm: ["MySQL", "Postgresql", "Mongodb", "Sequelize", "Mongoose", "Peewee", "Red Bean"],
     graphicDesign: ["Adobe Photoshop", "Illustrator", "InDesign", "Corel Draw Graphic Suite"],
@@ -18,7 +18,22 @@ export default {
     multimedia: ["Adobe Audition", "Premiere Pro", "Trimble Sketchup"],
     devOps: ["AWS", "Heroku", "Docker", "Travis CI", "GCP"]
   },
+
   experience: [
+    {
+      company: "Taxfix",
+      location: "Remote, Accra",
+      position: "Senior Software Engineer (Contract)",
+      period: "Feb 2025 - July 2025",
+      description: "I’ve worked with Taxfix, a client for Upbeat SL. on a large codebase, building features for the front-end with micro-front-end architecture and event driven backend of the payment and subscriptions part of the platform, setup as mono repos, writing all kinds of automated tests, while ensuring strict adherence to the rigorous engineering standards, running AB testing experiments in order to satisfy the hundreds of thousands of our customers."
+    },
+    {
+      company: "Upbeat SL.",
+      location: "Remote, Accra",
+      position: "Senior Software Engineer (Contract)",
+      period: "Sep 2024 - Date",
+      description: "At Upbeat, a software development agency, I’ve worked on a number of projects in a relatively short amount of time for a number of clients, including a shipment management product, a SAAS product that enables real estate companies advertise and sell their properties, a mobile app for mother care, a website for a fitness company and upgrading the company’s website."
+    },
     {
       company: "Obsidian Achernar Technologies co. ltd.",
       location: "Accra, Ghana",
@@ -155,9 +170,9 @@ export default {
     }
   ],
   affiliations: [
-    "Lead Organiser: Js Camp by Js Hack Accra",
-    "Volunteer Teaching Assistant: Python Ghana",
-    "Mentor: SeedStars World Accra 2018"
+    { role : "Lead Organiser", organisation: " Js Camp by Js Hack Accra" },
+    { role: "Mentor", organisation: "SeedStars World Accra 2018" },
+    { role: "Volunteer Teaching Assistant", organisation: "Python Ghana" }
   ],
   references: [
     {
