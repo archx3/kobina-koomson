@@ -17,6 +17,7 @@
   "dependencies": {
     "bootstrap-vue": "^2.0.0-rc.16",
     "core-js": "^2.6.5",
+    "gray-matter": "^4.0.3",
     "gsap": "3.6.0",
     "highlight.js": "^11.11.1",
     "in-viewport": "3.6.0",
