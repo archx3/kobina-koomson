@@ -1,10 +1,18 @@
-import Home          from  '../views/home'
+import Home          from  '@/views/home'
 
 export default [
   { path : '/', name : 'home', component : Home },
   { path : '/portfolio',
     name : 'portfolio',
     component: () => import(/* webpackChunkName: "teachers" */ '../views/Portfolio.vue')
+  },
+  { path : '/contact',
+    name : 'contact',
+    component: () => import(/* webpackChunkName: "teachers" */ '../views/contact.vue')
+  },
+  { path : '/about',
+    name : 'about',
+    component: () => import(/* webpackChunkName: "resume" */ '../views/resume.vue')
   },
   { path : '/portfolio/:id',
     name : 'portfolio-name',
@@ -14,13 +22,13 @@ export default [
     name : 'logofolio',
     component: () => import(/* webpackChunkName: "teacher" */ '../views/Logofolio.vue')
   },
-  { path : '/blog/',
-    name : 'blog-posts',
-    component: () => import(/* webpackChunkName: "teacher" */ '../views/BlogPost.vue')
-  },
-  { path : '/blog/:id',
-    name : 'blog-post',
+  { path : '/blogs/',
+    name : 'all-blog-posts',
     component: () => import(/* webpackChunkName: "teacher" */ '../views/BlogPosts.vue')
   },
-  { path: '*', component: () => import(/* webpackChunkName: "notfound" */ '../views/NotFound.vue')}
+  { path : '/blog/',
+    name : 'blog-posts',
+    component: () => import(/* webpackChunkName: "teacher" */ '../views/BlogPosts.vue')
+  },
+  { path: '*', component: () => import(/* webpackChunkName: "notfound" */ '../views/NotFound.vue') }
 ]

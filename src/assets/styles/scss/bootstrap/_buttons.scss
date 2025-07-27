@@ -1,0 +1,368 @@
+// stylelint-disable selector-no-qualifying-type
+// Base styles
+
+.btn {
+  display: inline-block;
+  font-weight: $btn-font-weight;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: $btn-border-width solid transparent;
+  transition: all .3s ease-in-out;
+  @include button-size($btn-padding-y, $btn-padding-x, $font-size-base, $btn-line-height, $btn-border-radius);
+  @include transition($btn-transition);
+
+  // Share hover and focus styles
+  @include hover-focus {
+    text-decoration: none;
+  }
+
+  &:focus, &.focus {
+    outline: 0;
+    filter: drop-shadow($btn-focus-box-shadow);
+  }
+
+  // Disabled comes first so active can properly restyle
+  &.disabled,
+  &:disabled {
+    opacity: $btn-disabled-opacity;
+    @include box-shadow(none);
+  }
+
+  // Opinionated: add "hand" cursor to non-disabled .btn elements
+  &:not(:disabled):not(.disabled) {
+    cursor: pointer;
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active {
+    @include box-shadow($btn-active-box-shadow);
+
+    &:focus {
+      @include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
+    }
+  }
+}
+
+// Make a button look and behave like a link
+.btn-link {
+  font-weight: $font-weight-normal;
+  color: var(--link-text);
+  background-color: transparent;
+
+  @include hover {
+    color: var(--link-text-hover);
+    text-decoration: $link-hover-decoration;
+    background-color: transparent;
+    border-color: transparent;
+  }
+
+  &:focus,
+  &.focus {
+    text-decoration: $link-hover-decoration;
+    border-color: transparent;
+    box-shadow: none;
+  }
+
+  &:disabled,
+  &.disabled {
+    color: $btn-link-disabled-color;
+    pointer-events: none;
+  }
+
+  // No need for an active state here
+}
+
+// Future-proof disabling of clicks on `<a>` elements
+a.btn.disabled, fieldset:disabled a.btn {
+  pointer-events: none;
+}
+
+
+//
+// Alternate buttons
+//
+
+$btn-theme-colors: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$btn-theme-colors: map-merge(
+    (
+      "success": $green,
+      "green": $obsidian-green,
+      "info": $info,
+      "warning": $warning,
+      "danger": $obsidian-red,
+      "red": $red,
+      "light": $light,
+      "dark": $dark,
+      "pink": $pink,
+      "purple": $purple,
+      "blue": $blue,
+      "cyan": $cyan,
+      "teal": $teal,
+      "yellow": $yellow,
+      "orange": $orange,
+      "indigo": $indigo,
+    ),
+    $btn-theme-colors
+);
+
+@each $color, $value in $btn-theme-colors {
+  .btn-#{$color} {
+    transition: all .3s ease-in-out;
+    @include button-variant($value, $value);
+  }
+}
+
+@each $color, $value in $btn-theme-colors {
+  .btn-outline-#{$color} {
+    transition: all .3s ease-in-out;
+    @include button-outline-variant($value);
+  }
+}
+
+@each $color, $value in $btn-theme-colors {
+  .btn-link-#{$color} {
+    transition: all .3s ease-in-out;
+    @include button-link-variant($value, $value);
+  }
+}
+
+:root {
+  // Custom default button styles
+  .btn-primary {
+    transition: all .3s ease-in-out;
+    @include button-variant-2(
+        var(--button-background),
+        var(--button-text),
+        var(--button-background),
+        var(--button-hover-background),
+        var(--button-text-hover),
+        var(--button-hover-background),
+        var(--button-active-background),
+        var(--button-text-active),
+        var(--button-active-background),
+    );
+  }
+
+  // Outline buttons
+  .btn-outline-primary {
+    transition: all .3s ease-in-out;
+    @include button-outline-variant-2(
+        var(--button-background),
+        var(--button-hover-background),
+        var(--button-active-background));
+  }
+
+  // Link buttons
+  .btn-link-primary {
+    transition: all .3s ease-in-out;
+    @include button-link-variant-2(
+        var(--secondary-button-text),
+        var(--secondary-button-text-hover),
+        var(--secondary-button-text-active));
+  }
+
+  .btn-secondary {
+    transition: all .3s ease-in-out;
+    @include button-variant-2(
+        var(--secondary-button-background),
+        var(--secondary-button-text),
+        var(--secondary-button-background),
+        var(--secondary-button-hover-background),
+        var(--secondary-button-text-hover),
+        var(--secondary-button-hover-background),
+        var(--secondary-button-active-background),
+        var(--secondary-button-active-background),
+        var(--secondary-button-text-active));
+  }
+
+  .btn-outline-secondary {
+    transition: all .3s ease-in-out;
+    @include button-outline-variant-2(
+        $secondary-button-text,
+        $secondary-button-text-hover,
+        $secondary-button-text-active
+    );
+  }
+
+  .btn-link-secondary {
+    transition: all .3s ease-in-out;
+    @include button-link-variant-2(
+        var(--button-text),
+        var(--button-text-hover),
+        var(--button-text-active)
+    );
+  }
+
+  //region accent-2 buttons
+    .btn-accent {
+      transition: all .3s ease-in-out;
+      @include button-variant-2(
+          var(--accent-button-background),
+          var(--accent-button-text),
+          var(--accent-button-background),
+          var(--accent-button-hover-background),
+          var(--accent-button-text-hover),
+          var(--accent-button-hover-background),
+          var(--accent-button-active-background),
+          var(--accent-button-active-background),
+          $accent-button-text-active-2);
+    }
+
+    .btn-outline-accent {
+      transition: all .3s ease-in-out;
+      @include button-outline-variant-2(
+          $accent-button-background-2,
+          $accent-button-hover-background-2,
+          $accent-button-active-background-2);
+    }
+
+    .btn-link-accent {
+      transition: all .3s ease-in-out;
+      @include button-link-variant-2(
+          $link-text,
+          $link-text-hover,
+          $link-text-active);
+    }
+  // endregion
+
+  ////region accent buttons
+  //@media (prefers-color-scheme: dark) {
+  //  .btn-accent {
+  //    transition: all .3s ease-in-out;
+  //    @include button-variant-2(
+  //        $accent-button-background,
+  //        $accent-button-text,
+  //        $accent-button-background,
+  //        $accent-button-hover-background,
+  //        $accent-button-text-hover,
+  //        $accent-button-hover-background,
+  //        $accent-button-active-background,
+  //        $accent-button-active-background,
+  //        $accent-button-text-active);
+  //  }
+  //
+  //  .btn-outline-accent {
+  //    transition: all .3s ease-in-out;
+  //    @include button-outline-variant-2(
+  //        $accent-button-background,
+  //        $accent-button-hover-background,
+  //        $accent-button-active-background);
+  //  }
+  //
+  //  .btn-link-accent {
+  //    transition: all .3s ease-in-out;
+  //    @include button-link-variant-2(
+  //        $link-text,
+  //        $link-text-hover,
+  //        $link-text-active);
+  //  }
+  //}
+  //// endregion
+  //region black buttons
+  .btn-black, .btn-obsidian-black, {
+    transition: all .3s ease-in-out;
+
+    @include button-variant-2(
+        $button-background,
+        $button-text,
+        $button-background,
+        $button-hover-background,
+        $button-text-hover,
+        $button-hover-background,
+        $button-active-background,
+        $button-text,
+        $button-active-background);
+  }
+
+  .btn-outline-black, .btn-outline-oa-black, .btn-outline-obsidian-black {
+    transition: all .3s ease-in-out;
+    @include button-outline-variant-2(
+        $button-background,
+        $button-hover-background,
+        $button-background);
+  }
+
+  .btn-link-black, .btn-link-oa-black, .btn-link-obsidian-black {
+    transition: all .3s ease-in-out;
+    @include button-link-variant-2(
+        $secondary-button-text,
+        $secondary-button-text-hover,
+        $secondary-button-text-active);
+  }
+  // endregion
+
+  // white buttons
+  .btn-white, .btn-obsidian-white, {
+    transition: all .3s ease-in-out;
+
+    @include button-variant-2(
+        $secondary-button-background,
+        $secondary-button-text,
+        $secondary-button-background,
+        $secondary-button-hover-background,
+        $secondary-button-text-hover,
+        $secondary-button-hover-background,
+        $secondary-button-active-background,
+        $secondary-button-text,
+        $secondary-button-active-background);
+  }
+
+  .btn-outline-white, .btn-outline-oa-white, .btn-outline-obsidian-white {
+    transition: all .3s ease-in-out;
+    @include button-outline-variant-2(
+        $secondary-button-background,
+        $secondary-button-hover-background,
+        $secondary-button-background);
+  }
+
+  .btn-link-white, .btn-link-oa-white, .btn-link-obsidian-white {
+    transition: all .3s ease-in-out;
+    @include button-link-variant-2(
+        $button-text,
+        $button-text-hover,
+        $button-text-active);
+  }
+
+}
+
+
+.btn-lg {
+  @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $font-size-lg, $btn-line-height-lg, $btn-border-radius-lg);
+}
+
+.btn-sm {
+  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $btn-line-height-sm, $btn-border-radius-sm);
+}
+
+
+//
+// Block button
+//
+
+.btn-block {
+  display: block;
+  width: 100%;
+
+  // Vertically space out multiple block buttons
+  + .btn-block {
+    margin-top: $btn-block-spacing-y;
+  }
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  &.btn-block {
+    width: 100%;
+  }
+}
+
+.bubbly-balloon {
+  button[data-close-button="true"] {
+    border-radius: 50%;
+  }
+}

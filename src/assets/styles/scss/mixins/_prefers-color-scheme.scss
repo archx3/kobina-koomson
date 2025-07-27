@@ -1,0 +1,19 @@
+@mixin prefers-color-scheme($color-scheme : 'light') {
+  @if ($color-scheme == "dark") {
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        @content;
+      }
+    }
+
+    :root.dark, :root[data-theme="dark"] {
+      @content;
+    }
+
+  } @else {
+    :root[data-theme="light"],  {
+      @content;
+    }
+  }
+}

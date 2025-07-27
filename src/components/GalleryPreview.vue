@@ -4,7 +4,7 @@
          @click="handleMobNav" data-toggle="collapse" data-target="#navbarCollapse"
          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <div class="burger-icon">
-        <div class="burger-container">
+        <div class="burger">
           <span class="burger-bun-top"></span>
           <span class="burger-bun-bot"></span>
         </div>
@@ -499,22 +499,22 @@ export default {
 
   .close-btn.is-open {
     .path {
-      animation: dash-in $animation linear normal;
+      animation: dash-in $animation-duration linear normal;
       animation-fill-mode:forwards;
     }
     .animate-path {
-      animation: rotate-in $animation linear normal;
+      animation: rotate-in $animation-duration linear normal;
       animation-fill-mode:forwards;
     }
   }
 
   .close-btn.is-closed {
     .path {
-      animation: dash-out $animation linear normal;
+      animation: dash-out $animation-duration linear normal;
       animation-fill-mode:forwards;
     }
     .animate-path {
-      animation: rotate-out $animation linear normal;
+      animation: rotate-out $animation-duration linear normal;
       animation-fill-mode:forwards;
     }
   }
@@ -557,7 +557,7 @@ export default {
     width: 68px;
   }
 
-  .burger-container {
+  .burger {
     position: relative;
     height: 28px;
     width: 36px;
@@ -584,7 +584,7 @@ export default {
     transform-origin: 34px 2px;
   }
   //.burger-filling {
-  //  @include transition(all,($animation/2.5),ease-in-//out);
+  //  @include transition(all,($animation-duration/2.5),ease-in-//out);
   //}
   // relative parent is the button
   .burger-filling {
@@ -605,25 +605,24 @@ export default {
     height: 68px;
   }
 
-
   // bun animations
   .close-btn.is-open {
     .burger-bun-top {
-      animation: bun-top-out $animation linear normal;
+      animation: bun-top-out $animation-duration linear normal;
       animation-fill-mode:forwards;
     }
     .burger-bun-bot {
-      animation: bun-bot-out $animation linear normal;
+      animation: bun-bot-out $animation-duration linear normal;
       animation-fill-mode:forwards;
     }
   }
   .close-btn.is-closed {
     .burger-bun-top {
-      animation: bun-top-in $animation linear normal;
+      animation: bun-top-in $animation-duration linear normal;
       animation-fill-mode:forwards;
     }
     .burger-bun-bot {
-      animation: bun-bot-in $animation linear normal;
+      animation: bun-bot-in $animation-duration linear normal;
       animation-fill-mode:forwards;
     }
   }
@@ -636,37 +635,18 @@ export default {
     }
     20% {
       left: 0;
-      top: 0;
-      transform: rotate(15deg);
+      top: 50%;
+      transform: translateY(-50%) rotate(15deg);
     }
     80% {
-      left: -5px;
-      top: 0;
-      transform: rotate(-60deg);
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%) rotate(-60deg);
     }
     100% {
-      left: -5px;
-      top: 1px;
-      transform: rotate(-45deg);
-    }
-  }
-
-  @keyframes bun-bot-out {
-    0% {
       left: 0;
-      transform: rotate(0deg);
-    }
-    20% {
-      left: 0;
-      transform: rotate(-15deg);
-    }
-    80% {
-      left: -5px;
-      transform: rotate(60deg);
-    }
-    100% {
-      left: -5px;
-      transform: rotate(45deg);
+      top: 50%;
+      transform: translateY(-50%) rotate(-45deg);
     }
   }
 
@@ -693,6 +673,28 @@ export default {
     }
   }
 
+  @keyframes bun-bot-out {
+    0% {
+      left: 0;
+      transform: rotate(0deg);
+    }
+    20% {
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%) rotate(-15deg);
+    }
+    80% {
+      left: -5px;
+      top: 50%;
+      transform: translateY(-50%) rotate(60deg);
+    }
+    100% {
+      left: -5px;
+      top: 50%;
+      transform: translateY(-50%) rotate(45deg);
+    }
+  }
+
   @keyframes bun-bot-in {
     0% {
       left: -5px;
@@ -700,12 +702,12 @@ export default {
     }
     20% {
       left: -5px;
-      bot: 0;
+      top: 0;
       transform: rotate(60deg);
     }
     80% {
       left: 0;
-      bot: 0;
+      top: 0;
       transform: rotate(-15deg);
     }
     100% {
@@ -717,7 +719,7 @@ export default {
   // burger filling
   .close-btn:hover {
     .burger-filling {
-      animation: burger-fill-out $animation linear normal;
+      animation: burger-fill-out $animation-duration linear normal;
       animation-fill-mode:forwards;
     }
   }

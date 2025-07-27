@@ -1,4 +1,4 @@
-@import "/includes/variables";
+@import "./includes/variables";
 
 /*padding class*/
 .padding-0-30 {
@@ -865,16 +865,16 @@ article {
 
 /*BUTTON*/
 .button.type-bloom {
-  position: relative;
-  height: 40px;
-  width: 139px;
-  color: #222;
-  font-size: 12px;
-  line-height: 36px;
-  font-family: "segoe ui", "helvetica", "arial", "Open Sans", sans-serif;
-  border: 2px solid rgba(34, 34, 34, 0.7);
-  background-color: transparent;
-  font-style: normal;
+  //position: relative;
+  //height: 40px;
+  //width: 139px;
+  //color: #222;
+  //font-size: 12px;
+  //line-height: 36px;
+  //font-family: "segoe ui", "helvetica", "arial", "Open Sans", sans-serif;
+  //border: 2px solid rgba(34, 34, 34, 0.7);
+  //background-color: transparent;
+  //font-style: normal;
 }
 
 .button.type-bloom:before {

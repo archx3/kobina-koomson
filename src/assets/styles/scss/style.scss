@@ -4,22 +4,24 @@
 PROJECT:	Kobina Koomson Website
 VERSION:	Versoin 3.3.2
 -------------------------------------------------------------------*/
+@import "functions";
+@import "./includes/_mixins";
+@import "mixins";
+@import "variables";
+@import "root";
 
-/*------------------------------------------------------------------
-[TABLE OF CONTENTS]
--------------------------------------------------------------------*/
-@import "includes/_mixins";
-
-@import "includes/_variables";
-
-@import "includes/_typography";
+@import "./includes/_typography";
 
 @import '../../fonts/line-icons.css';
 
 @import '../css/animate.css';
 
 @import 'tooltip.scss';
+@import 'utilities/helper';
+@import 'utilities/sizing';
 
-@import 'bloom-utilities.scss';
+//@import 'bloom-utilities.scss';
+
+@import 'utilities';
 
 @import 'main';

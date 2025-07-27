@@ -22,7 +22,8 @@
     "quotes": "off",
     "one-var": "off",
     "wrap-iife": "off",
-    "no-console": "off"
+    "no-console": "off",
+    "no-trailing-spaces": "off"
   },
   "overrides": [
     {
