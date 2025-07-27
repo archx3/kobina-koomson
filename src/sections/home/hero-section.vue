@@ -1,44 +1,46 @@
 <template>
-  <div id="hero-area" class="hero-area-bg container-full-bg main-content">
-    <div class="container flex-row flex ctr-h bot-85">
-      <div class="row justify-content-between main-actions">
+  <div id="hero-area" class="main-content hero-area-bg container-full-bg flex">
+    <div class="container flex-row flex bot-85 my-md-auto">
+      <div class="row justify-content-between ">
         <div class="col-md-5">
           <img src="/img/background/kobina-hero-pic.png" alt="">
         </div>
-        <div class=" col-lg-6">
+        <div class="col-md-6">
           <div class="contents page-header-inner home-text text-left mb-5">
-            <h3 class="my-name">
-              <span class='font-weight-light'>Hi, I'm <span class='official-name font-weight-bold'>{{
-                  name
-                }}</span></span>
+            <h3 class=" mt-4 mb-3">
+              <span class="font-weight-light intro">Hi, I'm <span class='official-name font-weight-bold'>
+                {{name }}</span></span>
             </h3>
             <p>
               A <span class="skill-highlight badge-pill badge badge-light pb-0">Software Engineer</span> with a passion
-              for building.
-              This is my personal space where I share my thoughts, ideas, and projects.
+              for building. This is my personal space where I share my thoughts, ideas, and projects.
             </p>
             <p class="text-muted">
               I am a full-stack web developer with a background in graphic design and a degree in computer science. I am
-              a
-              self-motivated, detail-oriented, always looking to learn new things and improve my skills.
+              a self-motivated, detail-oriented, always looking to learn new things and improve my skills.
             </p>
           </div>
-          <div class="hero-buttons d-flex justify-content-between mt-5">
-            <a href="/resume" class="">
-              <div class=" d-flex rounded-pill" style="background-color: rgb(244, 168, 4)">
-                <h6 class="d-none d-md-block mb-0 text-secondary m-auto">About Me</h6>
-              </div>
-            </a>
-            <a href="/projects" class="">
-              <div class=" d-flex rounded-pill" style="background-color: rgb(253,86,25)">
-                <h6 class="d-none d-md-block mb-0 m-auto">My Projects</h6>
-              </div>
-            </a>
-            <a href="/contact" class="">
-              <div class=" d-flex rounded-pill" style="background-color: rgb(194,248,3)">
-                <h6 class="d-none d-md-block mb-0 text-secondary m-auto">Contact Me</h6>
-              </div>
-            </a>
+          <div class="hero-buttons d-flex justify-content-md-start justify-content-center gap-3 my-5">
+              <router-link to="/about">
+              <b-button class="py-2 px-4 btn btn-primary border-0" pill style="background-color: rgb(244, 168, 4)">
+                About<span class="d-none d-lg-inline"> Me</span>
+              </b-button>
+              </router-link>
+            <router-link to="/blog" class="">
+              <b-button class="py-2 px-4 btn btn-primary border-0" pill style="background-color: rgb(253,86,25)">
+                Blog
+              </b-button>
+            </router-link>
+            <!-- <a href="/projects" class="">
+              <b-button class="py-2 px-4 btn btn-primary border-0" pill style="background-color: rgb(253,86,25)">
+                <span class="d-none d-lg-inline">View </span>Projects
+              </b-button>
+            </a>-->
+<!--            <a href="/contact" class="">-->
+<!--              <b-button class="py-2 px-4 btn btn-primary text-secondary border-0" pill style="background-color: rgb(194,248,3)">-->
+<!--                Contact<span class="d-none d-lg-inline"> Me</span>-->
+<!--              </b-button>-->
+<!--            </a>-->
           </div>
         </div>
       </div>
@@ -70,15 +72,26 @@ export default {
   }
 };
 </script>
+<style lang="scss">
+@import "../../assets/styles/scss/includes/mixins";
+.main-content {
+  margin-top: 102px;
+}
+</style>
 <style scoped lang="scss">
-@import "../assets/styles/scss/colors";
-@import "../assets/styles/scss/media-queries";
+@import "../../assets/styles/scss/colors";
+@import "../../assets/styles/scss/media-queries";
+@import "../../assets/styles/scss/mixins/breakpoints";
+@import "../../assets/styles/scss/includes/mixins";
 
 .hero-area-bg {
-  height: calc(100vh - 224px);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+
+  @media screen and (min-width: $md) {
+    height: calc(100vh - 234px);
+  }
 
   img {
     width: 100%;
@@ -87,8 +100,6 @@ export default {
   .col-12 {
     padding: 0;
     background-repeat: no-repeat;
-    /*filter: blur(8px);*/
-    /*background-attachment: fixed;*/
     transition: all .8s ease-out;
     background-size: cover;
     background-position: center center;
@@ -105,11 +116,7 @@ export default {
   height: 100%;
   top: 0;
   left: 0;
-  /*background: rgba(0, 0, 0, 0);*/
   opacity: .8;
-  /*z-index: 1;*/
-  //background: linear-gradient(45deg, #181b27 58%, #443329 66%, rgba(255, 153, 50, 0.65) 100%);
-  /*display: none;*/
 }
 
 #hero-area {
@@ -117,7 +124,6 @@ export default {
   position: relative;
 
   .contents {
-
     .btn {
       margin: 0 10px 0;
       font-size: 16px;
@@ -125,11 +131,9 @@ export default {
       text-transform: uppercase;
     }
   }
-
 }
 
 .main-actions {
-  /*margin-top: 40%;*/
   margin-left: auto;
   margin-right: auto;
   width: 100%;
@@ -137,23 +141,25 @@ export default {
 
 .container-full-bg {
   display: flex;
-
 }
 
 .home-text {
   h3 {
-    font-size: 4.3rem;
     margin: 0 auto;
     color: #fff !important;
 
-    span.offcial-name span {
+    span.official-name span {
       display: unset;
     }
   }
+
+  .intro {
+    font-size: 3rem;
+  }
 }
 
-span.offcial-name {
-  font-size: 90px;
+span.official-name {
+  //font-size: 90px;
 
   span {
     display: unset;
@@ -162,16 +168,10 @@ span.offcial-name {
 
 .skill-highlight {
   width: auto;
-  //margin: 0 auto;
   text-transform: uppercase;
-  //padding: 5px 20px;
-  //-webkit-border-radius: 20px;
-  //-moz-border-radius: 20px;
-  //border-radius: 20px;
   font-weight: 700;
   letter-spacing: 3px;
   color: #000;
-  //background-color: $accent-color;
   margin-bottom: 10px;
 }
 
@@ -180,7 +180,7 @@ span.offcial-name {
   width: 45px;
   bottom: 22.5px;
   left: calc(50% - 22.5px);
-  background: url(../assets/img/scroll.gif) 50% 50% no-repeat rgba(215, 181, 94, 0);
+  background: url(../../assets/img/scroll.gif) 50% 50% no-repeat rgba(215, 181, 94, 0);
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
@@ -204,7 +204,6 @@ span.offcial-name {
   width: 250px;
   height: auto;
   border-radius: 3px;
-  /*bottom: 85px;*/
   color: #000;
   padding: 10px;
   position: relative;
@@ -255,16 +254,16 @@ span.offcial-name {
 }
 </style>
 <style lang="scss">
-@import "../assets/styles/scss/media-queries";
-@import "../assets/styles/scss/includes/mixins";
+@import "../../assets/styles/scss/media-queries";
+@import "../../assets/styles/scss/includes/mixins";
 
-.main-content {
-  height: calc(100vh - 124px);
-
-  &.fixed-footer {
-    height: calc(100vh - 224px);
-  }
-}
+//.main-content {
+//  //height: calc(100vh - 124px);
+//
+//  &.fixed-footer {
+//    //height: calc(100vh - 224px);
+//  }
+//}
 
 @keyframes fadeBlur {
   0% {
@@ -281,19 +280,19 @@ span.offcial-name {
   filter: grayscale(0.65);
 }
 
-@include max-screen-size(760px) {
-  .skill-highlight {
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    border-radius: 0;
-  }
-}
-
-@include max-screen-size(576px) {
-  .official-name {
-    font-weight: bold;
-    font-size: 40px;
-  }
-}
+//@include max-screen-size(760px) {
+//  .skill-highlight {
+//    -webkit-border-radius: 0;
+//    -moz-border-radius: 0;
+//    border-radius: 0;
+//  }
+//}
+//
+//@include min-screen-size(576px) {
+//  .official-name {
+//    font-weight: bold;
+//    //font-size: 40px;
+//  }
+//}
 
 </style>
