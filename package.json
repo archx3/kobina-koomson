@@ -51,6 +51,7 @@
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "git-scripts": "^0.2.1",
+    "sass": "^1.89.2",
     "sass-loader": "^7.1.0",
     "surge": "^0.20.3"
   },
