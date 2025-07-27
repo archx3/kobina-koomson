@@ -1,23 +1,23 @@
 <template>
-  <nav class="navbar justify-content-between frosted-glass navbar-expand-sm navbar-expand-xs bg-inverse scrolling-navbar "
-       :class="{ /*'top-nav-collapse' : topNavCollapse,*/ 'nav-active' : mobNavShow}"
-       aria-labelledby="nav"
+  <nav
+    class="navbar justify-content-between frosted-glass navbar-expand-sm navbar-expand-xs bg-inverse scrolling-navbar py-2 py-lg-0"
+    :class="{ /*'top-nav-collapse' : topNavCollapse,*/ 'nav-active' : mobNavShow}"
+    aria-labelledby="nav"
   >
     <b-container>
       <transition name="collapsing">
-        <b-row class="my-4 navbar-collapse justify-content-between" id="navbarCollapse" style="z-index: 10">
-          <!--Brand-->
+        <b-row class="navbar-collapse justify-content-between" id="navbarCollapse" style="z-index: 10">
           <b-col class="col-auto">
             <ul>
               <li class="nav-item">
-                <router-link class="nav-link" to="/">
-                  <div class="navbar-brand">
-                    <div class="insignia d-flex">
+                <router-link class="h-100 d-flex" to="/">
+                  <div class="h-100 navbar-brand my-auto flex">
+                    <div class="insignia d-flex my-auto">
                       <img src="/img/insignia/kobina-head-bw.png" alt="insignia-head" class="mr-2 insignia-head">
-                      <h5 class="my-auto mr-1">
+                      <h5 class="my-auto mr-md-1">
                         Kobina Koomson
                       </h5>
-                      <p class="my-auto border-left  h-100 px-4 ml-4">
+                      <p class="my-auto border-left h-100 px-4 ml-4 d-none d-xl-block">
                         <span class="text-primary">Software Engineer</span>
                       </p>
                     </div>
@@ -27,33 +27,23 @@
             </ul>
           </b-col>
 
-          <b-col sm="auto">
-            <ul class="navbar-nav justify-content-end">
-              <!--List Items-->
-              <template v-if="!externalPage">
-                <li v-for="listItem in homeNavList "
-                    :key="listItem.name" @click="setActiveNavItem(listItem.name)"
-                    class="nav-item" :class="{ active : activeNavItem ===  listItem.name }">
-                  <a class="nav-link cur-ptr text-link-primary" v-scroll-to="listItem.link">
-                    {{ listItem.name }}
-                  </a>
-                </li>
-              </template>
-              <template v-else>
-                <li v-for="listItem in homeNavList " :key="listItem.name"
-                    class="nav-item">
-                  <router-link class="nav-link" :to="`/${listItem.link}`">
-                  </router-link>
-                </li>
-              </template>
-              <li class="">
+          <div class="col-auto pl-0">
+            <ul class="navbar-nav justify-content-end d-flex px-2">
+              <li v-for="listItem in homeNavList " :key="listItem.name"
+                  class="nav-item">
+                <router-link class="nav-link" :to="`${listItem.link}`">
+                  {{ listItem.name }}
+                </router-link>
+              </li>
+              <li class="d-none d-lg-block">
                 <a class="nav-link" href="#">
-                  <b-button variant="light" size="sm" class="px-3 py-1">Download Resumé</b-button>
+                  <b-button variant="primary" size="sm" class="px-3 py-1"
+                  @click="downloadResume">Download Resumé</b-button>
                 </a>
               </li>
               <li class="nav-item hamburger-li">
                 <a href="#" @click="handleMobNav">
-                  <div class="hamburglar is-open"
+                  <div class="hamburger is-open"
                        :class="{'is-closed' : !mobNavShow, 'is-open' : mobNavShow}"
                        data-toggle="collapse" data-target="#navbarCollapse"
                        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -76,24 +66,25 @@
                 </a>
               </li>
             </ul>
-          </b-col>
+          </div>
         </b-row>
       </transition>
 
-      <nav id="nav">
-        <div class="nav-opener-circle" style="/*! display: none; */">
-          <div class="circle-container">
-            <div class="circle-expand"></div>
+      <div id="nav">
+        <div class="nav-opener-circle " style="/*! display: none; */">
+          <div class="circle-container ">
+            <div class="circle-expand frosted-glass"></div>
           </div>
         </div>
-        <!--        <div class="holder hidden-sm hidden-xs" ></div>-->
         <div class="container-fluid">
           <div class="row cont v-align-transform justify-content-center w-100" style="top: 341px;">
             <b-col class="my-auto">
               <ul>
                 <li v-for="listItem in homeNavList " :key="listItem.name"
                     @click="handleMobNav" class=" cur-ptr" :class="{ active : activeNavItem ===  listItem.name }">
-                  <a v-scroll-to="listItem.link">{{ listItem.name }}</a>
+                  <router-link tag="a" :to="listItem.link">
+                    {{ listItem.name }}
+                  </router-link>
                 </li>
                 <li v-for="listItem in extNavList" :key="listItem.name"
                     @click="handleMobNav" :class="{ active : activeNavItem ===  listItem.name }">
@@ -104,7 +95,7 @@
 
                 <li v-for="listItem in extLinkList" :key="listItem.name"
                     @click="handleMobNav" :class="{ active : activeNavItem ===  listItem.name }">
-                  <router-link tag="a" :to="listItem.link">
+                  <router-link tag="p" :to="listItem.link" class="text-xl line-height-1">
                     {{ listItem.name }}
                   </router-link>
                   <ul>
@@ -121,7 +112,7 @@
             </b-col>
           </div>
         </div>
-      </nav>
+      </div>
     </b-container>
   </nav>
 </template>
@@ -158,7 +149,7 @@ export default {
       activeNavItem: this.active || "Home",
       homeNavList: this.navListSet || HOME_NAV_TABLE,
       extNavList: [
-        { name: "Blog", link: "#", icon: "blog.svg" },
+        // { name: "Blog", link: "#", icon: "blog.svg" },
         { name: "Logofolio", link: "logofolio", icon: "logofolio.svg" }
       ],
       extLinkList: [
@@ -219,6 +210,18 @@ export default {
     },
     handleScroll (e) {
       // this.topNavCollapse = window.scrollY > 60;
+    },
+    downloadResume () {
+      const docId = '1X8PGRdX4TALqtZWYyWvlamY43V8aMg-ASKDls_CNJJw';
+      const url = `https://docs.google.com/document/d/${docId}/export?format=pdf`;
+
+      // Create a link and simulate click
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', 'resume.pdf'); // Suggests filename
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
     }
   },
   created () {
@@ -232,6 +235,7 @@ export default {
 
 <style scoped lang="scss">
 @import "../assets/styles/scss/includes/variables";
+@import "../assets/styles/scss/includes/mixins";
 
 $transition-all-02-eio: all 0.3s ease-in-out;
 $hamburger-width: 28px;
@@ -245,7 +249,6 @@ $hamburger-link-padding: 4px;
 
   div {
     min-width: 100px;
-    //min-height: 100px;
     -webkit-background-size: contain;
     background-size: contain;
     background-repeat: no-repeat;
@@ -359,9 +362,17 @@ $hamburger-link-padding: 4px;
   }
 }
 
-@media (max-width: 768px) {
-  .navbar-nav {
-    .nav-link {
+.navbar-nav {
+  a.nav-link {
+    color : var(--primary-color);
+
+    &:hover {
+      color: var(--button-hover-background);
+    }
+  }
+  .nav-link {
+
+    @include ipad {
       display: none;
     }
   }
@@ -373,6 +384,13 @@ $hamburger-link-padding: 4px;
 
 .navbar {
   padding: 0;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  width: 100%;
+  min-height: 100px;
 }
 
 .top-nav-collapse {
@@ -389,9 +407,7 @@ $hamburger-link-padding: 4px;
     div {
       min-height: 45px;
     }
-  }
 
-  .navbar-brand {
     top: 0;
   }
 
@@ -414,6 +430,7 @@ $hamburger-link-padding: 4px;
 .search-inp-li {
   display: flex;
   position: relative;
+
   input {
     margin: auto 6px;
 
@@ -452,7 +469,6 @@ $hamburger-link-padding: 4px;
     content: '';
     width: 30px;
     height: 30px;
-    //background-color: transparentize($dark-b-gray, .5);
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
@@ -498,85 +514,6 @@ input.search-inp {
   }
 }
 
-.dropdown-toggle::after {
-  display: none;
-}
-
-.dropdown-menu {
-  margin: 0;
-  padding: 0;
-  display: none;
-  position: absolute;
-  z-index: 99;
-  min-width: 210px;
-  white-space: nowrap;
-  border-radius: 4px;
-  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-  animation: fadeIn 0.4s;
-  -webkit-animation: fadeIn 0.4s;
-  -moz-animation: fadeIn 0.4s;
-  -o-animation: fadeIn 0.4s;
-}
-
-.dropdown-menu:before {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  bottom: 100%;
-  left: 20%;
-  margin-left: -5px;
-  border-right: 10px solid transparent;
-  border-left: 10px solid transparent;
-  border-bottom: 10px solid #f5f5f5;
-}
-
-.dropdown:hover .dropdown-menu {
-  display: block;
-  position: absolute;
-  text-align: left;
-  top: 100%;
-  border: none;
-  animation: fadeIn 0.4s;
-  background: #f5f5f5;
-}
-
-.dropdown .dropdown-menu .dropdown-item {
-  width: 100%;
-  padding: 12px 20px;
-  font-size: 14px;
-  color: #212121;
-  border-bottom: 1px solid #f1f1f1;
-  text-decoration: none;
-  display: inline-block;
-  float: left;
-  clear: both;
-  position: relative;
-  outline: 0;
-  transition: all 0.3s ease-in-out;
-}
-
-.dropdown .dropdown-menu .dropdown-item:last-child {
-  border-bottom: none;
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
-}
-
-.dropdown .dropdown-menu .dropdown-item:first-child {
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-}
-
-.dropdown .dropdown-item:focus,
-.dropdown .dropdown-item:hover,
-.dropdown .dropdown-item.active {
-  color: $accent-color;
-}
-
-.dropdown-item.active, .dropdown-item:active {
-  background: transparent;
-}
-
 .fadeInUpMenu {
   animation-name: fadeInUpMenu;
 }
@@ -599,7 +536,6 @@ input.search-inp {
 
 @media (max-width: 991px) {
   .bg-inverse {
-    /*background: #fff !important;*/
     box-shadow: 0 3px 6px 3px rgba(0, 0, 0, 0.06);
   }
   .navbar-expand-xs .navbar-brand, .navbar-expand-xs .navbar-toggler {
@@ -613,10 +549,10 @@ input.search-inp {
   }
 }
 
-$color: $accent-color; // icon color
-$blue: #158fef; // background color-->
-$animation-duration: 0.6s; // animation speed
-$scale: 1; // icon scale 68/68 default
+$color: $accent-color;
+$blue: #158fef;
+$animation-duration: 0.6s;
+$scale: 1;
 
 // box rotation animation
 @keyframes rotate-out {
@@ -683,7 +619,7 @@ $scale: 1; // icon scale 68/68 default
 // dasharray is the dash size
 // need to be able to control dash space size.
 
-.hamburglar {
+.hamburger {
   transform: scale($scale);
   margin: 0 auto;
   position: relative;
@@ -692,29 +628,49 @@ $scale: 1; // icon scale 68/68 default
   height: $hamburger-width;
   -webkit-touch-callout: none;
   user-select: none;
-}
 
-.hamburglar.is-open {
-  .path {
-    animation: dash-in $animation-duration linear normal;
-    animation-fill-mode: forwards;
+  &.is-open {
+    .burger-bun-top {
+      animation: bun-top-out $animation-duration linear normal;
+      animation-fill-mode: forwards;
+    }
+
+    .burger-bun-bot {
+      animation: bun-bot-out $animation-duration linear normal;
+      animation-fill-mode: forwards;
+    }
+
+    .path {
+      animation: dash-in $animation-duration linear normal;
+      animation-fill-mode: forwards;
+    }
+
+    .animate-path {
+      animation: rotate-in $animation-duration linear normal;
+      animation-fill-mode: forwards;
+    }
   }
 
-  .animate-path {
-    animation: rotate-in $animation-duration linear normal;
-    animation-fill-mode: forwards;
-  }
-}
+  &.is-closed {
+    .burger-bun-top {
+      animation: bun-top-in $animation-duration linear normal;
+      animation-fill-mode: forwards;
+    }
 
-.hamburglar.is-closed {
-  .path {
-    animation: dash-out $animation-duration linear normal;
-    animation-fill-mode: forwards;
-  }
+    .burger-bun-bot {
+      animation: bun-bot-in $animation-duration linear normal;
+      animation-fill-mode: forwards;
+    }
 
-  .animate-path {
-    animation: rotate-out $animation-duration linear normal;
-    animation-fill-mode: forwards;
+    .path {
+      animation: dash-out $animation-duration linear normal;
+      animation-fill-mode: forwards;
+    }
+
+    .animate-path {
+      animation: rotate-out $animation-duration linear normal;
+      animation-fill-mode: forwards;
+    }
   }
 }
 
@@ -756,7 +712,6 @@ $scale: 1; // icon scale 68/68 default
     color: #fff;
     font-size: 14px;
     padding: 4px;
-    //padding-top: 2px;
     margin: auto 5px;
     border-radius: 50%;
     font-family: 'Roboto', sans-serif;
@@ -765,13 +720,10 @@ $scale: 1; // icon scale 68/68 default
     width: $hamburger-link-size;
     height: $hamburger-link-size;
     text-transform: uppercase;
-    //background: transparentize($dark-b-gray, .5);
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
     position: relative;
-
-    //background-color: $accent-color; //TODO: remove
   }
 
   &:hover {
@@ -815,14 +767,10 @@ $scale: 1; // icon scale 68/68 default
 
 .burger-bun-top {
   top: 5px;
-  //margin: 0 2px;
-  //transform-origin: 30px 1px;
 }
 
 .burger-bun-bot {
   top: calc(100% - 5px);
-  //margin: 0 2px;
-  //transform-origin: 26px 2px;
 }
 
 .burger-filling {
@@ -842,32 +790,6 @@ $scale: 1; // icon scale 68/68 default
 .svg-ring {
   width: $hamburger-width;
   height: $hamburger-width;
-}
-
-.hamburglar {
-  &.is-open {
-    .burger-bun-top {
-      animation: bun-top-out $animation-duration linear normal;
-      animation-fill-mode: forwards;
-    }
-
-    .burger-bun-bot {
-      animation: bun-bot-out $animation-duration linear normal;
-      animation-fill-mode: forwards;
-    }
-  }
-
-  &.is-closed {
-    .burger-bun-top {
-      animation: bun-top-in $animation-duration linear normal;
-      animation-fill-mode: forwards;
-    }
-
-    .burger-bun-bot {
-      animation: bun-bot-in $animation-duration linear normal;
-      animation-fill-mode: forwards;
-    }
-  }
 }
 
 @keyframes bun-top-out {
@@ -961,7 +883,7 @@ $scale: 1; // icon scale 68/68 default
   }
   100% {
     width: 36px;
-    left: 0px;
+    left: 0;
   }
 }
 
@@ -1046,7 +968,7 @@ $scale: 1; // icon scale 68/68 default
     transform-origin: center;
   }
 
-  .hamburglar {
+  .hamburger {
     .burger {
       transition: all 0.34s cubic-bezier(1, .1, 0, 1.01);
     }
@@ -1150,17 +1072,14 @@ $scale: 1; // icon scale 68/68 default
 
 #nav .nav-opener-circle .circle-container .circle-expand {
   position: relative;
-  background-color: $dark-b-gray;
+  //background-color: $dark-b-gray;
   width: 800px;
   height: 800px;
   left: calc(100% - 80px);
   top: 5px;
   border-radius: 50%;
-  -moz-transform: translate(-50%, -50%) scale(0);
-  -ms-transform: translate(-50%, -50%) scale(0);
-  -o-transform: translate(-50%, -50%) scale(0);
-  -webkit-transform: translate(-50%, -50%) scale(0);
   transform: translate(-50%, -50%) scale(0);
+  -ms-transform: translate(-50%, -50%) scale(0);
   z-index: -1;
   transition: transform ease 0.8s, background-color ease 0.3s;
   margin: 32px 5px 0 23px;
@@ -1191,7 +1110,7 @@ $scale: 1; // icon scale 68/68 default
 
 @media only screen and (max-width: 767px) {
   #nav .nav-opener-circle .circle-container .circle-expand {
-    margin: 7px 0 0 0px;
+    margin: 7px 0 0 0;
     transform: translate(-50%, -50%) scale(0);
   }
 }
@@ -1243,10 +1162,7 @@ $scale: 1; // icon scale 68/68 default
 
 .nav-active #nav .nav-opener-circle .circle-expand {
   background-color: transparentize($dark-b-gray, 0);
-  //-moz-transform: translate(-50%, -50%) scale(10) !important;
   -ms-transform: translate(-50%, -50%) scale(10) !important;
-  //-o-transform: translate(-50%, -50%) scale(10) !important;
-  //-webkit-transform: translate(-50%, -50%) scale(10) !important;
   transform: translate(-50%, -50%) scale(10) !important;
 }
 
@@ -1257,10 +1173,7 @@ $scale: 1; // icon scale 68/68 default
 
 .nav-active #nav .affix .nav-opener-circle .circle-expand {
   background-color: transparentize($dark-b-gray, 0.05);
-  //-moz-transform: translate(-50%, -50%) scale(10);
   -ms-transform: translate(-50%, -50%) scale(10);
-  //-o-transform: translate(-50%, -50%) scale(10);
-  //-webkit-transform: translate(-50%, -50%) scale(10);
   transform: translate(-50%, -50%) scale(10);
 }
 
@@ -1341,18 +1254,25 @@ $scale: 1; // icon scale 68/68 default
 
 #nav ul li > a {
   position: relative;
-  padding-bottom: 10px;
+  //padding-bottom: 10px;
 }
 
-#nav ul li > a:after {
-  content: "";
-  position: absolute;
-  height: 2px;
-  background-color: $accent-color;
-  width: 50%;
-  left: 0;
-  bottom: -100%;
-  transition: all linear 0.3s;
+#nav ul li > a {
+  &:after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    background-color: $accent-color;
+    width: 0;
+    left: 0;
+    bottom: -100%;
+    transition: all linear 0.3s;
+  }
+  &:hover {
+    &:after {
+      width: 50%;
+    }
+  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -1366,12 +1286,12 @@ $scale: 1; // icon scale 68/68 default
 
 #nav ul li a {
   display: inline-block;
-  color: $accent-color;
+  //color: $accent-color;
 }
 
-#nav ul li a:hover {
-  color: #fff;
-}
+//#nav ul li a:hover {
+  //color: #fff;
+//}
 
 #nav ul li a:hover:after {
   background-color: #fff;
@@ -1443,17 +1363,16 @@ $scale: 1; // icon scale 68/68 default
   display: none;
 }
 
-#nav ul li > ul li a {
-  color: #fff;
-}
+//#nav ul li > ul li a {
+//  //color: #fff;
+//}
 
-#nav ul li > ul li a:hover {
-  color: $accent-color-light;
-}
+//#nav ul li > ul li a:hover {
+//  color: $accent-color;
+//}
 
 .container {
   &.wide {
-    //max-width: 95%;
   }
 }
 </style>

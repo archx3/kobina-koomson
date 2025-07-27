@@ -1,28 +1,31 @@
 <template>
-  <footer>
+  <footer class="pb-4 mt-5 mt-lg-0 ">
     <div class="container wide border-top">
       <div class="row justify-content-between text-left">
-       <div class="col-md-10">
-          <div class="row copyright">
-            <div class="col-md-4">
+       <div class="col-lg-8">
+          <div class="row copyright py-3 py-lg-4 gap-1 gap-md-0 justify-content-between">
+            <div class="col-md-auto d-flex gap-md-3 gap-8 align-items-center flex-md-column align-items-md-start">
               <h6 class="mb-0 font-weight-600">Phone</h6>
               <a :href="`tel:${address.phone}`"
                  :aria-label="`Call us at ${address.name}`"
                  class=""><p>{{ address.phone }}</p>
               </a>
             </div>
-            <div class="col-md-4">
-              <h6 class="mb-">Email</h6>
+            <div class="col-md-auto d-flex gap-md-3 gap-8 align-items-center flex-md-column align-items-md-start">
+              <h6 class="mb-0">Email</h6>
               <a :href="`mailto:${address.email}`"
                  :aria-label="`Email us at ${address.name}`"
                  class=""><p>{{ address.email }}</p>
               </a>
             </div>
-            <div class="col-md-4">
-              <h6 class="">Follow Me</h6>
-              <div class="d-flex ju">
-                <a class="mr-3" :href="address.social.linkedin" target="_blank">
-                  <img class=" valign-middle" type="image/svg+xml" height="18" width="18" alt="linkedin" :src="`/img/icons/linkedin.svg`">
+            <div class="col-md-auto d-flex gap-md-3 gap-8 align-items-center flex-md-column align-items-md-start">
+              <h6 class="mb-0">Follow Me</h6>
+              <div class="d-flex gap-3">
+                <a class="" :href="address.social.linkedin" target="_blank">
+                  <img class="valign-baseline" type="image/svg+xml" height="18" width="18" alt="linkedin" :src="`/img/icons/linkedin.svg`">
+                </a>
+                <a class="my-auto text-primary" :href="address.social.github" target="_blank">
+                  <img class="" type="image/svg+xml" height="18" width="18" alt="twitter" :src="`/img/icons/github-filled.svg`">
                 </a>
                 <a class="my-auto" :href="address.social.twitter" target="_blank">
                   <img class="" type="image/svg+xml" height="18" width="18" alt="twitter" :src="`/img/icons/twitter.svg`">
@@ -32,7 +35,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-2 d-flex flex-column justify-content-center">
+        <div class="col-lg-3 d-flex gap-1 gap-md-10 gap-lg-3 justify-content-between justify-content-md-center align-content-center flex-column flex-md-row flex-lg-column ">
           <p class="">Copyright © {{ year }}</p>
           <p class="">Kobina George Koomson.</p>
         </div>

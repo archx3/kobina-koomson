@@ -62,7 +62,7 @@
               </li>
               <li class="nav-item hamburger-li">
                 <a href="#" @click="handleMobNav">
-                  <div class="hamburglar is-open"
+                  <div class="hamburger is-open"
                        :class="{'is-closed' : !mobNavShow, 'is-open' : mobNavShow}"
                        data-toggle="collapse" data-target="#navbarCollapse"
                        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -164,7 +164,7 @@ Vue.use(VueScrollTo, {
   force: true,
   cancelable: false,
   onStart: false,
-  onDone: function() {
+  onDone: function () {
     console.log("scroll-done");
   },
   onCancel: false,
@@ -759,7 +759,7 @@ $scale: 1; // icon scale 68/68 default
 // dasharray is the dash size
 // need to be able to control dash space size.
 
-.hamburglar {
+.hamburger {
   transform: scale($scale);
   margin: 0 auto;
   position: relative;
@@ -770,7 +770,7 @@ $scale: 1; // icon scale 68/68 default
   user-select: none;
 }
 
-.hamburglar.is-open {
+.hamburger.is-open {
   .path {
     animation: dash-in $animation-duration linear normal;
     animation-fill-mode: forwards;
@@ -782,7 +782,7 @@ $scale: 1; // icon scale 68/68 default
   }
 }
 
-.hamburglar.is-closed {
+.hamburger.is-closed {
   .path {
     animation: dash-out $animation-duration linear normal;
     animation-fill-mode: forwards;
@@ -921,7 +921,7 @@ $scale: 1; // icon scale 68/68 default
 }
 
 // bun animations
-.hamburglar {
+.hamburger {
   &.is-open {
     .burger-bun-top {
       animation: bun-top-out $animation-duration linear normal;
@@ -1042,8 +1042,8 @@ $scale: 1; // icon scale 68/68 default
 }
 
 // burger filling
-/*.hamburglar.is-open {}*/
-/*.hamburglar.is-closed {}*/
+/*.hamburger.is-open {}*/
+/*.hamburger.is-closed {}*/
 
 @keyframes burger-fill-in {
   0% {
@@ -1160,7 +1160,7 @@ $scale: 1; // icon scale 68/68 default
     //transform: translateY(-50%) rotate(135deg);
   }
 
-  .hamburglar {
+  .hamburger {
     .burger {
       transition: all 0.34s cubic-bezier(1, .1, 0, 1.01);
     }

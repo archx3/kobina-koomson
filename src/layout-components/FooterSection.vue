@@ -30,7 +30,7 @@ export default {
   }
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
   @import "../assets/styles/scss/includes/variables";
   .copyright{
     padding: 30px 10px;

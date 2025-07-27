@@ -150,8 +150,8 @@ export default {
       this.officialName = this.officialName.split();
 
       var officialName = this.$refs.nameEl,
-          officialNameLetters = toArray(officialName.children[0].children),
-          len = officialNameLetters.length;
+        officialNameLetters = toArray(officialName.children[0].children),
+        len = officialNameLetters.length;
       let st, index;
       const nextMultiplier = Math.floor(200 / len);
 
@@ -387,7 +387,7 @@ span.offcial-name {
   filter: grayscale(0.65);
 }
 
-@include max-screen-size(760px) {
+/*@include max-screen-size(760px) {
   .skill-highlight {
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
@@ -400,6 +400,6 @@ span.offcial-name {
     font-weight: bold;
     font-size: 40px;
   }
-}
+}*/
 
 </style>
