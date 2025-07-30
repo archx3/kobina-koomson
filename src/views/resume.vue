@@ -50,39 +50,8 @@
               <experience-section :resume-data="resumeData" />
 
               <!-- Education Section -->
-              <h4 class="section-title mt-5">Education</h4>
-              <b-row class="mt-4">
-                <b-col>
-                  <b-card bg-variant="dark" class="rounded-lg h-100">
-                    <b-card-body>
-                      <div class="education-section">
+              <education-section :resume-data="resumeData" />
 
-                        <div v-for="(edu, index) in resumeData.education" :key="index" class="education-item"
-                             :class="{ 'mt-4': index > 0 }">
-                          <div class="d-flex justify-content-between">
-                            <h5 class="institution-name">{{ edu.institution }}</h5>
-                            <span class="education-date">{{ edu.period }}</span>
-                          </div>
-                          <div class="d-flex justify-content-between mb-2">
-                            <div class="degree">{{ edu.degree }}</div>
-                            <div class="location">{{ edu.location }}</div>
-                          </div>
-                          <div v-if="edu.highlights && edu.highlights.length > 0" class="highlights mt-2">
-                            <strong>Highlights:</strong>
-                            <ul class="mt-1">
-                              <li v-for="(highlight, hIndex) in edu.highlights" class=" text-muted" :key="hIndex">
-                                {{ highlight }}
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </b-card-body>
-                  </b-card>
-                </b-col>
-              </b-row>
-
-              <!-- Certifications Section -->
               <certifications-section :resume-data="resumeData" />
 
               <affliliations-section :resume-data="resumeData" />
@@ -107,6 +76,7 @@ import CertificationsSection from "@/sections/resume/CertificationsSection.vue";
 import ExperienceSection from "@/sections/resume/ExperienceSection.vue";
 import SkillsSection from "@/sections/resume/SkillsSection.vue";
 import AffliliationsSection from "@/sections/resume/AffliliationsSection.vue";
+import EducationSection from "@/views/EducationSection.vue";
 
 export default {
   name: "resume",
@@ -115,7 +85,7 @@ export default {
       return ADDRESS_DATA;
     }
   },
-  components: { AffliliationsSection, SkillsSection, ExperienceSection, CertificationsSection, NavBar, MiniFooter },
+  components: { EducationSection, AffliliationsSection, SkillsSection, ExperienceSection, CertificationsSection, NavBar, MiniFooter },
   data () {
     return {
       title: "George Kobina Koomson - Resume",
@@ -136,13 +106,13 @@ export default {
   margin-bottom: 15px;
 
   .official-name {
-    color: $accent-color;
+    //color: $accent-color;
   }
 }
 
 .skill-highlight {
   background-color: rgba($accent-color, 0.2);
-  color: $accent-color;
+  //color: $accent-color;
   padding: 5px 10px;
 }
 
@@ -168,7 +138,7 @@ export default {
       display: inline-flex;
       align-items: center;
       background-color: rgba($accent-color, 0.1);
-      color: $accent-color;
+      //color: $accent-color;
       padding: 5px 12px;
       border-radius: 20px;
       font-size: 14px;
@@ -181,7 +151,7 @@ export default {
 
       &:hover {
         background-color: $accent-color;
-        color: white;
+        //color: white;
       }
     }
   }
@@ -193,7 +163,7 @@ export default {
   margin-bottom: 15px;
   position: relative;
   padding-bottom: 8px;
-  color: $accent-color;
+  //color: $accent-color;
 
   &:after {
     content: '';
@@ -213,7 +183,7 @@ export default {
 
   .skill-tag {
     background-color: rgba($accent-color, 0.1);
-    color: $accent-color;
+    //color: $accent-color;
     padding: 5px 12px;
     border-radius: 20px;
     font-size: 14px;
@@ -227,7 +197,7 @@ export default {
     font-size: 16px;
     font-weight: 500;
     margin-bottom: 8px;
-    color: $accent-color;
+    //color: $accent-color;
   }
 }
 
