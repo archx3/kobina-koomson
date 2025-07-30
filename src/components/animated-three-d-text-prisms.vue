@@ -105,7 +105,7 @@ export default {
   /* CSS custom properties for responsive sizing */
   //--font-size: 2rem;
   --prism-width: 0.55em; /* Relative to font size */
-  --prism-height: 1.2em; /* Relative to font size */
+  --prism-height: .8em; /* Relative to font size */
   --prism-depth: 0.75em; /* Relative to font size */
 }
 
@@ -115,7 +115,7 @@ export default {
   justify-content: center;
   gap: 2px;
   flex-wrap: wrap;
-  font-size: var(--font-size);
+  //font-size: var(--font-size);
 }
 
 .character-prism-container {
@@ -150,14 +150,14 @@ export default {
 .current-text {
   text-align: center;
   margin-top: 10px;
-  font-size: 1.2rem;
+  //font-size: 1.2rem;
   font-weight: 600;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .text-container {
-    --font-size: 1.5rem;
+    //--font-size: 1.5rem;
   }
 
   .prisms-row {
@@ -167,7 +167,7 @@ export default {
 
 @media (max-width: 480px) {
   .text-container {
-    --font-size: 1.2rem;
+    //--font-size: 1.2rem;
   }
 
   .prisms-row {

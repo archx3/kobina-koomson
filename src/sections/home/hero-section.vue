@@ -12,7 +12,10 @@
                 {{name }}</span></span>
             </h3>
             <p>
-              A <span class="skill-highlight badge-pill badge badge-light pb-0">Software Engineer</span> with a passion
+              A
+              <span class="skill-highlight badge-pill badge badge-light pb-0 d-none d-lg-inline">Software Engineer</span>
+              <animated-three-d-text class="text-secondary bg-white badge px-2 text-monospace text-base d-inline-flex d-lg-none "/>
+              with a passion
               for building. This is my personal space where I share my thoughts, ideas, and projects.
             </p>
             <p class="text-muted">
@@ -49,9 +52,11 @@
 </template>
 <script>
 
+import AnimatedThreeDText from "@/components/animated-three-d-text-prisms.vue";
+
 export default {
   name: "hero-section",
-  components: {},
+  components: { AnimatedThreeDText },
   data () {
     return {
       officialName: "Kobina G. Koomson",

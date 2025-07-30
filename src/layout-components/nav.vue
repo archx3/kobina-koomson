@@ -137,7 +137,7 @@ import Vue from "vue";
 import VueScrollTo from "vue-scrollto";
 import { BButton } from "bootstrap-vue";
 import { HOME_NAV_TABLE } from "@/config/nav-config";
-import AnimatedThreeDText from "@/views/animated-three-d-text-prisms.vue";
+import AnimatedThreeDText from "@/components/animated-three-d-text-prisms.vue";
 
 // Vue.use(VueScrollTo)
 
