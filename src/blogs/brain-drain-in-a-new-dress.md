@@ -27,7 +27,7 @@ Our teachers described it with righteous disapproval:
 
 > *"The phenomenon where African professionals leave the continent in droves in search of greener pastures, thereby robbing us of our own talent."*
 
-It felt like someone else’s problem — doctors going to Canada, and the US in the 70s, 80s, and 90s, accountants ending up in London, or nurses heading to Germany.
+It felt like someone else’s problem, doctors going to Canada and the US in the 70s, 80s, and 90s, accountants ending up in London, or nurses heading to Germany.
 
 Now, though, standing here in our thirties, it's no longer just in the textbooks. It's reality unfolding right in front of our eyes, as real as the sweat on my brow.
 Almost all of our friends have left the country's shore or are planning to do so, I retorted.
@@ -40,9 +40,9 @@ Sources indicate significant emigration among educated Ghanaians. For instance, 
 
 These numbers are only going to grow, especially post-pandemic.
 
-Between **2022 and 2024**, over **4,000 Ghanaian nurses** left the country to work in the UK alone — many of them trained in our public institutions, only to take their skills elsewhere due to low wages and limited opportunities.
+Between **2022 and 2024**, over **4,000 Ghanaian nurses** left the country to work in the UK alone, many of them trained in our public institutions, only to take their skills elsewhere due to low wages and limited opportunities.
 
-And it’s not just the health sector. A 2023 report from the *African Union Development Agency* noted a surge in African tech workers — developers, engineers, data analysts — leaving for Europe, the U.S., and increasingly, the UAE.
+And it’s not just the health sector. A 2023 report from the *African Union Development Agency* noted a surge in African tech workers. Developers, engineers, data analysts, leaving for Europe, the U.S., and increasingly, the UAE.
 
 These days, it feels like every other LinkedIn update is someone announcing their move to study or work in Berlin, Amsterdam, or Toronto.
 
@@ -68,7 +68,7 @@ We’ve started to **celebrate the brain drain**, not because it's stopped, but 
 The cost? Ghana loses roughly $1 billion annually due to brain drain, factoring in the investment in education and lost economic output.
 Nearly all remote workers pay no taxes on their income, and the government may not even be aware of the cost.
 
-Looking across the African continent, the picture is just as grim. The African Union estimates 70,000 skilled professionals leave Africa yearly, with nine countries, including Ghana, losing over $2 billion since 2010 just from training doctors who then migrate. In 2019, 2.1 million sub-Saharan Africans lived in the US, a 16-fold increase since 1980, with 53% hailing from Nigeria, Ghana, Kenya, Ethiopia, or Somalia. These aren’t just numbers—they’re the coders, engineers, and doctors who could be building Ghana’s future but are instead powering economies elsewhere.
+Looking across the African continent, the picture is just as grim. The African Union estimates 70,000 skilled professionals leave Africa yearly, with nine countries, including Ghana, losing over $2 billion since 2010 just from training doctors who then migrate. In 2019, 2.1 million sub-Saharan Africans lived in the US, a 16-fold increase since 1980, with 53% hailing from Nigeria, Ghana, Kenya, Ethiopia, or Somalia. These aren’t just numbers, they’re the coders, engineers, and doctors who could be building Ghana’s future but are instead powering economies elsewhere.
 
 
 
@@ -88,6 +88,7 @@ Even the government has joined the bandwagon. In a bizarre twist of logic, some 
 
 For Ghana's tech ecosystem in particular, my biggest peeve has been the sharp decline in mentorship and talent nurturing. When I was starting out my software engineering journey, one of the things I felt was missing was a sense of community and a desire to learn from more experienced developers yet not knowing who to turn to. Imagine my joy when I found a couple of local developer communities springing up some time after I graduated university.
 Unfortunately, these communities are now often led by folks who are only focused on their remote gigs and making next to no effort on helping nurture the next generation of local talent. The result? A generation of developers who are good at following instructions but not enough with the foundational skills to innovate or lead.
+
 ---
 
 ## Remittances: Blessing or Band-Aid?
@@ -110,7 +111,7 @@ We’re slowly gutting our future to pay for the present. It’s like selling yo
 
 Honestly? This is a hard problem.
 
-The forces pulling our talent abroad, or online, are powerful: better pay, stability, **respect**, access to tools. If there's one thing we can learn from the new trend, it's that evidently, that the cause isn't just about wanting to live in countries with better infrastructure with better quality of life but primarily about better opportunities. not about stopping migration—people will always chase better opportunities.
+The forces pulling our talent abroad, or online, are powerful: better pay, stability, **respect**, access to tools. If there's one thing we can learn from the new trend, it's that evidently, the cause isn't just about wanting to live in countries with better infrastructure with better quality of life but primarily about better opportunities. not about stopping migration, after all, people will always chase better opportunities anyway.
 
 But that doesn’t mean we’re powerless.
 
@@ -118,24 +119,24 @@ But that doesn’t mean we’re powerless.
 Not just through salaries, but through dignity, safety, and growth opportunities. A young developer in Accra should not have to beg for a fair salary while a less experienced peer in Europe earns 10x more.
 
 ##### 2. We need infrastructure that attracts and retains talent.
-Tech hubs, research labs, startup accelerators with actual funding — not just press releases. We should be exporting solutions, not people.
+Tech hubs, research labs, startup accelerators with actual funding, not just press releases. We should be exporting solutions, not people.
 
 ##### 3. We need policies that rethink migration incentives.
-Encouraging people to leave isn’t a development strategy. Let’s fund institutions, support local innovation, and incentivize return — not exodus.
+Encouraging people to leave isn’t a development strategy. Let’s fund institutions, support local innovation, and incentivize return, not exodus.
 
 ##### 4. We need to shift the narrative.
-Brain drain isn’t just about people leaving. It’s about why they feel they must leave — and why staying feels like settling.
+Brain drain isn’t just about people leaving. It’s about why they feel they must leave, and why staying feels like settling.
 
 ---
 
 #### A Closing Thought
 
-Obeng and I still tinker — just with higher stakes now. But I can't help but wonder what would’ve happened if we’d stayed in that garage, built something big, and had the support to scale it right here in Ghana like Steve Jobs and uncle Wozniak did.
+Obeng and I still tinker, just with higher stakes now. But I can't help but wonder what would’ve happened if we’d stayed in that garage, built something big, and had the support to scale it right here in Ghana like Steve Jobs and uncle Wozniak did.
 We ended that part of our conversation with the all too popular Ghanaian expression: "hm, ɛyɛ asɛm oo" and moved on to the next.
 
 Maybe one day that’ll be possible. Maybe the next wave of kids soldering wires on their porches in Madina or Dansoman won’t need to pick between dreams in Ghana and departure.
 
-But until then, we’re stuck in this strange new chapter of brain drain — dressed in Wi-Fi, Zoom, and forex accounts.
+But until then, we’re stuck in this strange new chapter of brain drain, dressed in Wi-Fi, Zoom, and forex accounts.
 
 ---
 
