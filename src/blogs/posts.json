@@ -1,22 +1,62 @@
 [
-  {
-    "slug": "google-doc-resume-download",
-    "title": "How to Let Visitors Download Your Google Docs Resumé or CV as a PDF on the Web",
-    "date": "2025-07-26",
-    "description": "A quick, practical story about turning a humble Google Doc into a professional download button for the web — and what I learned about Google Docs URLs along the way.",
-    "summary": "A quick, practical story about turning a humble Google Doc into a professional download button for the web — and what I learned about Google Docs URLs...",
-    "tags": [
-      "Google Docs",
-      "Web Development",
-      "Resumé",
-      "Resume",
-      "CV",
-      "Download Button",
-      "HTML",
-      "JavaScript"
-    ],
-    "cover": "/img/blogs/google-doc-resume-download.jpg",
-    "coverAlt": "A screenshot of a Google Docs resumé with a download button overlay.",
-    "thumbnail": "/img/blogs/google-doc-resume-download.jpg"
-  }
+  [
+    {
+      "slug": "brain-drain-in-a-new-dress",
+      "title": "Brain Drain in a New Dress",
+      "date": "2025-07-29",
+      "description": "Brain drain has taken a new form, remote work. From Accra to Alberta, Ghanaian professionals are exporting their talent while the nation celebrates remittances. But what’s the long-term cost?\"",
+      "summary": "Brain drain has taken a new form, remote work. From Accra to Alberta, Ghanaian professionals are exporting their talent while the nation celebrates...",
+      "tags": [
+        "brain drain",
+        "remote work",
+        "Ghana",
+        "migration",
+        "remittances",
+        "tech talent"
+      ],
+      "cover": "/img/blogs/brain-drain-in-a-new-dress.webp",
+      "coverAlt": "A symbolic image representing brain drain, featuring a silhouette of Africa with a digital network overlay, symbolizing the migration of talent and remote work.",
+      "thumbnail": "/img/blogs/brain-drain-in-a-new-dress.webp",
+      "published": true
+    },
+    {
+      "slug": "google-doc-resume-download",
+      "title": "Let Visitors Download Your Google Docs Resumé or CV as a PDF on the Web",
+      "date": "2025-07-26",
+      "description": "A quick, practical story about turning a humble Google Doc into a professional download button for the web — and what I learned about Google Docs URLs along the way.",
+      "summary": "A quick, practical story about turning a humble Google Doc into a professional download button for the web — and what I learned about Google Docs URLs...",
+      "tags": [
+        "Google Docs",
+        "Web Development",
+        "Resumé",
+        "Resume",
+        "CV",
+        "Download Button",
+        "HTML",
+        "JavaScript"
+      ],
+      "cover": "/img/blogs/google-doc-resume-download.webp",
+      "coverAlt": "A screenshot of a Google Docs resumé with a download button overlay.",
+      "thumbnail": "/img/blogs/google-doc-resume-download.webp",
+      "published": true
+    },
+    {
+      "slug": "building-a-scalable-translation-system",
+      "title": "Building a Scalable Translation System: Lessons from the Trenches",
+      "date": "2024-08-25",
+      "description": "A technical deep dive into translating user-generated content at scale for a massive community website.",
+      "summary": "A technical deep dive into translating user-generated content at scale for a massive community website....",
+      "tags": [
+        "translation\"",
+        "django",
+        "scalability",
+        "architecture",
+        "python"
+      ],
+      "cover": "/img/blogs/building-a-scalable-translation-system.webp",
+      "coverAlt": "A screenshot of a Django admin interface showing translation management.",
+      "thumbnail": "/img/blogs/building-a-scalable-translation-system.webp",
+      "published": true
+    }
+  ]
 ]
