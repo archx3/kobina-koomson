@@ -3,9 +3,9 @@
     <seo
       :title="frontmatter.title"
       :description="frontmatter.description"
-      :image="frontmatter.cover"
-      :url="`https://kobinakoomson.com/blogs/${slug}`"
-      :type="'article'"
+      :image="`https://kobina.me${frontmatter.cover}`"
+      :url="`https://kobina.me/blogs/${slug}`"
+      :type="'website'"
       :publishedTime="frontmatter.date"
       :author="frontmatter.author"
       :twitterCard="'summary_large_image'"
