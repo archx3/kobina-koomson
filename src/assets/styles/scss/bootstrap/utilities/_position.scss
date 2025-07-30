@@ -7,10 +7,10 @@
 $positions: static, relative, absolute, fixed, sticky;
 
 @each $position in $positions {
-  .position-#{$position} { position: $position !important; }
+  .position-#{$position} {
+    position: $position !important;
+  }
 }
-
-// Shorthand
 
 .fixed-top {
   position: fixed;
@@ -26,7 +26,30 @@ $positions: static, relative, absolute, fixed, sticky;
   bottom: 0;
   left: 0;
   z-index: $zindex-fixed;
+
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    $next: breakpoint-next($breakpoint, $grid-breakpoints);
+    $infix: breakpoint-infix($next, $grid-breakpoints);
+
+    @include media-breakpoint-up($breakpoint) {
+      &#{$infix} {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: $zindex-fixed;
+      }
+    }
+  }
 }
+
+//.fixed-bottom-md {
+//  position: fixed;
+//  right: 0;
+//  bottom: 0;
+//  left: 0;
+//  z-index: $zindex-fixed;
+//}
 
 .sticky-top {
   @supports (position: sticky) {

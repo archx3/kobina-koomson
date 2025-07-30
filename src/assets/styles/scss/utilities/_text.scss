@@ -155,7 +155,7 @@ $line-height-map: (
 
 @each $size, $multiplier in $line-height-map {
   .leading-#{$size}, .line-height-#{$size} {
-    line-height: $multiplier;
+    line-height: $multiplier !important;
   }
 }
 

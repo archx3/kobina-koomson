@@ -224,9 +224,9 @@ $switch-checked-toggle-border: $obsidian-gray-light;
 // region $input-disabled-text,
 $input-disabled-bg: #e9ecef !default;
 
-$primary-text: #2E2E2E !default;
+$primary-text: #fff !default;
 $primary-subtitle-text: #2E2E2E !default;
-$primary-muted-text: #B3B3B3 !default;
+$primary-muted-text: transparentize($primary-text, 0.3) !default;
 $primary-muted-text-2: #6b7174 !default;
 
 $secondary-text: #fff !default;
@@ -872,6 +872,9 @@ $transition-base: all .2s ease-in-out !default;
 $transition-fade: opacity .15s linear !default;
 $transition-collapse: height .35s ease !default;
 
+$transition-all-02-l: all 0.2s linear !default;
+$transition-all-02-eio: all 0.2s ease-in-out !default;
+
 
 // Fonts
 //
@@ -879,7 +882,7 @@ $transition-collapse: height .35s ease !default;
 
 // stylelint-disable value-keyword-case
 $font-family-sans-serif: "Inter", "Poppins", "Open Sans", "Segoe UI", "helvetica", 'Montserrat', -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
-$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-monospace: 'ubuntu mono', 'Courier New', Courier, monospace !default;
 $font-family-base: $font-family-sans-serif !default;
 // stylelint-enable value-keyword-case
 
@@ -903,7 +906,7 @@ $h6-font-size: $font-size-base !default;
 
 $headings-margin-bottom: ($spacer * 0.5) !default;
 $headings-font-family: inherit !default;
-$headings-font-weight: 500 !default;
+$headings-font-weight: 700 !default;
 $headings-line-height: 1.2 !default;
 $headings-color: inherit !default;
 
@@ -1018,7 +1021,7 @@ $btn-font-weight: $font-weight-normal !default;
 $btn-box-shadow: inset 0 1px 0 rgba($white, .15), 0 1px 1px rgba($black, .075) !default;
 $btn-focus-width: $input-btn-focus-width !default;
 $btn-focus-box-shadow: $input-btn-focus-box-shadow !default;
-$btn-disabled-opacity: .65 !default;
+$btn-disabled-opacity: .35 !default;
 $btn-active-box-shadow: inset 0 3px 5px rgba($black, .125) !default;
 
 $btn-link-disabled-color: $gray-600 !default;
