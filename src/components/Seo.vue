@@ -22,6 +22,7 @@ export default {
   metaInfo () {
     return {
       title: this.title,
+      description: this.description,
       meta: [
         { name: 'description', content: this.description },
 
@@ -41,7 +42,9 @@ export default {
         { name: 'twitter:title', content: this.title },
         { name: 'twitter:description', content: this.description },
         { name: 'twitter:image', content: this.image },
-        { name: 'twitter:site', content: this.twitterHandle }
+        { name: 'twitter:site', content: this.twitterHandle },
+        { name: 'twitter:url', content: this.url },
+        { name: 'twitter:domain', content: 'https://kobina.me' },
       ].filter(Boolean),
       link: [
         { rel: 'canonical', href: this.url },
