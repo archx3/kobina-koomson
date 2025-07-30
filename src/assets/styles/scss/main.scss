@@ -289,7 +289,7 @@ $breakpoints: (
 .fixed-height-content {
   height: calc(100vh - 234px);
   @each $breakpoint, $width in $breakpoints {
-    @media (min-width: $width) {
+    @media (min-width: $width) and (min-height: 600px) {
       &-#{$breakpoint} {
         height: calc(100vh - 234px);
       }

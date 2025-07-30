@@ -1,5 +1,5 @@
 <template>
-  <div id="hero-area" class="main-content hero-area-bg fixed-height-content  container-full-bg flex">
+  <div id="hero-area" class="main-content hero-area-bg fixed-height-content-lg  container-full-bg flex">
     <div class="container flex-row flex bot-85 my-md-auto">
       <div class="row justify-content-between ">
         <div class="col-md-5">

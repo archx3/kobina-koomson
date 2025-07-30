@@ -31,6 +31,10 @@ $positions: static, relative, absolute, fixed, sticky;
     $next: breakpoint-next($breakpoint, $grid-breakpoints);
     $infix: breakpoint-infix($next, $grid-breakpoints);
 
+    @if $infix == "-lg" {
+      $infix: "";
+    }
+
     @include media-breakpoint-up($breakpoint) {
       &#{$infix} {
         position: fixed;
@@ -43,13 +47,15 @@ $positions: static, relative, absolute, fixed, sticky;
   }
 }
 
-//.fixed-bottom-md {
-//  position: fixed;
-//  right: 0;
-//  bottom: 0;
-//  left: 0;
-//  z-index: $zindex-fixed;
-//}
+.fixed-bottom-lg {
+  @media (min-width: map-get($grid-breakpoints, lg)) and (min-height: 600px) {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: $zindex-fixed;
+  }
+}
 
 .sticky-top {
   @supports (position: sticky) {
