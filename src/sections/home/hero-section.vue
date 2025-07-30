@@ -1,9 +1,9 @@
 <template>
-  <div id="hero-area" class="main-content hero-area-bg container-full-bg flex">
+  <div id="hero-area" class="main-content hero-area-bg fixed-height-content  container-full-bg flex">
     <div class="container flex-row flex bot-85 my-md-auto">
       <div class="row justify-content-between ">
         <div class="col-md-5">
-          <img src="/img/background/kobina-hero-pic.png" alt="">
+          <img src="/img/background/kobina-hero-pic.webp" alt="">
         </div>
         <div class="col-md-6">
           <div class="contents page-header-inner home-text text-left mb-5">
@@ -77,6 +77,7 @@ export default {
 .main-content {
   margin-top: 102px;
 }
+
 </style>
 <style scoped lang="scss">
 @import "../../assets/styles/scss/colors";
@@ -88,10 +89,6 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-
-  @media screen and (min-width: $md) {
-    height: calc(100vh - 234px);
-  }
 
   img {
     width: 100%;
@@ -146,7 +143,6 @@ export default {
 .home-text {
   h3 {
     margin: 0 auto;
-    color: #fff !important;
 
     span.official-name span {
       display: unset;
@@ -246,11 +242,11 @@ span.official-name {
     margin-top: calc(65%);
   }
 
-  .skill-highlight {
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    border-radius: 0;
-  }
+  //.skill-highlight {
+  //  -webkit-border-radius: 0;
+  //  -moz-border-radius: 0;
+  //  border-radius: 0;
+  //}
 }
 </style>
 <style lang="scss">

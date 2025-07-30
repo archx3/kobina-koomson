@@ -29,7 +29,6 @@
       title="All Experiences"
       header-class="p-4 px-5"
       body-class="p-5"
-
       size="xl" hide-footer centered >
       <experience
         v-for="(exp, index) in resumeData.experience"
@@ -76,26 +75,12 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "../../assets/styles/scss/colors";
-@import "../../assets/styles/scss/media-queries";
-
 .section-title {
   font-size: 22px;
   font-weight: bold;
   margin-bottom: 15px;
   position: relative;
   padding-bottom: 8px;
-  color: $accent-color;
-
-  &:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 40px;
-    height: 2px;
-    background-color: $accent-color;
-  }
 }
 
 .experience-section {
