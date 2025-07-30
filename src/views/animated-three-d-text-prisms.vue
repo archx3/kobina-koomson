@@ -1,5 +1,5 @@
 <template>
-  <div class="text-container d-flex" :class="className">
+  <div class="text-container" :class="className">
     <div class="prisms-row my-auto">
       <div
         v-for="(_, index) in maxLength"
