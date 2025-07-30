@@ -1,13 +1,13 @@
 ---
-title: "How to Let Visitors Download Your Google Docs Resumé or CV as a PDF on the Web"
+title: "Let Visitors Download Your Google Docs Resumé or CV as a PDF on the Web"
 slug: "google-doc-resume-download"
 description: "A quick, practical story about turning a humble Google Doc into a professional download button for the web — and what I learned about Google Docs URLs along the way."
 date: "2025-07-26"
 tags: ["Google Docs", "Web Development", "Resumé", "Resume", "CV", "Download Button", "HTML", "JavaScript"]
 author: "Kobina Koomson"
-cover: "/img/blogs/google-doc-resume-download.jpg"
+cover: "/img/blogs/google-doc-resume-download.webp"
 coverAlt: "A screenshot of a Google Docs resumé with a download button overlay."
-thumbnail: "/img/blogs/google-doc-resume-download.jpg"
+thumbnail: "/img/blogs/google-doc-resume-download.webp"
 layout: "blog"
 published: true
 ---

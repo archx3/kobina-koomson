@@ -160,7 +160,7 @@ $oa-matte-color : #000;
 
 
 //$primary-color: #ffbc3b;
-$primary-color: $accent-color;
+$primary-color: #faf1cc;
 //$secondary-color: #1a1a37;
 $secondary-color: $dark-b-gray;
 
@@ -168,7 +168,7 @@ $primary-text-color: $accent-color;
 //$primary-text-color-light: $accent-color-light;
 //$primary-text-color-light: $accent-color-light;
 
-$secondary-text-color: #fff;
+$secondary-text-color: $primary-text-color;
 $secondary-text-color-light: #dadada;
 //$text-color-dark: #1e1e4b;
 $text-color-dark: #000;

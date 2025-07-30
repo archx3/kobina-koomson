@@ -3,7 +3,6 @@
 </template>
 
 <script>
-// import '../lib/vendor/drift'
 export default {
   name: 'app',
 }

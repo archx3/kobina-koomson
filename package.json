@@ -17,6 +17,7 @@
   "dependencies": {
     "bootstrap-vue": "^2.0.0-rc.16",
     "core-js": "^2.6.5",
+    "dayjs": "^1.11.13",
     "gray-matter": "^4.0.3",
     "gsap": "3.6.0",
     "highlight.js": "^11.11.1",
@@ -64,7 +65,6 @@
     "node-sass": "file:dependency-stub",
     "string-length": "4.0.2",
     "strip-ansi": "6.0.1",
-    "fsevents": "file:dependency-stub",
     "chromedriver": "file:dependency-stub"
   }
 }

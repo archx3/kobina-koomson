@@ -21,11 +21,11 @@
             <div class="col-md-auto d-flex gap-md-3 gap-8 align-items-center flex-md-column align-items-md-start">
               <h6 class="mb-0">Follow Me</h6>
               <div class="d-flex gap-3">
-                <a class="" :href="address.social.linkedin" target="_blank">
-                  <img class="valign-baseline" type="image/svg+xml" height="18" width="18" alt="linkedin" :src="`/img/icons/linkedin.svg`">
-                </a>
                 <a class="my-auto text-primary" :href="address.social.github" target="_blank">
                   <img class="" type="image/svg+xml" height="18" width="18" alt="twitter" :src="`/img/icons/github-filled.svg`">
+                </a>
+                <a class="" :href="address.social.linkedin" target="_blank">
+                  <img class="valign-baseline" type="image/svg+xml" height="18" width="18" alt="linkedin" :src="`/img/icons/linkedin.svg`">
                 </a>
                 <a class="my-auto" :href="address.social.twitter" target="_blank">
                   <img class="" type="image/svg+xml" height="18" width="18" alt="twitter" :src="`/img/icons/twitter.svg`">

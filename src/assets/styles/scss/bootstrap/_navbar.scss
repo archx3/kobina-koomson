@@ -28,7 +28,7 @@ $navbar-height : 85px;
   // few properties so that content nested within behave properly.
   > .container,
   > .container-fluid {
-    display: flex;
+    //display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;

@@ -1,3 +1,4 @@
+
 <template>
   <nav
     class="navbar justify-content-between frosted-glass navbar-expand-sm navbar-expand-xs bg-inverse scrolling-navbar py-2 py-lg-0"
@@ -6,7 +7,7 @@
   >
     <b-container>
       <transition name="collapsing">
-        <b-row class="navbar-collapse justify-content-between" id="navbarCollapse" style="z-index: 10">
+        <b-row class="navbar-collapse justify-content-between w-100 position-relative"  id="navbarCollapse" style="z-index: 10">
           <b-col class="col-auto">
             <ul>
               <li class="nav-item">
@@ -14,12 +15,13 @@
                   <div class="h-100 navbar-brand my-auto flex">
                     <div class="insignia d-flex my-auto">
                       <img src="/img/insignia/kobina-head-bw.png" alt="insignia-head" class="mr-2 insignia-head">
-                      <h5 class="my-auto mr-md-1">
-                        Kobina Koomson
+                      <h5 class="my-auto mr-md-1 d-flex align-items-center align-content-center">
+                        <span v-if="this.$route.path === '/'">Kobina Koomson</span>
+                        <span v-else class="font-weight-600 terminal text-monospace">
+                          <span class="prompt">kobina > $ cd</span> <span class="path">&nbsp;/</span><span class="cursor blinking" />
+                        </span>
                       </h5>
-                      <p class="my-auto border-left h-100 px-4 ml-4 d-none d-xl-block">
-                        <span class="text-primary">Software Engineer</span>
-                      </p>
+                      <animated-three-d-text class="text-primary border-left px-4 ml-4"/>
                     </div>
                   </div>
                 </router-link>
@@ -38,11 +40,12 @@
               <li class="d-none d-lg-block">
                 <a class="nav-link" href="#">
                   <b-button variant="primary" size="sm" class="px-3 py-1"
-                  @click="downloadResume">Download Resumé</b-button>
+                            @click="downloadResume">Download Resumé
+                  </b-button>
                 </a>
               </li>
               <li class="nav-item hamburger-li">
-                <a href="#" @click="handleMobNav">
+                <a href="#" @click="toggleMobNav">
                   <div class="hamburger is-open"
                        :class="{'is-closed' : !mobNavShow, 'is-open' : mobNavShow}"
                        data-toggle="collapse" data-target="#navbarCollapse"
@@ -69,44 +72,56 @@
           </div>
         </b-row>
       </transition>
+      <b-row v-if="$slots['nav-footer']">
+        <b-col >
+          <slot name="nav-footer"></slot>
+        </b-col>
+      </b-row>
 
       <div id="nav">
-        <div class="nav-opener-circle " style="/*! display: none; */">
+        <div class="nav-opener-circle ">
           <div class="circle-container ">
             <div class="circle-expand frosted-glass"></div>
           </div>
         </div>
-        <div class="container-fluid">
-          <div class="row cont v-align-transform justify-content-center w-100" style="top: 341px;">
-            <b-col class="my-auto">
+        <div class="container-fluid" @click="toggleMobNav">
+          <div class="row cont v-align-transform justify-content-center w-100">
+            <b-col sm="12" class="my-auto">
               <ul>
                 <li v-for="listItem in homeNavList " :key="listItem.name"
-                    @click="handleMobNav" class=" cur-ptr" :class="{ active : activeNavItem ===  listItem.name }">
+                    @click="toggleMobNav" class=" cur-ptr" :class="{ active : activeNavItem ===  listItem.name }">
                   <router-link tag="a" :to="listItem.link">
                     {{ listItem.name }}
                   </router-link>
                 </li>
                 <li v-for="listItem in extNavList" :key="listItem.name"
-                    @click="handleMobNav" :class="{ active : activeNavItem ===  listItem.name }">
+                    @click="toggleMobNav" :class="{ active : activeNavItem ===  listItem.name }">
                   <router-link tag="a" :to="listItem.link">
                     {{ listItem.name }}
                   </router-link>
                 </li>
 
                 <li v-for="listItem in extLinkList" :key="listItem.name"
-                    @click="handleMobNav" :class="{ active : activeNavItem ===  listItem.name }">
+                    @click="toggleMobNav" :class="{ active : activeNavItem ===  listItem.name }">
                   <router-link tag="p" :to="listItem.link" class="text-xl line-height-1">
                     {{ listItem.name }}
                   </router-link>
                   <ul>
                     <li v-for="childItem in listItem.children" :key="childItem.name"
-                        @click="handleMobNav" :class="{ active : activeNavItem ===  childItem.name }">
+                        @click="toggleMobNav" :class="{ active : activeNavItem ===  childItem.name }">
                       <a :href="childItem.link">
                         {{ childItem.name }}
                       </a>
                     </li>
+
+                    <li class="d-lg-none">
+                      <b-button variant="primary" size="sm" class="px-3 py-1"
+                                @click="downloadResume">Download Resumé
+                      </b-button>
+                    </li>
                   </ul>
                 </li>
+
                 <!--<li class="has-dropdown"><a href="/solutions/" target="_self">Our <span>Solutions</span></a><ul><li><a href="/solutions/#cloud" target="_self" class="scrollto" data-hash="#cloud">Cloud</a></li><li><a href="/solutions/#connectivity" target="_self" class="scrollto" data-hash="#connectivity">Connectivity</a></li><li><a href="/solutions/#data-centres" target="_self" class="scrollto" data-hash="#data-centres">Data Centres</a></li><li><a href="/solutions/#security" target="_self" class="scrollto" data-hash="#security">Security</a></li><li><a href="/solutions/#communications" target="_self" class="scrollto" data-hash="#communications">Communications</a></li><li class="has-dropdown"><a href="/solutions/#wholesale" target="_self" class="scrollto" data-hash="#wholesale">Wholesale</a></li></ul></li>-->
               </ul>
             </b-col>
@@ -122,6 +137,7 @@ import Vue from "vue";
 import VueScrollTo from "vue-scrollto";
 import { BButton } from "bootstrap-vue";
 import { HOME_NAV_TABLE } from "@/config/nav-config";
+import AnimatedThreeDText from "@/views/animated-three-d-text-prisms.vue";
 
 // Vue.use(VueScrollTo)
 
@@ -182,10 +198,15 @@ export default {
         }
       ],
       topNavCollapse: false,
-      mobNavShow: false
+      mobNavShow: false,
+      // Job title animation data
+      jobTitles: ["Software Engineer", "Graphic Designer", "UI/UX Designer"],
+      currentTitleIndex: 0,
+      titleInterval: null
     };
   },
   components: {
+    AnimatedThreeDText,
     BButton
   },
   props: {
@@ -205,30 +226,47 @@ export default {
     setActiveNavItem (name) {
       this.activeNavItem = name;
     },
-    handleMobNav () {
+    toggleMobNav () {
       this.mobNavShow = !this.mobNavShow;
     },
     handleScroll (e) {
       // this.topNavCollapse = window.scrollY > 60;
     },
     downloadResume () {
-      const docId = '1X8PGRdX4TALqtZWYyWvlamY43V8aMg-ASKDls_CNJJw';
+      const docId = "1X8PGRdX4TALqtZWYyWvlamY43V8aMg-ASKDls_CNJJw";
       const url = `https://docs.google.com/document/d/${docId}/export?format=pdf`;
 
       // Create a link and simulate click
-      const link = document.createElement('a');
+      const link = document.createElement("a");
       link.href = url;
-      link.setAttribute('download', 'resume.pdf'); // Suggests filename
+      link.setAttribute("download", "resume.pdf"); // Suggests filename
       document.body.appendChild(link);
       link.click();
       link.remove();
+    },
+    startTitleAnimation() {
+      this.titleInterval = setInterval(() => {
+        this.currentTitleIndex = (this.currentTitleIndex + 1) % this.jobTitles.length;
+      }, 3000); // Change every 3 seconds
+    },
+    stopTitleAnimation() {
+      if (this.titleInterval) {
+        clearInterval(this.titleInterval);
+        this.titleInterval = null;
+      }
     }
+  },
+  mounted() {
+    // Start the job title animation when component is mounted
+    this.startTitleAnimation();
   },
   created () {
     window.addEventListener("scroll", this.handleScroll);
   },
   destroyed () {
     window.removeEventListener("scroll", this.handleScroll);
+    // Clean up the interval when component is destroyed
+    this.stopTitleAnimation();
   }
 };
 </script>
@@ -242,6 +280,10 @@ $hamburger-width: 28px;
 // All good burgers need filling!
 $hamburger-link-size: 36px;
 $hamburger-link-padding: 4px;
+$prompt-color: #00ff00;
+nav.navbar {
+  z-index: 10000;
+}
 
 .navbar-brand {
   position: relative;
@@ -264,6 +306,138 @@ $hamburger-link-padding: 4px;
 
     &.insignia-head {
       height: 45px;
+
+      @include mobile {
+        height: 35px;
+      }
+    }
+  }
+
+  .insignia {
+    h5 {
+      @include mobile {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .terminal {
+    color: $prompt-color !important;
+
+    .path {
+      color: #9f29ff;
+    }
+
+    &:hover {
+      .prompt {
+        opacity: .6;
+      }
+    }
+  }
+
+  .cursor {
+    display: inline-block;
+    background-color: $prompt-color; /* Green cursor for terminal effect */
+    width: 7px;
+    height: 21px; /* Adjust to match font size */
+    margin-left: 3px;
+    line-height: 1.2;
+    position: relative;
+    top: 5px;
+  }
+
+  .blinking {
+    animation: blink 0.8s steps(2, start) infinite;
+  }
+
+  @keyframes blink {
+    to {
+      visibility: hidden;
+    }
+  }
+}
+
+// Job Title Animation Styles
+.job-title-container {
+  perspective: 800px;
+  height: 1.2em;
+  overflow: hidden;
+  position: relative;
+}
+
+.job-title-wrapper {
+  position: relative;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.job-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(100%) rotateX(-90deg);
+  transform-origin: center bottom;
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  backface-visibility: hidden;
+  white-space: nowrap;
+
+  &.active {
+    opacity: 1;
+    transform: translateY(0%) rotateX(0deg);
+  }
+
+  // Exit animation for the previous title
+  &:not(.active) {
+    transform: translateY(-100%) rotateX(90deg);
+    transition-delay: 0s;
+  }
+}
+
+// Enhanced 3D twist animation
+@keyframes twistUp {
+  0% {
+    transform: translateY(100%) rotateX(-90deg) rotateY(0deg) scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(50%) rotateX(-45deg) rotateY(5deg) scale(0.9);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(0%) rotateX(0deg) rotateY(0deg) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes twistDown {
+  0% {
+    transform: translateY(0%) rotateX(0deg) rotateY(0deg) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-50%) rotateX(45deg) rotateY(-5deg) scale(0.9);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-100%) rotateX(90deg) rotateY(0deg) scale(0.8);
+    opacity: 0;
+  }
+}
+
+// Alternative smoother animation variant
+.job-title-container.smooth-twist {
+  .job-title {
+    &.active {
+      animation: twistUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    }
+
+    &:not(.active) {
+      animation: twistDown 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
     }
   }
 }
@@ -364,12 +538,13 @@ $hamburger-link-padding: 4px;
 
 .navbar-nav {
   a.nav-link {
-    color : var(--primary-color);
+    color: var(--primary-color);
 
     &:hover {
       color: var(--button-hover-background);
     }
   }
+
   .nav-link {
 
     @include ipad {
@@ -919,20 +1094,50 @@ $scale: 1;
   position: absolute;
   z-index: 7;
   overflow: hidden;
-}
 
-#nav > * {
-  visibility: hidden;
-  opacity: 0;
-  top: 0;
-}
+  &> * {
+    visibility: hidden;
+    opacity: 0;
+    top: 0;
+  }
 
-#nav .holder {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: -100vh;
-  bottom: 100vh;
+  .holder {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -100vh;
+    bottom: 100vh;
+  }
+
+  .holder:before {
+    content: "\e9be";
+    font-size: 600px;
+    font-family: 'is', sans-serif !important;
+    position: absolute;
+    left: -210px;
+    top: 50%;
+    color: #fff;
+    opacity: 0.2;
+  }
+
+  .holder:after {
+    content: "\e9ba";
+    font-size: 600px;
+    font-family: 'is', sans-serif !important;
+    position: absolute;
+    right: -210px;
+    top: 50%;
+    color: #fff;
+    opacity: 0.2;
+  }
+
+  .container-fluid {
+    min-height: 100vh;
+  }
+
+  .container-fluid .cont {
+    padding: 240px 0;
+  }
 }
 
 .nav-active {
@@ -973,36 +1178,6 @@ $scale: 1;
       transition: all 0.34s cubic-bezier(1, .1, 0, 1.01);
     }
   }
-}
-
-#nav .holder:before {
-  content: "\e9be";
-  font-size: 600px;
-  font-family: 'is', sans-serif !important;
-  position: absolute;
-  left: -210px;
-  top: 50%;
-  color: #fff;
-  opacity: 0.2;
-}
-
-#nav .holder:after {
-  content: "\e9ba";
-  font-size: 600px;
-  font-family: 'is', sans-serif !important;
-  position: absolute;
-  right: -210px;
-  top: 50%;
-  color: #fff;
-  opacity: 0.2;
-}
-
-#nav .container-fluid {
-  min-height: 100vh;
-}
-
-#nav .container-fluid .cont {
-  padding: 240px 0;
 }
 
 @media only screen and (max-width: 1681px) {
@@ -1234,7 +1409,7 @@ $scale: 1;
   vertical-align: top;
   letter-spacing: 0;
   padding: 0 55px;
-  text-align: left;
+  text-align: center;
 }
 
 @media only screen and (max-width: 1681px) {
@@ -1268,6 +1443,7 @@ $scale: 1;
     bottom: -100%;
     transition: all linear 0.3s;
   }
+
   &:hover {
     &:after {
       width: 50%;
@@ -1290,7 +1466,7 @@ $scale: 1;
 }
 
 //#nav ul li a:hover {
-  //color: #fff;
+//color: #fff;
 //}
 
 #nav ul li a:hover:after {
@@ -1317,7 +1493,7 @@ $scale: 1;
   #nav ul li > ul {
     font-size: 13px;
     padding: 80px 0 0;
-    max-width: 112px;
+    //max-width: 112px;
   }
 }
 
@@ -1362,14 +1538,6 @@ $scale: 1;
 #nav ul li > ul li > a:after {
   display: none;
 }
-
-//#nav ul li > ul li a {
-//  //color: #fff;
-//}
-
-//#nav ul li > ul li a:hover {
-//  color: $accent-color;
-//}
 
 .container {
   &.wide {
