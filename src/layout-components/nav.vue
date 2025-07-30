@@ -21,7 +21,7 @@
                           <span class="prompt">kobina > $ cd</span> <span class="path">&nbsp;/</span><span class="cursor blinking" />
                         </span>
                       </h5>
-                      <animated-three-d-text class="text-primary border-left px-4 ml-4"/>
+                      <animated-three-d-text class="text-primary border-left px-4 ml-4 d-none d-xl-flex"/>
                     </div>
                   </div>
                 </router-link>
