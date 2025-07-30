@@ -2,7 +2,7 @@
   <div id="app" ref="globalHost" class="blk fp global-host ys position-relative">
     <nav-bar />
     <hero-section />
-    <mini-footer class="fixed-bottom-md" />
+    <mini-footer class="fixed-bottom-lg" />
   </div>
 </template>
 
