@@ -152,7 +152,8 @@ export default {
         "Was part of the team that represented the school in the National Finance Quiz competition for senior high schools organised by the Bank of Ghana.",
         "Was part of the team that re-initiated the annual creation of the Bleoo Empire school magazine.",
         "The team conducted research with the appropriate stakeholders and collected relevant material for the creation of the 2011 Phoenix Edition."
-      ]
+      ],
+      hide: true
     }
   ],
   certifications: [
