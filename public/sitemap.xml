@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://kobin.me</loc>
+    <loc>https://kobina.me</loc>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
-    <lastmod>2025-07-30T13:17:49.976Z</lastmod>
+    <lastmod>2025-07-31T06:21:35.221Z</lastmod>
   </url>
   <url>
-    <loc>http://kobin.me/about</loc>
+    <loc>https://kobina.me/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2025-07-30T13:17:49.977Z</lastmod>
+    <lastmod>2025-07-31T06:21:35.221Z</lastmod>
   </url>
   <url>
-    <loc>http://kobin.me/logofolio</loc>
+    <loc>https://kobina.me/logofolio</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2025-07-30T13:17:49.977Z</lastmod>
+    <lastmod>2025-07-31T06:21:35.221Z</lastmod>
   </url>
   <url>
-    <loc>http://kobin.me/blog/brain-drain-in-a-new-dress</loc>
+    <loc>https://kobina.me/blog/brain-drain-in-a-new-dress</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <lastmod>2025-07-29T00:00:00.000Z</lastmod>
   </url>
   <url>
-    <loc>http://kobin.me/blog/building-a-scalable-translation-system</loc>
+    <loc>https://kobina.me/blog/building-a-scalable-translation-system</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <lastmod>2024-08-25T00:00:00.000Z</lastmod>
   </url>
   <url>
-    <loc>http://kobin.me/blog/google-doc-resume-download</loc>
+    <loc>https://kobina.me/blog/google-doc-resume-download</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <lastmod>2025-07-26T00:00:00.000Z</lastmod>
