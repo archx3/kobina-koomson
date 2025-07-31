@@ -45,7 +45,7 @@ export default {
         { name: 'twitter:site', content: this.twitterHandle },
         { name: 'twitter:url', content: this.url },
         { name: 'twitter:domain', content: 'https://kobina.me' },
-      ].filter(Boolean),
+      ],
       link: [
         { rel: 'canonical', href: this.url },
         { rel: 'icon', href: '/favicon.ico' }

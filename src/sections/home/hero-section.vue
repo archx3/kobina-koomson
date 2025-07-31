@@ -16,7 +16,7 @@
               <span class="skill-highlight badge-pill badge badge-light pb-0 d-none d-lg-inline">Software Engineer</span>
               <animated-three-d-text class="text-secondary bg-white badge px-2 text-monospace text-base d-inline-flex d-lg-none "/>
               with a passion
-              for building. This is my personal space where I share my thoughts, ideas, and projects.
+              for problem solving. This is my personal space where I share my thoughts, ideas, and projects.
             </p>
             <p class="text-muted">
               I am a full-stack web developer with a background in graphic design and a degree in computer science. I am

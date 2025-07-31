@@ -1,7 +1,7 @@
 ---
 title: "Brain Drain in a New Dress"
 slug: "brain-drain-in-a-new-dress"
-description: Brain drain has taken a new form, remote work. From Accra to Alberta, Ghanaian professionals are exporting their talent while the nation celebrates remittances. But what’s the long-term cost?"
+description: "Brain drain has taken a new form, remote work. From Accra to Alberta, Ghanaian professionals are exporting their talent while the nation celebrates remittances. But what’s the long-term cost?"
 date: "2025-07-29"
 tags: ["brain drain", "remote work", "Ghana", "migration", "remittances", "tech talent"]
 author: "Kobina Koomson"
