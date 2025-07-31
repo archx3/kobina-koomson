@@ -139,6 +139,12 @@ function writePostHtmlForSeoToFile (postsHtmlForSeo) {
       <strong>Sorry, this site doesn't work properly without JavaScript enabled. Please enable it and enjoy.</strong>
     </noscript>
     <div id="app"></div>
+    <script>
+    // since this page doesn't have a router, we need to rewrite the url to the correct route
+    if (window.location.pathname === '/blog/${data.slug}.html') {
+      window.location.href = '/blog/${data.slug}';
+    }
+</script>
   </body>
 </html>
 
@@ -163,6 +169,20 @@ function writePostListToFile (postList) {
   }
 
   fs.writeFileSync(POST_LIST_FILE, JSON.stringify(pages, null, 2));
+}
+
+function writeRewriteRulesToFile (postList) {
+  const rewriteRules = [
+    ...postList
+    // { slug: "about", title: "About", date: "", description: "", summary: "", tags: [], cover: "", coverAlt: "", thumbnail: "", published: true },
+  ].map(post => {
+    return `/blog/${post.slug} /blog/${post.slug}.html 200`;
+  }).concat([
+    '\n',
+    '/* /index.html 200',
+  ]).join("\n");
+
+  fs.writeFileSync(path.join(PUBLIC_DIR, "_redirects"), rewriteRules);
 }
 
 function main () {
@@ -239,6 +259,7 @@ function main () {
     writeSitemapToFile(sitemapEntries);
 
     writePostListToFile(postList);
+    // writeRewriteRulesToFile(postList);
   } catch (err) {
     console.error("❌ Error generating blog routes:", err);
   }
