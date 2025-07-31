@@ -140,8 +140,10 @@ function writePostHtmlForSeoToFile (postsHtmlForSeo) {
     </noscript>
     <div id="app"></div>
     <script>
-    // since this page doesn't have a router, we need to manually set the initial route
-    window.initialRoute = '/blog/${data.slug}';'
+    // since this page doesn't have a router, we need to rewrite the url to the correct route
+    if (window.location.pathname === '/blog/${data.slug}.html') {
+      window.location.href = '/blog/${data.slug}';
+    }
 </script>
   </body>
 </html>
